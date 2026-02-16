@@ -1,0 +1,79 @@
+"use client"
+
+import { useState } from "react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { CheckCircle2, Download } from "lucide-react"
+
+export function WhitePaperModal() {
+  const [submitted, setSubmitted] = useState(false)
+
+  return (
+    <Dialog onOpenChange={() => setSubmitted(false)}>
+      <DialogTrigger asChild>
+        <Button className="rounded-full font-serif font-semibold px-8 bg-foreground text-background hover:bg-foreground/90">
+          <Download className="w-4 h-4 mr-2" />
+          Download the White Paper
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        {!submitted ? (
+          <>
+            <DialogHeader>
+              <DialogTitle className="font-serif text-xl text-foreground">Download the Full White Paper</DialogTitle>
+            </DialogHeader>
+            <p className="text-sm text-muted-foreground mb-4">
+              Access the full research citations, REPAIR&#8482; architecture, and early outcomes.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault()
+                setSubmitted(true)
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <Label htmlFor="wp-name" className="text-xs font-medium text-foreground">Name</Label>
+                <Input id="wp-name" required placeholder="Full name" className="mt-1" />
+              </div>
+              <div>
+                <Label htmlFor="wp-email" className="text-xs font-medium text-foreground">Work Email</Label>
+                <Input id="wp-email" type="email" required placeholder="you@organization.com" className="mt-1" />
+              </div>
+              <div>
+                <Label htmlFor="wp-org" className="text-xs font-medium text-foreground">Organization</Label>
+                <Input id="wp-org" required placeholder="Your organization" className="mt-1" />
+              </div>
+              <div>
+                <Label htmlFor="wp-role" className="text-xs font-medium text-foreground">Role</Label>
+                <Input id="wp-role" required placeholder="Your role" className="mt-1" />
+              </div>
+              <div className="bg-secondary rounded-lg p-3">
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  <span className="font-semibold text-foreground">Includes:</span> Full research citations (secondary trauma literature, AIP/EMDR foundations, polyvagal, HRV), REPAIR&#8482; architecture, and early outcomes.
+                </p>
+              </div>
+              <Button type="submit" className="w-full rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90">
+                Get the White Paper
+              </Button>
+            </form>
+          </>
+        ) : (
+          <div className="py-8 text-center">
+            <div className="flex justify-center mb-4">
+              <CheckCircle2 className="w-12 h-12 text-accent" />
+            </div>
+            <h3 className="font-serif text-lg font-bold text-foreground mb-2">Thank you!</h3>
+            <p className="text-sm text-muted-foreground mb-6">Your white paper is ready to download.</p>
+            <Button className="rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90">
+              <Download className="w-4 h-4 mr-2" />
+              Download White Paper (PDF)
+            </Button>
+          </div>
+        )}
+      </DialogContent>
+    </Dialog>
+  )
+}
