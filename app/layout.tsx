@@ -3,8 +3,8 @@ import { Rubik, DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" })
-const _dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" })
+const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" })
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" })
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${rubik.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />
