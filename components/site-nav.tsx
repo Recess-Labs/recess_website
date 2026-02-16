@@ -1,0 +1,164 @@
+"use client"
+
+import { useState } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { Menu, X, ChevronDown } from "lucide-react"
+
+const solutions = [
+  { label: "Trauma-Informed Workforce System", href: "/solutions/workforce-system" },
+  { label: "Recess Frontline Ally App", href: "/solutions/ally-app" },
+  { label: "Emotional Operating Dashboard", href: "/solutions/dashboard" },
+  { label: "divider", href: "" },
+  { label: "Full Implementation", href: "/solutions/implementation" },
+]
+
+const industries = [
+  { label: "Healthcare & Behavioral Health", href: "/industries/healthcare" },
+  { label: "Education", href: "/industries/education" },
+  { label: "Public Safety", href: "/industries/public-safety", note: "Includes corrections + VA-adjacent" },
+]
+
+const resources = [
+  { label: "Help Center", href: "#" },
+  { label: "See your risk", href: "https://pulse.withrecess.com", external: true },
+  { label: "Articles", href: "#" },
+  { label: "Flow with Recess (Podcast)", href: "#" },
+]
+
+export function SiteNav() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  return (
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/60">
+      <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 h-16">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+            <rect width="32" height="32" rx="8" fill="#29285D" />
+            <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#8D7AA0" />
+            <circle cx="16" cy="16" r="3" fill="#FDF0ED" />
+          </svg>
+          <span className="font-serif text-xl font-bold text-foreground">Recess</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex items-center gap-1">
+          <NavItem label="Homepage" href="/" active={pathname === "/"} />
+          <DropdownNavItem label="Solutions" href="/solutions" items={solutions} active={pathname.startsWith("/solutions")} />
+          <DropdownNavItem label="Industries" items={industries} active={pathname.startsWith("/industries")} />
+          <NavItem label="Our Science" href="/science" active={pathname === "/science"} />
+          <NavItem label="About" href="/about" active={pathname === "/about"} />
+          <DropdownNavItem label="Resources" items={resources} active={false} />
+        </div>
+
+        {/* CTA */}
+        <div className="hidden lg:block">
+          <Button asChild size="sm" className="rounded-full font-serif font-semibold px-5 bg-foreground text-background hover:bg-foreground/90">
+            <Link href="/get-started">Schedule a Free Strategy Call</Link>
+          </Button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+          {mobileOpen ? <X className="w-5 h-5 text-foreground" /> : <Menu className="w-5 h-5 text-foreground" />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="lg:hidden border-t border-border/60 bg-background px-6 py-6 flex flex-col gap-4">
+          <Link href="/" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Homepage</Link>
+          <MobileGroup title="Solutions" href="/solutions">
+            {solutions.filter(s => s.label !== "divider").map(s => (
+              <Link key={s.href} href={s.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{s.label}</Link>
+            ))}
+          </MobileGroup>
+          <MobileGroup title="Industries">
+            {industries.map(i => (
+              <div key={i.href}>
+                <Link href={i.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{i.label}</Link>
+                {i.note && <span className="text-xs text-muted-foreground/60 ml-2">{i.note}</span>}
+              </div>
+            ))}
+          </MobileGroup>
+          <Link href="/science" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Our Science</Link>
+          <Link href="/about" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>About</Link>
+          <Button asChild size="sm" className="rounded-full font-serif font-semibold mt-2 bg-foreground text-background">
+            <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule a Free Strategy Call</Link>
+          </Button>
+        </div>
+      )}
+    </header>
+  )
+}
+
+function NavItem({ label, href, active }: { label: string; href: string; active: boolean }) {
+  return (
+    <Link href={href} className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+      {label}
+    </Link>
+  )
+}
+
+function DropdownNavItem({ label, href, items, active }: { label: string; href?: string; items: { label: string; href: string; note?: string; external?: boolean }[]; active: boolean }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      {href ? (
+        <Link href={href} className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+          {label} <ChevronDown className="w-3 h-3" />
+        </Link>
+      ) : (
+        <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+          {label} <ChevronDown className="w-3 h-3" />
+        </button>
+      )}
+      {open && (
+        <div className="absolute top-full left-0 pt-1 z-50">
+          <div className="bg-background border border-border rounded-xl shadow-lg p-2 min-w-[260px]">
+            {items.map((item, i) =>
+              item.label === "divider" ? (
+                <div key={i} className="my-1 border-t border-border" />
+              ) : (
+                <div key={item.href}>
+                  {item.external ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors" onClick={() => setOpen(false)}>
+                      {item.label}
+                    </Link>
+                  )}
+                  {item.note && <span className="block px-3 pb-1 text-xs text-muted-foreground/60">{item.note}</span>}
+                </div>
+              )
+            )}
+            {label === "Resources" && (
+              <div className="mt-1 mx-2 p-3 bg-secondary rounded-lg border border-border/40">
+                <p className="text-xs font-serif font-semibold text-foreground">In Good Company</p>
+                <p className="text-xs text-muted-foreground mt-0.5">Writing by our founder</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function MobileGroup({ title, href, children }: { title: string; href?: string; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div>
+      <button onClick={() => setOpen(!open)} className="flex items-center gap-1 text-sm font-medium text-foreground">
+        {href ? <Link href={href}>{title}</Link> : title}
+        <ChevronDown className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && <div className="pl-3 mt-2 flex flex-col gap-1">{children}</div>}
+    </div>
+  )
+}
