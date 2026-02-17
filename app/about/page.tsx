@@ -3,8 +3,7 @@ import Image from "next/image"
 import { PageWrapper } from "@/components/page-wrapper"
 import { SharedCTA } from "@/components/shared-cta"
 import { FadeInSection } from "@/components/fade-in-section"
-import { AlertTriangle, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { AlertTriangle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About Recess",
@@ -13,99 +12,54 @@ export const metadata: Metadata = {
 
 const advisors = [
   {
-    name: "Michael Lawrence",
-    role: "Health Tech Growth & Scale Advisor",
-    image: "/images/team/michael-lawrence.jpg",
-    credentials: ["MBA"],
-    highlights: ["Sold company to Google"],
-    logos: [{ label: "Google", color: "#4285F4" }],
-  },
-  {
-    name: "Dr. Ayelet Hirshfeld",
-    role: "Clinical & Trauma Science Advisor",
+    name: "Ayelet Hirshfeld, PhD",
+    role: "AI in Mental Health | Stanford Postdoctoral Researcher | Trauma & High-Risk Workforce Specialist",
     image: "/images/team/ayelet-hirshfeld.webp",
-    credentials: ["PhD"],
-    highlights: ["Expert in high-risk populations (healthcare, first responders, military)", "Stanford postdoc", "GenAI in mental health"],
-    logos: [{ label: "Stanford", color: "#8C1515" }],
   },
   {
-    name: "Dr. Kwame Johnson, MD",
-    role: "Health Product & AI Advisor",
+    name: "Michael Lawrence",
+    role: "Commercialization Strategy | 3x Healthcare Exit | Former Google",
+    image: "/images/team/michael-lawrence.jpg",
+  },
+  {
+    name: "Kwame Johnson, MD",
+    role: "Enterprise Clinical AI | Duke-Trained Physician | Former Google & Microsoft",
     image: "/images/team/kwame-johnson.jpg",
-    credentials: ["MD (Duke)"],
-    highlights: ["Ex-Google Health", "Ex-Microsoft", "Product leader in AI for healthcare", "Enterprise clinical AI in hospital systems"],
-    logos: [{ label: "Google", color: "#4285F4" }, { label: "Microsoft", color: "#00A4EF" }, { label: "Duke", color: "#003087" }],
   },
 ]
 
 const leadership = [
   {
-    name: "Kelz Bethel, MBA",
-    role: "Cofounder, CEO",
+    name: "Kelz Bethel",
+    role: "Cofounder & CEO",
     image: "/images/team/kelz-bethel.png",
-    credentials: ["MBA"],
-    highlights: ["3x Founder with 1 exit", "Former Psychologist"],
-    logos: [],
   },
   {
     name: "Lisanne Fellinger",
-    role: "Cofounder, CTO",
+    role: "Cofounder & CTO",
     image: "/images/team/lisanne-fellinger.jpg",
-    credentials: [],
-    highlights: ["Published Neuroscientist", "10 Years Senior Software Engineer"],
-    logos: [{ label: "Disney+", color: "#113CCF" }, { label: "BBC", color: "#BB1919" }, { label: "HBO", color: "#000" }],
+  },
+  {
+    name: "Matthew Swartz",
+    role: "Chief Psychology Officer",
+    image: "/images/team/matthew-swartz.jpg",
   },
 ]
 
-function TeamCard({ person }: { person: typeof advisors[number] }) {
+function PersonCard({ person }: { person: { name: string; role: string; image: string } }) {
   return (
-    <div className="group relative bg-background rounded-2xl border border-border/40 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-      {/* Subtle top gradient accent */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8D7AA0] to-[#AAF5D4] opacity-60 group-hover:opacity-100 transition-opacity" />
-
-      <div className="flex items-start gap-5">
-        {/* Photo */}
-        <div className="relative shrink-0">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border/40 group-hover:border-accent/40 transition-colors">
-            <Image
-              src={person.image}
-              alt={person.name}
-              width={80}
-              height={80}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Info */}
-        <div className="flex-1 min-w-0">
-          <p className="font-serif font-bold text-foreground text-lg leading-tight">{person.name}</p>
-          <p className="text-sm text-accent font-semibold mt-1">{person.role}</p>
-        </div>
+    <div className="flex flex-col items-center text-center">
+      <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-border/40 mb-4 shadow-sm">
+        <Image
+          src={person.image}
+          alt={person.name}
+          width={112}
+          height={112}
+          className="w-full h-full object-cover"
+        />
       </div>
-
-      {/* Highlights */}
-      <div className="mt-4 flex flex-wrap gap-1.5">
-        {person.highlights.map((h, i) => (
-          <span key={i} className="inline-block text-xs text-muted-foreground bg-[#F5F5FF] rounded-full px-3 py-1 border border-border/20">
-            {h}
-          </span>
-        ))}
-      </div>
-
-      {/* Company logos */}
-      {person.logos.length > 0 && (
-        <div className="mt-3 flex items-center gap-2 pt-3 border-t border-border/20">
-          <span className="text-xs text-muted-foreground/60 shrink-0">Trusted by</span>
-          <div className="flex items-center gap-2">
-            {person.logos.map((logo, i) => (
-              <span key={i} className="inline-flex items-center gap-1 text-xs font-semibold rounded-md px-2 py-0.5 border" style={{ borderColor: `${logo.color}30`, color: logo.color, backgroundColor: `${logo.color}08` }}>
-                {logo.label}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+      <p className="font-serif font-bold text-foreground text-base leading-tight">{person.name}</p>
+      <p className="text-sm text-muted-foreground mt-1 max-w-[220px] leading-snug">{person.role}</p>
     </div>
   )
 }
@@ -173,7 +127,6 @@ export default function AboutPage() {
               {/* Right side: "Not a wellness platform" callout */}
               <div className="lg:mt-14">
                 <div className="relative rounded-2xl border-2 border-[#E8A94C] bg-[#FFFBF0] p-7 shadow-md overflow-hidden">
-                  {/* Caution stripe at top */}
                   <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#E8A94C]" />
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-12 h-12 rounded-full bg-[#E8A94C] flex items-center justify-center shrink-0 shadow-sm">
@@ -186,7 +139,6 @@ export default function AboutPage() {
                   <p className="text-base text-muted-foreground leading-relaxed">
                     We are a science-backed system designed for high-exposure environments where stability is operationally critical.
                   </p>
-                  {/* Subtle repeating caution pattern */}
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#E8A94C] opacity-40" />
                 </div>
               </div>
@@ -229,7 +181,6 @@ export default function AboutPage() {
                 Most institutions respond with training and wellness programs. Few address the nervous system strain driving the instability.
               </p>
 
-              {/* We Believe -- elevated dark card */}
               <div className="relative rounded-2xl bg-foreground p-8 md:p-10 shadow-xl">
                 <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: "linear-gradient(to right, #FFF2E2, #AAF5D4, #D4EDF9, #FFCCE5)" }} />
                 <p className="font-serif font-bold text-background text-xl mb-6">We believe:</p>
@@ -268,32 +219,22 @@ export default function AboutPage() {
                 Built by Experts. Guided by Science.
               </h2>
               <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Recess is guided by world-class experts across trauma research, neuroscience, health systems, and AI -- with roots at Google, Microsoft, Stanford, Duke, Disney+, BBC, and HBO.
+                Recess is guided by world-class experts across trauma research, neuroscience, health systems, and AI.
               </p>
             </div>
 
-            {/* Advisory Board */}
-            <div className="mb-6">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center shrink-0">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#AAF5D4" stroke="#29285D" strokeWidth="1" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-serif font-bold text-foreground text-xl">Advisory Board</p>
-                  <p className="text-sm text-muted-foreground">Industry leaders shaping our scientific and strategic direction</p>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {advisors.map((a, i) => (
-                  <TeamCard key={i} person={a} />
+            {/* Leadership Team */}
+            <div className="mb-16">
+              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Leadership Team</p>
+              <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
+                {leadership.map((p, i) => (
+                  <PersonCard key={i} person={p} />
                 ))}
               </div>
             </div>
 
             {/* Divider */}
-            <div className="flex items-center gap-4 my-12">
+            <div className="flex items-center gap-4 mb-16">
               <div className="flex-1 h-px bg-border" />
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -303,24 +244,12 @@ export default function AboutPage() {
               <div className="flex-1 h-px bg-border" />
             </div>
 
-            {/* Leadership Team */}
+            {/* Advisory Board */}
             <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center shrink-0">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#D4EDF9" strokeWidth="2" fill="none" strokeLinecap="round" />
-                    <circle cx="9" cy="7" r="4" stroke="#D4EDF9" strokeWidth="2" fill="none" />
-                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#D4EDF9" strokeWidth="2" fill="none" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-serif font-bold text-foreground text-xl">Leadership Team</p>
-                  <p className="text-sm text-muted-foreground">The founders building the future of frontline workforce stability</p>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-5 max-w-2xl">
-                {leadership.map((a, i) => (
-                  <TeamCard key={i} person={a} />
+              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Advisory Board</p>
+              <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
+                {advisors.map((p, i) => (
+                  <PersonCard key={i} person={p} />
                 ))}
               </div>
             </div>
