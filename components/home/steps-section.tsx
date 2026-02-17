@@ -60,25 +60,41 @@ export function StepsSection() {
         </div>
 
         {/* Outcomes */}
-        <FadeInSection delay={500} className="mt-16 bg-background rounded-2xl p-8 lg:p-10 border border-border/30 shadow-sm">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
-            <div className="lg:w-1/2">
+        <FadeInSection delay={500} className="mt-16">
+          <div className="bg-background rounded-3xl border border-border/30 shadow-lg overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-1.5 bg-gradient-to-r from-[#FFF2E2] via-[#AAF5D4] to-[#D4EDF9]" />
+            <div className="p-8 lg:p-12">
               <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-3">The Result</p>
-              <h3 className="font-serif text-2xl font-bold text-foreground">A low-lift system for detecting and reducing trauma-driven instability at scale.</h3>
-              <ul className="mt-5 flex flex-col gap-2.5">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground max-w-2xl">
+                A low-lift system for detecting and reducing trauma-driven instability at scale.
+              </h3>
+
+              {/* Outcome stats grid */}
+              <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {outcomes.map((o, i) => (
-                  <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                    {o}
-                  </li>
+                  <div key={i} className="flex items-start gap-3 bg-[#F5F5FF] rounded-xl p-5 border border-border/20">
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-base text-foreground leading-relaxed">{o}</span>
+                  </div>
                 ))}
-              </ul>
-              <Link href="/solutions" className="mt-6 inline-flex items-center gap-1.5 text-sm text-foreground hover:text-accent font-serif font-semibold transition-colors">
-                Explore the Recess System <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <div className="lg:w-1/2 flex justify-center">
-              <SystemMapIllustration />
+              </div>
+
+              {/* System diagram */}
+              <div className="mt-10 pt-8 border-t border-border/20">
+                <div className="flex justify-center">
+                  <SystemMapIllustration />
+                </div>
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-serif font-semibold text-base bg-foreground text-background hover:bg-foreground/90 hover:scale-[1.02] transition-all shadow-md"
+                >
+                  Explore the Recess System <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </FadeInSection>

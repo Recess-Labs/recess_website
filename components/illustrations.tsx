@@ -25,37 +25,60 @@ export function ExposureDiagram() {
 
 export function SystemMapIllustration() {
   return (
-    <svg viewBox="0 0 680 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-2xl">
-      {/* Workforce Standards */}
-      <rect x="0" y="50" width="190" height="100" rx="20" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="18" y="68" width="32" height="32" rx="8" fill="#29285D" opacity="0.1" />
-      <path d="M30 78 L38 86 L46 74" stroke="#8D7AA0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <text x="18" y="124" fill="#29285D" fontWeight="600" fontSize="13" fontFamily="system-ui">Foundation</text>
-      <text x="18" y="140" fill="#777698" fontSize="10" fontFamily="system-ui">Standards + training</text>
-
-      {/* Center connection lines */}
-      <path d="M195 100 L245 100" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
-      <path d="M435 100 L485 100" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
-
-      {/* Ally App */}
-      <rect x="245" y="50" width="190" height="100" rx="20" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="263" y="68" width="32" height="32" rx="8" fill="#29285D" opacity="0.1" />
-      <circle cx="279" cy="84" r="8" stroke="#8D7AA0" strokeWidth="2" fill="none" />
-      <circle cx="279" cy="84" r="3" fill="#8D7AA0" />
-      <text x="263" y="124" fill="#29285D" fontWeight="600" fontSize="13" fontFamily="system-ui">Frontline Ally</text>
-      <text x="263" y="140" fill="#777698" fontSize="10" fontFamily="system-ui">Real-time stabilization</text>
-
-      {/* Dashboard */}
-      <rect x="490" y="50" width="190" height="100" rx="20" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="508" y="68" width="32" height="32" rx="8" fill="#29285D" opacity="0.1" />
-      <rect x="515" y="76" width="18" height="12" rx="2" stroke="#8D7AA0" strokeWidth="2" fill="none" />
-      <path d="M518 85 L522 80 L526 83 L530 77" stroke="#8D7AA0" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-      <text x="508" y="124" fill="#29285D" fontWeight="600" fontSize="13" fontFamily="system-ui">Signal</text>
-      <text x="508" y="140" fill="#777698" fontSize="10" fontFamily="system-ui">Predict + prevent</text>
-
+    <svg viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-2xl">
       {/* Top label */}
-      <text x="340" y="30" textAnchor="middle" fill="#8D7AA0" fontWeight="600" fontSize="11" fontFamily="system-ui" letterSpacing="2">THE RECESS SYSTEM</text>
-      <line x1="190" y1="38" x2="490" y2="38" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.4" />
+      <text x="360" y="20" textAnchor="middle" fill="#8D7AA0" fontWeight="700" fontSize="11" fontFamily="system-ui" letterSpacing="3">THE RECESS SYSTEM</text>
+      <line x1="140" y1="30" x2="580" y2="30" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.3" />
+
+      {/* Foundation Card */}
+      <rect x="0" y="50" width="210" height="140" rx="20" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="20" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
+      {/* Foundation icon - building blocks */}
+      <rect x="28" y="92" width="24" height="12" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <rect x="34" y="80" width="12" height="14" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <line x1="40" y1="88" x2="40" y2="94" stroke="#8D7AA0" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="40" cy="85" r="2" fill="#8D7AA0" />
+      <text x="20" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Foundation\u2122"}</text>
+      <text x="20" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Standards + training</text>
+      <text x="20" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">Align leadership around</text>
+      <text x="20" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">trauma exposure</text>
+
+      {/* Connection line 1 */}
+      <path d="M215 120 L250 120" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
+      <circle cx="250" cy="120" r="3" fill="#8D7AA0" opacity="0.4" />
+
+      {/* Frontline Ally Card */}
+      <rect x="255" y="50" width="210" height="140" rx="20" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="275" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
+      {/* Ally icon - wave circle */}
+      <circle cx="295" cy="90" r="12" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <path d="M285 90 Q289 84 295 90 Q301 96 305 90" stroke="#8D7AA0" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <circle cx="295" cy="90" r="4" fill="#29285D" opacity="0.12" />
+      <text x="275" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Frontline Ally\u2122"}</text>
+      <text x="275" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Real-time stabilization</text>
+      <text x="275" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">Personalized relief in</text>
+      <text x="275" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">minutes, not sessions</text>
+
+      {/* Connection line 2 */}
+      <path d="M470 120 L505 120" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
+      <circle cx="505" cy="120" r="3" fill="#8D7AA0" opacity="0.4" />
+
+      {/* Signal Card */}
+      <rect x="510" y="50" width="210" height="140" rx="20" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="530" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
+      {/* Signal icon - chart bars */}
+      <rect x="534" y="78" width="24" height="24" rx="5" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <line x1="540" y1="98" x2="540" y2="88" stroke="#8D7AA0" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="546" y1="98" x2="546" y2="82" stroke="#29285D" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="552" y1="98" x2="552" y2="92" stroke="#8D7AA0" strokeWidth="2.5" strokeLinecap="round" />
+      <text x="530" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Signal\u2122"}</text>
+      <text x="530" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Predict + prevent</text>
+      <text x="530" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">AI-powered turnover risk</text>
+      <text x="530" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">intelligence</text>
+
+      {/* Bottom connecting arc */}
+      <path d="M105 195 Q360 230 615 195" stroke="#8D7AA0" strokeWidth="1" strokeDasharray="4 3" opacity="0.3" fill="none" />
+      <text x="360" y="228" textAnchor="middle" fill="#8D7AA0" fontSize="9" fontFamily="system-ui" opacity="0.6">Integrated Emotional Infrastructure</text>
     </svg>
   )
 }
