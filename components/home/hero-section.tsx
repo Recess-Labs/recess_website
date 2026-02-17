@@ -129,7 +129,7 @@ export function HeroSection() {
                   alt="Recess Frontline Ally app showing daily check-in, flow state tracking, and personalized stabilization protocols on a smartphone"
                   width={420}
                   height={520}
-                  className="drop-shadow-2xl"
+                  className="drop-shadow-2xl w-auto h-auto max-w-[320px] md:max-w-[400px]"
                   priority
                 />
               </div>
