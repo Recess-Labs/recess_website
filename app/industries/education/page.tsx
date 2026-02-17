@@ -14,6 +14,8 @@ export default function EducationPage() {
       title="Education"
       tagline="The stability of a school depends on the stability of the adults inside it."
       intro="Schools are being asked to do more than teach. Educators are managing escalating student needs, chronic behavioral incidents, community crisis spillover, and the emotional weight of supporting children through instability. When exposure becomes constant, educator strain becomes predictable."
+      heroImage="/images/industries/education.jpg"
+      heroImageAlt="Teachers in a school setting showing resilience and dedication in their daily work with students"
       seenTitle="What leaders are seeing"
       seenItems={[
         "Teacher attrition driving classroom instability",

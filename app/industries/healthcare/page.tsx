@@ -14,6 +14,8 @@ export default function HealthcarePage() {
       title="Healthcare & Behavioral Health"
       tagline="When trauma exposure is part of care delivery, workforce stability becomes a clinical risk."
       intro="In healthcare and behavioral health, crisis is not occasional — it's structural. Staff carry grief, violence, high acuity needs, moral injury, and constant emotional intensity. Over time, trauma exposure accumulates in the body and brain. The result isn't just burnout — it's operational instability that impacts care."
+      heroImage="/images/industries/healthcare.jpg"
+      heroImageAlt="Healthcare professionals in a hospital environment supporting each other through the emotional demands of patient care"
       seenTitle="What leaders are seeing"
       seenItems={[
         "Rising turnover and vacancy strain in hard-to-replace roles",

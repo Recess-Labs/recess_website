@@ -244,8 +244,9 @@ export function HealthcareIcon() {
   return (
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
       <rect width="64" height="64" rx="16" fill="#FFCCE5" />
-      <path d="M32 18 C28 18, 20 22, 20 30 C20 40, 32 48, 32 48 C32 48, 44 40, 44 30 C44 22, 36 18, 32 18Z" fill="#8D7AA0" opacity="0.2" stroke="#8D7AA0" strokeWidth="1.5" />
-      <path d="M29 30 h6 M32 27 v6" stroke="#29285D" strokeWidth="2" strokeLinecap="round" />
+      <path d="M32 48 C22 40 16 34 16 28 C16 22 20.5 18 25.5 18 C29 18 31.5 20 32 22 C32.5 20 35 18 38.5 18 C43.5 18 48 22 48 28 C48 34 42 40 32 48Z" fill="#8D7AA0" opacity="0.2" stroke="#29285D" strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="29.5" y="27" width="5" height="12" rx="1" fill="#29285D" />
+      <rect x="26" y="30.5" width="12" height="5" rx="1" fill="#29285D" />
     </svg>
   )
 }

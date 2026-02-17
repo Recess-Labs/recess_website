@@ -60,6 +60,8 @@ export default function PublicSafetyPage() {
       title="Public Safety"
       tagline="In public safety, emotional overload becomes legal exposure."
       intro="Police, fire, EMS, dispatch, and corrections operate in environments where trauma exposure is routine — and where a single moment of overload can escalate into incident, scrutiny, and consequence. In these roles, the biggest workforce stability driver is often extended leave: injury leave, stress leave, disability claims, and long recovery periods that tear holes in staffing and readiness."
+      heroImage="/images/industries/public-safety.jpg"
+      heroImageAlt="First responders at a station in a quiet moment between calls, showing the human side of public safety work"
       seenTitle="What leaders are seeing"
       seenItems={[
         "Extended absences that break coverage and increase overtime burden",
