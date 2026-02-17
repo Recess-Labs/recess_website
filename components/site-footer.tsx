@@ -9,7 +9,7 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center gap-2">
               <svg viewBox="0 0 32 32" fill="none" className="w-7 h-7">
                 <rect width="32" height="32" rx="8" fill="#8D7AA0" />
-                <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#FDF0ED" />
+                <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#F5F5FF" />
                 <circle cx="16" cy="16" r="3" fill="#29285D" />
               </svg>
               <span className="font-serif text-lg font-bold text-primary-foreground">Recess</span>
@@ -21,9 +21,9 @@ export function SiteFooter() {
           <div>
             <p className="font-serif font-semibold text-sm mb-4 text-primary-foreground/80">Solutions</p>
             <ul className="flex flex-col gap-2">
-              <li><Link href="/solutions/workforce-system" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Workforce System</Link></li>
-              <li><Link href="/solutions/ally-app" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Ally App</Link></li>
-              <li><Link href="/solutions/dashboard" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Operating Dashboard</Link></li>
+              <li><Link href="/solutions/workforce-system" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Foundation</Link></li>
+              <li><Link href="/solutions/ally-app" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Ally</Link></li>
+              <li><Link href="/solutions/dashboard" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Signal</Link></li>
               <li><Link href="/solutions/implementation" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Implementation</Link></li>
             </ul>
           </div>

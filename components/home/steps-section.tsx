@@ -33,7 +33,7 @@ const outcomes = [
 
 export function StepsSection() {
   return (
-    <section className="bg-secondary py-16 lg:py-24">
+    <section className="bg-[#F5F5FF] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-center text-balance">
@@ -60,7 +60,7 @@ export function StepsSection() {
         </div>
 
         {/* Outcomes */}
-        <FadeInSection delay={500} className="mt-16 bg-background rounded-2xl p-8 lg:p-10 border border-border/50">
+        <FadeInSection delay={500} className="mt-16 bg-background rounded-2xl p-8 lg:p-10 border border-border/30 shadow-sm">
           <div className="flex flex-col lg:flex-row lg:items-center gap-8">
             <div className="lg:w-1/2">
               <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-3">The Result</p>

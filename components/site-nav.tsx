@@ -39,7 +39,7 @@ export function SiteNav() {
           <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
             <rect width="32" height="32" rx="8" fill="#29285D" />
             <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#8D7AA0" />
-            <circle cx="16" cy="16" r="3" fill="#FDF0ED" />
+            <circle cx="16" cy="16" r="3" fill="#F5F5FF" />
           </svg>
           <span className="font-serif text-xl font-bold text-foreground">Recess</span>
         </Link>
@@ -97,7 +97,7 @@ export function SiteNav() {
 
 function NavItem({ label, href, active }: { label: string; href: string; active: boolean }) {
   return (
-    <Link href={href} className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+    <Link href={href} className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-[#F5F5FF]" : "text-muted-foreground hover:text-foreground hover:bg-[#F5F5FF]"}`}>
       {label}
     </Link>
   )
@@ -108,11 +108,11 @@ function DropdownNavItem({ label, href, items, active }: { label: string; href?:
   return (
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       {href ? (
-        <Link href={href} className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+        <Link href={href} className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-[#F5F5FF]" : "text-muted-foreground hover:text-foreground hover:bg-[#F5F5FF]"}`}>
           {label} <ChevronDown className="w-3 h-3" />
         </Link>
       ) : (
-        <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"}`}>
+        <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active ? "text-foreground bg-[#F5F5FF]" : "text-muted-foreground hover:text-foreground hover:bg-[#F5F5FF]"}`}>
           {label} <ChevronDown className="w-3 h-3" />
         </button>
       )}
@@ -125,11 +125,11 @@ function DropdownNavItem({ label, href, items, active }: { label: string; href?:
               ) : (
                 <div key={item.href}>
                   {item.external ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors">
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-[#F5F5FF] rounded-lg transition-colors">
                       {item.label}
                     </a>
                   ) : (
-                    <Link href={item.href} className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors" onClick={() => setOpen(false)}>
+                    <Link href={item.href} className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-[#F5F5FF] rounded-lg transition-colors" onClick={() => setOpen(false)}>
                       {item.label}
                     </Link>
                   )}
@@ -138,7 +138,7 @@ function DropdownNavItem({ label, href, items, active }: { label: string; href?:
               )
             )}
             {label === "Resources" && (
-              <div className="mt-1 mx-2 p-3 bg-secondary rounded-lg border border-border/40">
+              <div className="mt-1 mx-2 p-3 bg-[#F5F5FF] rounded-lg border border-border/40">
                 <p className="text-xs font-serif font-semibold text-foreground">In Good Company</p>
                 <p className="text-xs text-muted-foreground mt-0.5">Writing by our founder</p>
               </div>

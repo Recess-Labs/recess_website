@@ -87,23 +87,25 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {solutions.map((s, i) => (
-        <section key={i} className={`${i % 2 === 0 ? "bg-secondary" : "bg-background"} py-16 lg:py-20`}>
+      {solutions.map((s, i) => {
+        const solutionColors = ["#FFF2E2", "#AAF5D4", "#D4EDF9"]
+        return (
+        <section key={i} className={`${i % 2 === 0 ? "bg-[#F5F5FF]" : "bg-background"} py-16 lg:py-20`}>
           <div className="mx-auto max-w-7xl px-6">
             <FadeInSection>
               <div className="flex flex-col gap-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                        <s.icon className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: solutionColors[i] }}>
+                        <s.icon className="w-6 h-6 text-foreground" />
                       </div>
                       <span className="font-serif text-xs font-bold text-accent uppercase tracking-widest">{s.num}</span>
                     </div>
                     <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight">{s.title}</h2>
                     <p className="mt-2 text-accent font-medium">{s.tagline}</p>
                     <p className="mt-4 text-muted-foreground leading-relaxed">{s.desc}</p>
-                    <Link href={s.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent transition-colors">
+                    <Link href={s.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent hover:gap-2.5 transition-all">
                       Learn More <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -111,7 +113,7 @@ export default function SolutionsPage() {
                     <p className="text-xs font-serif font-bold text-muted-foreground uppercase tracking-widest mb-3">What It Includes</p>
                     <ul className="flex flex-col gap-3">
                       {s.checks.map((c, j) => (
-                        <li key={j} className="flex items-start gap-3 bg-background/60 rounded-xl p-4 border border-border/30">
+                        <li key={j} className="flex items-start gap-3 bg-background rounded-xl p-4 border border-border/30">
                           <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                           <span className="text-sm text-foreground">{c}</span>
                         </li>
@@ -120,7 +122,7 @@ export default function SolutionsPage() {
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-background/40 rounded-xl p-6 border border-border/30">
+                  <div className="bg-background rounded-xl p-6 border border-border/30">
                     <p className="text-xs font-serif font-bold text-muted-foreground uppercase tracking-widest mb-3">Without structure</p>
                     <ul className="flex flex-col gap-2">
                       {s.withoutItems.map((item, j) => (
@@ -130,8 +132,8 @@ export default function SolutionsPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-background/40 rounded-xl p-6 border border-accent/20">
-                    <p className="text-xs font-serif font-bold text-accent uppercase tracking-widest mb-3">With Recess</p>
+                  <div className="rounded-xl p-6 border" style={{ backgroundColor: solutionColors[i] + "40", borderColor: solutionColors[i] }}>
+                    <p className="text-xs font-serif font-bold text-foreground uppercase tracking-widest mb-3">With Recess</p>
                     <ul className="flex flex-col gap-2">
                       {s.withItems.map((item, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm text-foreground">
@@ -146,18 +148,19 @@ export default function SolutionsPage() {
             </FadeInSection>
           </div>
         </section>
-      ))}
+        )
+      })}
 
-      <section className="bg-secondary py-14 lg:py-16">
+      <section className="bg-foreground py-14 lg:py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <FadeInSection>
-            <p className="font-serif text-lg font-semibold text-foreground">Not Sure Where to Start?</p>
-            <p className="mt-2 text-muted-foreground leading-relaxed">
-              Recess can be implemented in phases — or deployed as a fully integrated system.<br />
+            <p className="font-serif text-lg font-semibold text-background">Not Sure Where to Start?</p>
+            <p className="mt-2 text-background/50 leading-relaxed">
+              Recess can be implemented in phases -- or deployed as a fully integrated system.<br />
               Foundation sets the standards. Frontline Ally stabilizes individuals. Signal protects the system.
             </p>
             <div className="mt-6">
-              <Button asChild className="rounded-full font-serif font-semibold px-7 bg-foreground text-background hover:bg-foreground/90">
+              <Button asChild className="rounded-full font-serif font-semibold px-7 bg-background text-foreground hover:bg-background/90 hover:scale-[1.02] transition-all">
                 <Link href="/get-started">Schedule a Free Strategy Call</Link>
               </Button>
             </div>

@@ -1,6 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import { FadeInSection } from "@/components/fade-in-section"
 import { Shield, Smartphone, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
+
+const popColors = ["#FFF2E2", "#AAF5D4", "#D4EDF9"]
 
 const systems = [
   {
@@ -29,9 +35,39 @@ const systems = [
   },
 ]
 
-export function SystemSection() {
+function SystemCard({ s, i, isActive, onHover }: { s: typeof systems[0]; i: number; isActive: boolean; onHover: () => void }) {
   return (
-    <section className="bg-background py-16 lg:py-24">
+    <div
+      onMouseEnter={onHover}
+      className={`bg-background rounded-2xl p-7 border h-full flex flex-col transition-all duration-300 cursor-pointer group ${
+        isActive ? "shadow-lg -translate-y-1 border-accent/30" : "border-border/30 hover:shadow-md"
+      }`}
+    >
+      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110" style={{ backgroundColor: popColors[i] }}>
+        <s.icon className="w-6 h-6 text-foreground" />
+      </div>
+      <h3 className="font-serif text-lg font-bold text-foreground">{s.title}</h3>
+      <p className="text-xs font-medium mb-2" style={{ color: "#8D7AA0" }}>{s.subtitle}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+      <ul className="flex flex-col gap-2 mb-6">
+        {s.checks.map((c, j) => (
+          <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground">
+            <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" /> {c}
+          </li>
+        ))}
+      </ul>
+      <Link href={s.href} className="mt-auto inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent transition-colors group-hover:gap-2.5">
+        Learn More <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </div>
+  )
+}
+
+export function SystemSection() {
+  const [activeCard, setActiveCard] = useState(0)
+
+  return (
+    <section className="bg-[#F5F5FF] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <div className="text-center max-w-2xl mx-auto">
@@ -45,36 +81,38 @@ export function SystemSection() {
           </div>
         </FadeInSection>
 
-        <div className="mt-12 grid lg:grid-cols-3 gap-6">
+        {/* Layer indicator */}
+        <FadeInSection delay={100} className="mt-10 flex justify-center">
+          <div className="inline-flex items-center gap-1 bg-background rounded-full p-1 border border-border/30">
+            {systems.map((s, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveCard(i)}
+                className={`px-4 py-2 rounded-full text-xs font-serif font-semibold transition-all ${
+                  activeCard === i ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {s.title.replace("\u2122", "")}
+              </button>
+            ))}
+          </div>
+        </FadeInSection>
+
+        <div className="mt-8 grid lg:grid-cols-3 gap-6">
           {systems.map((s, i) => (
             <FadeInSection key={i} delay={i * 100}>
-              <div className="bg-secondary rounded-2xl p-7 border border-border/50 h-full flex flex-col hover:shadow-md transition-shadow group">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
-                  <s.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="font-serif text-lg font-bold text-foreground">{s.title}</h3>
-                <p className="text-xs text-accent font-medium mb-2">{s.subtitle}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
-                <ul className="flex flex-col gap-2 mb-6">
-                  {s.checks.map((c, j) => (
-                    <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" /> {c}
-                    </li>
-                  ))}
-                </ul>
-                <Link href={s.href} className="mt-auto inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent transition-colors group-hover:gap-2">
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
+              <SystemCard s={s} i={i} isActive={activeCard === i} onHover={() => setActiveCard(i)} />
             </FadeInSection>
           ))}
         </div>
 
-        <FadeInSection delay={400} className="mt-8 text-center">
-          <Link href="/solutions" className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 font-serif font-medium transition-colors">
-            {"Explore the Recess System \u2192"}
-          </Link>
-          <p className="mt-2 text-xs text-muted-foreground">{"Foundation \u2022 Frontline Ally \u2022 Signal"}</p>
+        <FadeInSection delay={400} className="mt-10 flex flex-col items-center gap-4">
+          <Button asChild className="rounded-full font-serif font-semibold px-8 bg-foreground text-background hover:bg-foreground/90 hover:scale-[1.02] transition-all">
+            <Link href="/solutions">
+              Explore the Full System <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
+          </Button>
+          <p className="text-xs text-muted-foreground">{"Foundation \u2022 Frontline Ally \u2022 Signal"}</p>
         </FadeInSection>
       </div>
     </section>

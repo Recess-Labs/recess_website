@@ -13,33 +13,35 @@ export function ProofSection() {
 
         <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <FadeInSection delay={100}>
-            <div className="bg-secondary rounded-2xl p-7 border border-border/50 relative">
+            <div className="bg-[#F5F5FF] rounded-2xl p-7 border border-border/30 relative hover:shadow-md transition-shadow">
               {/* Avatar illustration */}
               <div className="flex items-center gap-3 mb-4">
-                <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10 shrink-0">
-                  <circle cx="20" cy="20" r="20" fill="#8D7AA0" opacity="0.15" />
-                  <circle cx="20" cy="16" r="6" fill="#8D7AA0" opacity="0.4" />
-                  <path d="M8 36 C8 28 14 24 20 24 C26 24 32 28 32 36" fill="#8D7AA0" opacity="0.3" />
-                </svg>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#FFCCE5" }}>
+                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                    <circle cx="12" cy="8" r="4" stroke="#29285D" strokeWidth="1.5" fill="none" />
+                    <path d="M4 20 C4 16 7 13 12 13 C17 13 20 16 20 20" stroke="#29285D" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  </svg>
+                </div>
                 <div>
                   <p className="font-serif text-sm font-semibold text-foreground">Provider</p>
                   <p className="text-xs text-muted-foreground">Frontline care worker</p>
                 </div>
               </div>
               <blockquote className="text-muted-foreground leading-relaxed italic">
-                {"\"I didn't realize how much I was carrying until I couldn't sleep… and I started dreading work.\""}
+                {"\"I didn't realize how much I was carrying until I couldn't sleep\u2026 and I started dreading work.\""}
               </blockquote>
             </div>
           </FadeInSection>
 
           <FadeInSection delay={200}>
-            <div className="bg-secondary rounded-2xl p-7 border border-border/50 relative">
+            <div className="bg-[#F5F5FF] rounded-2xl p-7 border border-border/30 relative hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10 shrink-0">
-                  <circle cx="20" cy="20" r="20" fill="#29285D" opacity="0.1" />
-                  <circle cx="20" cy="16" r="6" fill="#29285D" opacity="0.3" />
-                  <path d="M8 36 C8 28 14 24 20 24 C26 24 32 28 32 36" fill="#29285D" opacity="0.2" />
-                </svg>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#D4EDF9" }}>
+                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                    <rect x="3" y="6" width="18" height="12" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
+                    <path d="M8 12h8M8 15h5" stroke="#29285D" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+                  </svg>
+                </div>
                 <div>
                   <p className="font-serif text-sm font-semibold text-foreground">Leader</p>
                   <p className="text-xs text-muted-foreground">Operations director</p>

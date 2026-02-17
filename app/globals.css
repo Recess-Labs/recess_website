@@ -7,8 +7,9 @@
    Primary accent: #8D7AA0
    Deep navy: #29285D (headings, buttons, emphasis)
    Body text: #777698
-   Soft bg: #FDF0ED
+   Soft component bg: #F5F5FF
    White bg: #FFFFFF
+   Pop colors: #FFF2E2 #AAF5D4 #FFCCE5 #FFEDAC #D4EDF9
 */
 
 :root {
@@ -20,9 +21,9 @@
   --popover-foreground: #29285D;
   --primary: #29285D;
   --primary-foreground: #FFFFFF;
-  --secondary: #FDF0ED;
+  --secondary: #F5F5FF;
   --secondary-foreground: #29285D;
-  --muted: #FDF0ED;
+  --muted: #F5F5FF;
   --muted-foreground: #777698;
   --accent: #8D7AA0;
   --accent-foreground: #FFFFFF;
@@ -70,4 +71,39 @@
   body {
     @apply bg-background text-muted-foreground;
   }
+}
+
+/* Animated pulse ring for CTAs */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 4s ease-in-out 1s infinite;
+}
+.animate-float-slow {
+  animation: float 6s ease-in-out 0.5s infinite;
+}
+
+/* Subtle shimmer for interactive elements */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }

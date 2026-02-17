@@ -2,6 +2,8 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { WhyNowIcon } from "@/components/illustrations"
 import { ArrowRight } from "lucide-react"
 
+const popColors = ["#FFF2E2", "#AAF5D4", "#FFCCE5", "#D4EDF9"]
+
 const items = [
   { type: "shortage" as const, title: "Workforce shortages are tightening", desc: "Fewer staff to absorb the same exposure load." },
   { type: "duty" as const, title: "Duty-of-care expectations are expanding", desc: "Institutional responsibility for employee wellbeing is increasing." },
@@ -27,9 +29,11 @@ export function WhyNowSection() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((item, i) => (
             <FadeInSection key={i} delay={i * 100}>
-              <div className="bg-secondary rounded-2xl p-6 border border-border/50 h-full hover:shadow-md transition-shadow">
-                <WhyNowIcon type={item.type} />
-                <h3 className="mt-4 font-serif text-sm font-semibold text-foreground">{item.title}</h3>
+              <div className="bg-[#F5F5FF] rounded-2xl p-6 border border-border/30 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: popColors[i] }}>
+                  <WhyNowIcon type={item.type} />
+                </div>
+                <h3 className="font-serif text-sm font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             </FadeInSection>
