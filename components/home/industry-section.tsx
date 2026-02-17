@@ -1,11 +1,11 @@
+"use client"
+
 import Link from "next/link"
 import { FadeInSection } from "@/components/fade-in-section"
-import { HealthcareIcon, EducationIcon, PublicSafetyIcon } from "@/components/illustrations"
 import { ArrowRight } from "lucide-react"
 
 const industries = [
   {
-    icon: HealthcareIcon,
     title: "Healthcare & Behavioral Health",
     subtitle: "Hospitals, behavioral health, senior living",
     bullets: [
@@ -14,9 +14,16 @@ const industries = [
       "Compassion fatigue and detachment",
     ],
     href: "/industries/healthcare",
+    color: "#FFCCE5",
+    icon: (
+      <svg viewBox="0 0 72 72" fill="none" className="w-16 h-16">
+        <rect width="72" height="72" rx="18" fill="#FFCCE5" />
+        <path d="M36 20 C31 20, 22 25, 22 33 C22 43, 36 52, 36 52 C36 52, 50 43, 50 33 C50 25, 41 20, 36 20Z" fill="#8D7AA0" opacity="0.25" stroke="#29285D" strokeWidth="1.5" />
+        <path d="M32 33h8 M36 29v8" stroke="#29285D" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    icon: EducationIcon,
     title: "Education",
     subtitle: "K-12 districts, charter schools, residency programs",
     bullets: [
@@ -25,60 +32,70 @@ const industries = [
       "Substitute dependency and learning disruption",
     ],
     href: "/industries/education",
+    color: "#FFEDAC",
+    icon: (
+      <svg viewBox="0 0 72 72" fill="none" className="w-16 h-16">
+        <rect width="72" height="72" rx="18" fill="#FFEDAC" />
+        <path d="M18 34 L36 24 L54 34 L36 44Z" fill="#8D7AA0" opacity="0.25" stroke="#29285D" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M24 38v10c0 0 5 5 12 5s12-5 12-5V38" stroke="#29285D" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+        <line x1="54" y1="34" x2="54" y2="48" stroke="#29285D" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    icon: PublicSafetyIcon,
     title: "Public Safety",
-    subtitle: "Police, fire, EMS, corrections",
-    note: "Includes corrections + VA-adjacent",
+    subtitle: "Police, fire, EMS",
     bullets: [
       "Decision fatigue under chronic trauma exposure",
       "Escalation risk under nervous system overload",
       "Retention pressure in high-stress roles",
     ],
     href: "/industries/public-safety",
+    color: "#D4EDF9",
+    icon: (
+      <svg viewBox="0 0 72 72" fill="none" className="w-16 h-16">
+        <rect width="72" height="72" rx="18" fill="#D4EDF9" />
+        <path d="M36 18 L50 25V37C50 47 36 54 36 54C36 54 22 47 22 37V25L36 18Z" fill="#8D7AA0" opacity="0.25" stroke="#29285D" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M30 36L34 40L42 32" stroke="#29285D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      </svg>
+    ),
   },
 ]
 
-const cardAccents = ["#FFCCE5", "#FFEDAC", "#D4EDF9"]
-
 export function IndustrySection() {
   return (
-    <section className="bg-[#F5F5FF] py-16 lg:py-24">
+    <section className="bg-[#F5F5FF] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-balance">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
               Where Are You Carrying Risk?
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
               Different sectors experience it differently. The pattern is the same: exposure, overload, instability.
             </p>
           </div>
         </FadeInSection>
 
-        <div className="mt-12 grid lg:grid-cols-3 gap-6">
+        <div className="mt-14 grid lg:grid-cols-3 gap-8">
           {industries.map((ind, i) => (
             <FadeInSection key={i} delay={i * 120}>
-              <Link href={ind.href} className="block bg-background rounded-2xl overflow-hidden border border-border/30 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <div className="h-1.5" style={{ backgroundColor: cardAccents[i] }} />
-                <div className="p-7">
-                  <ind.icon />
-                  <h3 className="mt-4 font-serif text-lg font-bold text-foreground group-hover:text-accent transition-colors">{ind.title}</h3>
-                  <p className="text-xs text-muted-foreground mt-1">{ind.subtitle}</p>
-                  <ul className="mt-4 flex flex-col gap-2">
+              <Link href={ind.href} className="block bg-background rounded-2xl overflow-hidden border border-border/30 h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div className="h-2" style={{ backgroundColor: ind.color }} />
+                <div className="p-8">
+                  {ind.icon}
+                  <h3 className="mt-5 font-serif text-xl font-bold text-foreground group-hover:text-accent transition-colors">{ind.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1.5">{ind.subtitle}</p>
+                  <ul className="mt-5 flex flex-col gap-3">
                     {ind.bullets.map((b, j) => (
-                      <li key={j} className="text-xs text-muted-foreground flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-1" style={{ backgroundColor: cardAccents[i] }} />
+                      <li key={j} className="text-sm text-muted-foreground flex items-start gap-2.5">
+                        <span className="w-2 h-2 rounded-full shrink-0 mt-1.5" style={{ backgroundColor: ind.color }} />
                         {b}
                       </li>
                     ))}
                   </ul>
-                  {ind.note && (
-                    <p className="mt-3 text-[10px] text-accent/70 italic">{ind.note}</p>
-                  )}
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-foreground group-hover:text-accent group-hover:gap-2.5 transition-all">
-                    Learn more <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-serif font-semibold text-foreground group-hover:text-accent group-hover:gap-3 transition-all">
+                    Learn more <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
               </Link>

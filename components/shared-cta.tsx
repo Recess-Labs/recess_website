@@ -19,10 +19,10 @@ export function SharedCTA() {
           <span className="w-2 h-2 rounded-full bg-[#AAF5D4] animate-pulse" />
           <span className="text-xs font-sans font-medium text-background/60 tracking-wide">30-minute discovery call</span>
         </div>
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-background text-balance">
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-background text-balance">
           If Trauma Exposure Is Structural in Your Workforce, Let{"'"}s Talk.
         </h2>
-        <p className="mt-5 text-background/50 leading-relaxed max-w-lg mx-auto">
+        <p className="mt-5 text-lg text-background/50 leading-relaxed max-w-lg mx-auto">
           In 30 minutes, you{"'"}ll see how the system works -- and whether it fits your environment.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

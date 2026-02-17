@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -17,7 +18,7 @@ const solutions = [
 const industries = [
   { label: "Healthcare & Behavioral Health", href: "/industries/healthcare" },
   { label: "Education", href: "/industries/education" },
-  { label: "Public Safety", href: "/industries/public-safety", note: "Includes corrections + VA-adjacent" },
+  { label: "Public Safety", href: "/industries/public-safety" },
 ]
 
 const resources = [
@@ -34,19 +35,20 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/60">
       <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 h-16">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
-            <rect width="32" height="32" rx="8" fill="#29285D" />
-            <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#8D7AA0" />
-            <circle cx="16" cy="16" r="3" fill="#F5F5FF" />
-          </svg>
-          <span className="font-serif text-xl font-bold text-foreground">Recess</span>
+        {/* Logo - clickable to home */}
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/recess-logo-colour.png"
+            alt="Recess"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
-          <NavItem label="Homepage" href="/" active={pathname === "/"} />
           <DropdownNavItem label="Solutions" href="/solutions" items={solutions} active={pathname.startsWith("/solutions")} />
           <DropdownNavItem label="Industries" items={industries} active={pathname.startsWith("/industries")} />
           <NavItem label="Our Science" href="/science" active={pathname === "/science"} />
@@ -57,7 +59,7 @@ export function SiteNav() {
         {/* CTA */}
         <div className="hidden lg:block">
           <Button asChild size="sm" className="rounded-full font-serif font-semibold px-5 bg-foreground text-background hover:bg-foreground/90">
-            <Link href="/get-started">Schedule a Free Strategy Call</Link>
+            <Link href="/get-started">Schedule a Call</Link>
           </Button>
         </div>
 
@@ -70,7 +72,6 @@ export function SiteNav() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-border/60 bg-background px-6 py-6 flex flex-col gap-4">
-          <Link href="/" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Homepage</Link>
           <MobileGroup title="Solutions" href="/solutions">
             {solutions.filter(s => s.label !== "divider").map(s => (
               <Link key={s.href} href={s.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{s.label}</Link>
@@ -78,16 +79,13 @@ export function SiteNav() {
           </MobileGroup>
           <MobileGroup title="Industries">
             {industries.map(i => (
-              <div key={i.href}>
-                <Link href={i.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{i.label}</Link>
-                {i.note && <span className="text-xs text-muted-foreground/60 ml-2">{i.note}</span>}
-              </div>
+              <Link key={i.href} href={i.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{i.label}</Link>
             ))}
           </MobileGroup>
           <Link href="/science" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Our Science</Link>
           <Link href="/about" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>About</Link>
           <Button asChild size="sm" className="rounded-full font-serif font-semibold mt-2 bg-foreground text-background">
-            <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule a Free Strategy Call</Link>
+            <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule a Call</Link>
           </Button>
         </div>
       )}
@@ -133,7 +131,6 @@ function DropdownNavItem({ label, href, items, active }: { label: string; href?:
                       {item.label}
                     </Link>
                   )}
-                  {item.note && <span className="block px-3 pb-1 text-xs text-muted-foreground/60">{item.note}</span>}
                 </div>
               )
             )}

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function SiteFooter() {
   return (
@@ -6,21 +7,22 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10">
           <div>
-            <Link href="/" className="flex items-center gap-2">
-              <svg viewBox="0 0 32 32" fill="none" className="w-7 h-7">
-                <rect width="32" height="32" rx="8" fill="#8D7AA0" />
-                <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#F5F5FF" />
-                <circle cx="16" cy="16" r="3" fill="#29285D" />
-              </svg>
-              <span className="font-serif text-lg font-bold text-primary-foreground">Recess</span>
+            <Link href="/">
+              <Image
+                src="/images/recess-logo-white.png"
+                alt="Recess"
+                width={120}
+                height={40}
+                className="h-7 w-auto"
+              />
             </Link>
-            <p className="mt-3 text-sm text-primary-foreground/60 leading-relaxed">
+            <p className="mt-4 text-sm text-primary-foreground/60 leading-relaxed">
               Emotional infrastructure for trauma-exposed workforces.
             </p>
           </div>
           <div>
             <p className="font-serif font-semibold text-sm mb-4 text-primary-foreground/80">Solutions</p>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               <li><Link href="/solutions/workforce-system" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Foundation</Link></li>
               <li><Link href="/solutions/ally-app" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Ally</Link></li>
               <li><Link href="/solutions/dashboard" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Signal</Link></li>
@@ -29,7 +31,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="font-serif font-semibold text-sm mb-4 text-primary-foreground/80">Industries</p>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               <li><Link href="/industries/healthcare" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Healthcare</Link></li>
               <li><Link href="/industries/education" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Education</Link></li>
               <li><Link href="/industries/public-safety" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Public Safety</Link></li>
@@ -37,7 +39,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="font-serif font-semibold text-sm mb-4 text-primary-foreground/80">Company</p>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               <li><Link href="/science" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Our Science</Link></li>
               <li><Link href="/about" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">About</Link></li>
               <li><a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Risk Assessment</a></li>

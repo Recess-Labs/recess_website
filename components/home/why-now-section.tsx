@@ -17,10 +17,10 @@ export function WhyNowSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-balance">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
               The Cost of Waiting Is Rising
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               If exposure is structural, stabilization has to be structural too.
             </p>
           </div>
@@ -33,8 +33,8 @@ export function WhyNowSection() {
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: popColors[i] }}>
                   <WhyNowIcon type={item.type} />
                 </div>
-                <h3 className="font-serif text-sm font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                <h3 className="font-serif text-base font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             </FadeInSection>
           ))}

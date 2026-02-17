@@ -6,7 +6,7 @@ export function ProofSection() {
     <section className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-center text-balance">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-center text-balance">
             Emotional Overload Is Often Invisible — Until It Isn{"'"}t
           </h2>
         </FadeInSection>
@@ -27,7 +27,7 @@ export function ProofSection() {
                   <p className="text-xs text-muted-foreground">Frontline care worker</p>
                 </div>
               </div>
-              <blockquote className="text-muted-foreground leading-relaxed italic">
+              <blockquote className="text-base text-muted-foreground leading-relaxed italic">
                 {"\"I didn't realize how much I was carrying until I couldn't sleep\u2026 and I started dreading work.\""}
               </blockquote>
             </div>
@@ -47,7 +47,7 @@ export function ProofSection() {
                   <p className="text-xs text-muted-foreground">Operations director</p>
                 </div>
               </div>
-              <blockquote className="text-muted-foreground leading-relaxed italic">
+              <blockquote className="text-base text-muted-foreground leading-relaxed italic">
                 {"\"We were seeing leave spikes, scheduling chaos, and constant strain. Training didn't change what was happening day to day.\""}
               </blockquote>
             </div>
@@ -55,7 +55,7 @@ export function ProofSection() {
         </div>
 
         <FadeInSection delay={300} className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Recess is built for the moment after the hardest moments — so trauma load doesn{"'"}t silently accumulate into exits and incidents.
           </p>
         </FadeInSection>

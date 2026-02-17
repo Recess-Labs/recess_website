@@ -8,6 +8,7 @@ import { StepsSection } from "@/components/home/steps-section"
 import { SystemSection } from "@/components/home/system-section"
 import { IndustrySection } from "@/components/home/industry-section"
 import { WhyNowSection } from "@/components/home/why-now-section"
+import { ImageBreak } from "@/components/home/image-break"
 import { SharedCTA } from "@/components/shared-cta"
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <CostBand />
       <ProofSection />
       <StepsSection />
+      <ImageBreak />
       <SystemSection />
       <IndustrySection />
       <WhyNowSection />

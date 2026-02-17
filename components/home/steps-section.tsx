@@ -36,7 +36,7 @@ export function StepsSection() {
     <section className="bg-[#F5F5FF] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-center text-balance">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-center text-balance">
             Stabilize Trauma Exposure in Three Steps
           </h2>
         </FadeInSection>
@@ -52,8 +52,8 @@ export function StepsSection() {
                 <StepIcon step={s.step} />
                 <p className="mt-4 font-serif text-xs font-bold text-accent uppercase tracking-widest">Step {s.step}</p>
                 <h3 className="mt-2 font-serif text-xl font-bold text-foreground">{s.title}</h3>
-                <p className="mt-1 text-sm font-medium text-accent">{s.subtitle}</p>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <p className="mt-1 text-base font-medium text-accent">{s.subtitle}</p>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             </FadeInSection>
           ))}
@@ -67,7 +67,7 @@ export function StepsSection() {
               <h3 className="font-serif text-2xl font-bold text-foreground">A low-lift system for detecting and reducing trauma-driven instability at scale.</h3>
               <ul className="mt-5 flex flex-col gap-2.5">
                 {outcomes.map((o, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                     {o}
                   </li>

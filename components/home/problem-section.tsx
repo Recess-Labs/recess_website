@@ -16,10 +16,10 @@ export function ProblemSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <div className="max-w-2xl">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-balance">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
               The Hidden Operational Risk
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               When frontline staff are repeatedly exposed to crisis, grief, and distress, the nervous system stays activated. Over time, that strain shows up at work.
             </p>
           </div>
@@ -31,8 +31,8 @@ export function ProblemSection() {
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-colors" style={{ backgroundColor: popColors[i] }}>
                   <p.icon className="w-5 h-5 text-foreground" />
                 </div>
-                <h3 className="font-serif text-sm font-semibold text-foreground mb-2">{p.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                <h3 className="font-serif text-base font-semibold text-foreground mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             </FadeInSection>
           ))}
