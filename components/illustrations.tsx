@@ -169,36 +169,73 @@ export function MobileAppMockup() {
 
 export function RepairEngineDiagram() {
   return (
-    <svg viewBox="0 0 560 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-xl">
-      {/* Center circle */}
-      <circle cx="280" cy="170" r="56" fill="#29285D" />
-      <text x="280" y="162" textAnchor="middle" fill="#FFFFFF" fontWeight="700" fontSize="12" fontFamily="system-ui">REPAIR</text>
-      <text x="280" y="180" textAnchor="middle" fill="#8D7AA0" fontSize="8" fontFamily="system-ui">Engine</text>
+    <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-2xl">
+      {/* Outer ring pulses */}
+      <circle cx="300" cy="200" r="130" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.1" strokeDasharray="2 4">
+        <animate attributeName="r" values="130;135;130" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="300" cy="200" r="110" stroke="#8D7AA0" strokeWidth="0.8" opacity="0.15" strokeDasharray="4 4">
+        <animate attributeName="r" values="110;114;110" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="300" cy="200" r="95" stroke="#8D7AA0" strokeWidth="1" opacity="0.2" strokeDasharray="6 4">
+        <animate attributeName="r" values="95;98;95" dur="3s" repeatCount="indefinite" />
+      </circle>
+
+      {/* Center circle - much bigger */}
+      <circle cx="300" cy="200" r="78" fill="#29285D" />
+      <circle cx="300" cy="200" r="78" stroke="#8D7AA0" strokeWidth="1" opacity="0.3" />
+
+      {/* Recess logo icon inside (wave circle) */}
+      <circle cx="300" cy="178" r="16" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.6" />
+      <path d="M290 182 Q294 174 300 182 Q306 190 310 182" stroke="#FFFFFF" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6" />
+      <circle cx="300" cy="174" r="6" fill="#FFFFFF" opacity="0.15" />
+
+      {/* REPAIR text */}
+      <text x="300" y="210" textAnchor="middle" fill="#FFFFFF" fontWeight="800" fontSize="16" fontFamily="system-ui" letterSpacing="2">REPAIR</text>
+      <text x="300" y="226" textAnchor="middle" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" letterSpacing="1">Engine</text>
+
+      {/* Connection lines from inputs to center */}
+      <line x1="165" y1="90" x2="240" y2="148" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+      <line x1="435" y1="90" x2="360" y2="148" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+      <line x1="300" y1="320" x2="300" y2="278" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+
+      {/* Small dots on connection lines */}
+      <circle r="3" fill="#8D7AA0" opacity="0.7">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M165 90 L240 148" />
+      </circle>
+      <circle r="3" fill="#8D7AA0" opacity="0.7">
+        <animateMotion dur="2.2s" repeatCount="indefinite" path="M435 90 L360 148" />
+      </circle>
+      <circle r="3" fill="#8D7AA0" opacity="0.7">
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M300 320 L300 278" />
+      </circle>
 
       {/* Input 1 - Top Left */}
-      <rect x="40" y="20" width="180" height="80" rx="16" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
-      <text x="130" y="52" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Emotional Signals</text>
-      <text x="130" y="68" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Secondary trauma, moral injury</text>
-      <text x="130" y="80" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Compassion fatigue indicators</text>
-      <line x1="200" y1="100" x2="248" y2="140" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" />
+      <rect x="30" y="20" width="200" height="90" rx="18" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
+      <circle cx="60" cy="50" r="14" fill="#29285D" opacity="0.08" />
+      <path d="M54 52 Q57 46 60 52 Q63 58 66 52" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <text x="82" y="50" fill="#29285D" fontWeight="700" fontSize="12" fontFamily="system-ui">Emotional Signals</text>
+      <text x="82" y="66" fill="#777698" fontSize="9" fontFamily="system-ui">Secondary trauma, moral injury</text>
+      <text x="82" y="80" fill="#777698" fontSize="9" fontFamily="system-ui">Compassion fatigue indicators</text>
 
       {/* Input 2 - Top Right */}
-      <rect x="340" y="20" width="180" height="80" rx="16" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
-      <text x="430" y="52" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Engagement Patterns</text>
-      <text x="430" y="68" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Session interaction data</text>
-      <text x="430" y="80" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Stress-response patterns</text>
-      <line x1="360" y1="100" x2="312" y2="140" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" />
+      <rect x="370" y="20" width="200" height="90" rx="18" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
+      <circle cx="400" cy="50" r="14" fill="#29285D" opacity="0.08" />
+      <rect x="393" y="43" width="14" height="14" rx="3" stroke="#8D7AA0" strokeWidth="1.5" fill="none" />
+      <line x1="396" y1="53" x2="396" y2="47" stroke="#29285D" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="400" y1="53" x2="400" y2="44" stroke="#8D7AA0" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="404" y1="53" x2="404" y2="49" stroke="#29285D" strokeWidth="1.5" strokeLinecap="round" />
+      <text x="422" y="50" fill="#29285D" fontWeight="700" fontSize="12" fontFamily="system-ui">Engagement Patterns</text>
+      <text x="422" y="66" fill="#777698" fontSize="9" fontFamily="system-ui">Session interaction data</text>
+      <text x="422" y="80" fill="#777698" fontSize="9" fontFamily="system-ui">Stress-response patterns</text>
 
       {/* Input 3 - Bottom */}
-      <rect x="190" y="260" width="180" height="80" rx="16" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
-      <text x="280" y="292" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Biometric Input</text>
-      <text x="280" y="308" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Breathing, HRV, arousal signals</text>
-      <text x="280" y="320" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Nervous system activation</text>
-      <line x1="280" y1="260" x2="280" y2="226" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="4 3" />
-
-      {/* Outer ring pulses */}
-      <circle cx="280" cy="170" r="76" stroke="#8D7AA0" strokeWidth="1" opacity="0.3" strokeDasharray="4 4" />
-      <circle cx="280" cy="170" r="96" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.15" strokeDasharray="2 4" />
+      <rect x="175" y="330" width="250" height="70" rx="18" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
+      <circle cx="205" cy="365" r="14" fill="#29285D" opacity="0.08" />
+      <path d="M197 365 Q201 357 205 365 Q209 373 213 365" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <line x1="205" y1="370" x2="205" y2="375" stroke="#29285D" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+      <text x="227" y="360" fill="#29285D" fontWeight="700" fontSize="12" fontFamily="system-ui">Biometric Input</text>
+      <text x="227" y="378" fill="#777698" fontSize="9" fontFamily="system-ui">Breathing, HRV, nervous system activation</text>
     </svg>
   )
 }
@@ -236,28 +273,103 @@ export function PublicSafetyIcon() {
 
 export function NervousSystemIllustration() {
   return (
-    <svg viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-sm">
-      {/* Brain outline */}
-      <ellipse cx="200" cy="90" rx="60" ry="50" fill="#F5F5FF" stroke="#8D7AA0" strokeWidth="1.5" />
-      <path d="M170 70 Q200 50 230 70" stroke="#8D7AA0" strokeWidth="1" opacity="0.5" fill="none" />
-      <path d="M160 90 Q200 60 240 90" stroke="#8D7AA0" strokeWidth="1" opacity="0.3" fill="none" />
-      {/* Spine */}
-      <path d="M200 140 Q198 160 200 180 Q202 200 200 220" stroke="#29285D" strokeWidth="2" strokeLinecap="round" fill="none" />
-      {/* Neural connections */}
-      <circle cx="200" cy="90" r="4" fill="#8D7AA0" />
-      <line x1="200" y1="94" x2="200" y2="140" stroke="#8D7AA0" strokeWidth="1.5" />
-      {/* Branch signals */}
-      <path d="M200 160 Q170 165 150 175" stroke="#8D7AA0" strokeWidth="1" opacity="0.6" strokeDasharray="3 3" />
-      <path d="M200 160 Q230 165 250 175" stroke="#8D7AA0" strokeWidth="1" opacity="0.6" strokeDasharray="3 3" />
-      <path d="M200 190 Q165 195 140 210" stroke="#8D7AA0" strokeWidth="1" opacity="0.4" strokeDasharray="3 3" />
-      <path d="M200 190 Q235 195 260 210" stroke="#8D7AA0" strokeWidth="1" opacity="0.4" strokeDasharray="3 3" />
-      {/* Signal dots */}
-      <circle cx="150" cy="175" r="3" fill="#8D7AA0" opacity="0.5" />
-      <circle cx="250" cy="175" r="3" fill="#8D7AA0" opacity="0.5" />
-      <circle cx="140" cy="210" r="3" fill="#8D7AA0" opacity="0.3" />
-      <circle cx="260" cy="210" r="3" fill="#8D7AA0" opacity="0.3" />
+    <svg viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-md">
+      {/* Soft background glow */}
+      <circle cx="210" cy="180" r="170" fill="#F5F5FF" opacity="0.5" />
+      <circle cx="210" cy="180" r="120" fill="#F5F5FF" opacity="0.3" />
+
+      {/* Brain - left hemisphere */}
+      <path d="M210 60 Q160 55 140 80 Q118 108 125 140 Q130 165 155 175 Q175 182 210 180" stroke="#29285D" strokeWidth="2" fill="none" strokeLinecap="round" />
+      {/* Brain - right hemisphere */}
+      <path d="M210 60 Q260 55 280 80 Q302 108 295 140 Q290 165 265 175 Q245 182 210 180" stroke="#29285D" strokeWidth="2" fill="none" strokeLinecap="round" />
+      {/* Brain center dividing line */}
+      <path d="M210 65 Q208 100 210 130 Q212 155 210 178" stroke="#8D7AA0" strokeWidth="1.2" fill="none" opacity="0.5" />
+
+      {/* Brain wrinkle curves - left */}
+      <path d="M155 85 Q170 100 150 120" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.4" />
+      <path d="M140 105 Q165 115 145 140" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.3" />
+      <path d="M168 75 Q185 95 165 108" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.35" />
+      {/* Brain wrinkle curves - right */}
+      <path d="M265 85 Q250 100 270 120" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.4" />
+      <path d="M280 105 Q255 115 275 140" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.3" />
+      <path d="M252 75 Q235 95 255 108" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.35" />
+
+      {/* Brainstem */}
+      <path d="M210 180 Q208 195 210 210" stroke="#29285D" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+
+      {/* Spinal cord */}
+      <path d="M210 210 Q207 240 210 270 Q213 300 210 340" stroke="#29285D" strokeWidth="2" fill="none" strokeLinecap="round">
+        <animate attributeName="d" values="M210 210 Q207 240 210 270 Q213 300 210 340;M210 210 Q213 240 210 270 Q207 300 210 340;M210 210 Q207 240 210 270 Q213 300 210 340" dur="4s" repeatCount="indefinite" />
+      </path>
+
+      {/* Major nerve branches - left side */}
+      <path d="M210 220 Q175 225 140 240 Q110 252 85 270" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.7" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="3s" repeatCount="indefinite" />
+      </path>
+      <path d="M140 240 Q125 255 105 260" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.5" strokeLinecap="round" />
+      <path d="M210 250 Q170 260 130 285 Q100 305 70 320" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.6" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3.5s" repeatCount="indefinite" />
+      </path>
+      <path d="M130 285 Q118 298 100 300" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.4" strokeLinecap="round" />
+      <path d="M210 280 Q175 295 145 320" stroke="#8D7AA0" strokeWidth="1.2" fill="none" opacity="0.5" strokeLinecap="round" />
+
+      {/* Major nerve branches - right side */}
+      <path d="M210 220 Q245 225 280 240 Q310 252 335 270" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.7" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="3.2s" repeatCount="indefinite" />
+      </path>
+      <path d="M280 240 Q295 255 315 260" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.5" strokeLinecap="round" />
+      <path d="M210 250 Q250 260 290 285 Q320 305 350 320" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.6" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3.8s" repeatCount="indefinite" />
+      </path>
+      <path d="M290 285 Q302 298 320 300" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.4" strokeLinecap="round" />
+      <path d="M210 280 Q245 295 275 320" stroke="#8D7AA0" strokeWidth="1.2" fill="none" opacity="0.5" strokeLinecap="round" />
+
+      {/* Neural signal pulses traveling along nerves */}
+      <circle r="3" fill="#8D7AA0" opacity="0.8">
+        <animateMotion dur="2.5s" repeatCount="indefinite" path="M210 220 Q175 225 140 240 Q110 252 85 270" />
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3" fill="#8D7AA0" opacity="0.8">
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M210 220 Q245 225 280 240 Q310 252 335 270" />
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.8s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3" fill="#8D7AA0" opacity="0.7">
+        <animateMotion dur="3.2s" repeatCount="indefinite" path="M210 250 Q170 260 130 285 Q100 305 70 320" />
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.2s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3" fill="#8D7AA0" opacity="0.7">
+        <animateMotion dur="3.5s" repeatCount="indefinite" path="M210 250 Q250 260 290 285 Q320 305 350 320" />
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+
+      {/* Nerve ending dots */}
+      <circle cx="85" cy="270" r="4" fill="#8D7AA0" opacity="0.5">
+        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="335" cy="270" r="4" fill="#8D7AA0" opacity="0.5">
+        <animate attributeName="r" values="4;6;4" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="70" cy="320" r="4" fill="#8D7AA0" opacity="0.4">
+        <animate attributeName="r" values="4;6;4" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="350" cy="320" r="4" fill="#8D7AA0" opacity="0.4">
+        <animate attributeName="r" values="4;6;4" dur="2.6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="105" cy="260" r="3" fill="#8D7AA0" opacity="0.35" />
+      <circle cx="315" cy="260" r="3" fill="#8D7AA0" opacity="0.35" />
+      <circle cx="145" cy="320" r="3" fill="#8D7AA0" opacity="0.35" />
+      <circle cx="275" cy="320" r="3" fill="#8D7AA0" opacity="0.35" />
+      <circle cx="100" cy="300" r="3" fill="#8D7AA0" opacity="0.3" />
+      <circle cx="320" cy="300" r="3" fill="#8D7AA0" opacity="0.3" />
+
+      {/* Central brain node */}
+      <circle cx="210" cy="120" r="6" fill="#8D7AA0" opacity="0.3">
+        <animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="210" cy="120" r="3" fill="#29285D" />
+
       {/* Label */}
-      <text x="200" y="236" textAnchor="middle" fill="#777698" fontSize="9" fontFamily="system-ui">Nervous System Regulation</text>
+      <text x="210" y="372" textAnchor="middle" fill="#777698" fontSize="10" fontFamily="system-ui" fontWeight="500">Nervous System Regulation</text>
     </svg>
   )
 }
