@@ -68,7 +68,7 @@ export default function AboutPage() {
   return (
     <PageWrapper>
       {/* Vision Hero */}
-      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
         <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1400 500">
           <path d="M0 350 Q350 300 700 350 T1400 330" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.06" />
           <path d="M0 380 Q350 330 700 380 T1400 360" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.04" />
@@ -148,7 +148,7 @@ export default function AboutPage() {
       </section>
 
       {/* Manifesto - We Believe */}
-      <section className="relative py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="relative py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border border-accent/5" />
         <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border border-accent/5" />
 
@@ -182,7 +182,7 @@ export default function AboutPage() {
               </p>
 
               <div className="relative rounded-2xl bg-foreground p-8 md:p-10 shadow-xl">
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: "linear-gradient(to right, #FFF2E2, #AAF5D4, #D4EDF9, #FFCCE5)" }} />
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: "linear-gradient(to right, #D4CCE0, #8D7AA0, #D4CCE0)" }} />
                 <p className="font-serif font-bold text-background text-xl mb-6">We believe:</p>
                 <ul className="space-y-4">
                   {[
@@ -258,7 +258,7 @@ export default function AboutPage() {
       </section>
 
       {/* Backed By */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">Backed By</h2>

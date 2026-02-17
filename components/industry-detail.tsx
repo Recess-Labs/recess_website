@@ -29,7 +29,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
   return (
     <PageWrapper>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
         {/* Decorative flowing lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1440 600">
           <path d="M-100 450 Q300 350 720 400 T1540 350" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.08">
@@ -86,8 +86,8 @@ export function IndustryDetail(props: IndustryDetailProps) {
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8">{props.seenTitle}</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {props.seenItems.map((item, i) => (
-                <div key={i} className="bg-[#FAFAF8] rounded-xl p-5 border border-border/40 flex items-start gap-3 hover:shadow-md transition-shadow">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: "#FDF0ED" }}>
+                <div key={i} className="bg-[#F5F5FF] rounded-xl p-5 border border-border/40 flex items-start gap-3 hover:shadow-md transition-shadow">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: "#F0ECF5" }}>
                     <ShieldAlert className="w-3.5 h-3.5 text-accent" />
                   </div>
                   <span className="text-base text-foreground leading-relaxed">{item}</span>
@@ -95,7 +95,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
               ))}
             </div>
             {props.costLine && (
-              <div className="mt-8 rounded-xl border-l-4 border-[#FFEDAC] bg-[#FFFDF5] p-5">
+              <div className="mt-8 rounded-xl border-l-4 border-[#8D7AA0] bg-[#F0ECF5] p-5">
                 <p className="text-base text-foreground font-medium">{props.costLine}</p>
               </div>
             )}
@@ -104,7 +104,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
       </section>
 
       {/* Why traditional approaches fall short */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="max-w-3xl">
@@ -116,7 +116,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
                 <div key={i} className="relative bg-background rounded-2xl p-6 border border-border/40 hover:shadow-lg transition-all group">
                   {/* Gap / crack visual */}
                   <div className="absolute top-0 left-6 right-6 h-1 rounded-b-full" style={{ background: "linear-gradient(90deg, transparent 0%, #FFCCE5 30%, #FFEDAC 70%, transparent 100%)", opacity: 0.6 }} />
-                  <div className="w-10 h-10 rounded-full bg-[#FDF0ED] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-[#F0ECF5] flex items-center justify-center mb-4">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                       <circle cx="12" cy="12" r="10" stroke="#8D7AA0" strokeWidth="1.5" fill="none" />
                       <line x1="12" y1="8" x2="12" y2="13" stroke="#29285D" strokeWidth="2" strokeLinecap="round" />
@@ -177,11 +177,11 @@ export function IndustryDetail(props: IndustryDetailProps) {
 
           <div className="relative">
             {/* Connecting line between steps (desktop) */}
-            <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-[#FFF2E2] via-[#AAF5D4] to-[#D4EDF9]" />
+            <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-[#D4CCE0] via-[#8D7AA0] to-[#D4CCE0]" />
 
             <div className="grid md:grid-cols-3 gap-8">
               {props.howSteps.map((step, i) => {
-                const colors = ["#FFF2E2", "#AAF5D4", "#D4EDF9"]
+                const colors = ["#F0ECF5", "#E8E0F0", "#D4CCE0"]
                 const labels = ["Step 1", "Step 2", "Step 3"]
                 const icons = [
                   // Detect - radar
@@ -227,7 +227,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
       </section>
 
       {/* Outcomes */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-4xl px-6">
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Outcomes That Matter</h2>

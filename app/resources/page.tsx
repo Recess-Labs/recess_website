@@ -53,7 +53,7 @@ const resources = [
 export default function ResourcesPage() {
   return (
     <PageWrapper>
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="max-w-2xl mb-12">

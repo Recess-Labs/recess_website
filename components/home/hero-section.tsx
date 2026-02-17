@@ -11,12 +11,12 @@ export function HeroSection() {
   const [hoveredCta, setHoveredCta] = useState(false)
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
       {/* Animated decorative flowing lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient orbs */}
         <div className="absolute top-20 -left-40 w-[500px] h-[500px] rounded-full blur-[100px] opacity-40" style={{ backgroundColor: "#F5F5FF" }} />
-        <div className="absolute -bottom-20 right-0 w-96 h-96 rounded-full blur-[80px] opacity-30" style={{ backgroundColor: "#FFF2E2" }} />
+        <div className="absolute -bottom-20 right-0 w-96 h-96 rounded-full blur-[80px] opacity-30" style={{ backgroundColor: "#E8E0F0" }} />
 
         {/* Animated flowing SVG lines */}
         <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1400 800" fill="none">

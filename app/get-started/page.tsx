@@ -39,7 +39,7 @@ const roles = [
 export default function GetStartedPage() {
   return (
     <PageWrapper>
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeInSection>
@@ -95,7 +95,7 @@ export default function GetStartedPage() {
                 {/* Placeholder for scheduling embed */}
                 <div className="bg-background rounded-xl border border-border/40 p-10 text-center mb-6">
                   <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 mx-auto mb-4">
-                    <rect width="64" height="64" rx="16" fill="#FDF0ED" />
+                    <rect width="64" height="64" rx="16" fill="#F5F5FF" />
                     <rect x="16" y="14" width="32" height="36" rx="4" stroke="#8D7AA0" strokeWidth="1.5" fill="none" />
                     <line x1="16" y1="24" x2="48" y2="24" stroke="#8D7AA0" strokeWidth="1.5" />
                     <circle cx="26" cy="18" r="2" fill="#29285D" />

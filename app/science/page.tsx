@@ -14,7 +14,7 @@ export default function SciencePage() {
   return (
     <PageWrapper>
       {/* Hero */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="max-w-2xl">
@@ -33,7 +33,7 @@ export default function SciencePage() {
               </p>
 
               {/* Callout styled like a nervous system signal */}
-              <div className="mt-8 relative overflow-hidden rounded-2xl border-2 border-[#8D7AA0]/30" style={{ backgroundColor: "#FDF0ED" }}>
+              <div className="mt-8 relative overflow-hidden rounded-2xl border-2 border-[#8D7AA0]/30" style={{ backgroundColor: "#F5F5FF" }}>
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                   <svg className="absolute -right-4 -top-4 w-32 h-32 opacity-[0.06]" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" stroke="#29285D" strokeWidth="1" fill="none" />
@@ -96,7 +96,7 @@ export default function SciencePage() {
       </section>
 
       {/* Section 2: AIP Model */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="max-w-3xl">
@@ -156,7 +156,7 @@ export default function SciencePage() {
                   "Heart Rate Variability (HRV) research — a measurable indicator of stress and recovery",
                   "Secondary trauma and occupational stress literature",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-base text-foreground bg-[#FAFAF8] rounded-xl p-5 border border-border/30">
+                  <li key={i} className="flex items-start gap-3 text-base text-foreground bg-[#F5F5FF] rounded-xl p-5 border border-border/30">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{item}</span>
                   </li>
@@ -173,7 +173,7 @@ export default function SciencePage() {
       </section>
 
       {/* Section 4: REPAIR Engine */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="text-center mb-10">
@@ -212,7 +212,7 @@ export default function SciencePage() {
                 "AI-driven adaptive delivery",
                 "Mental health data set for frontline",
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-[#FAFAF8] rounded-xl p-5 border border-border/30 hover:shadow-sm transition-shadow">
+                <div key={i} className="flex items-center gap-3 bg-[#F5F5FF] rounded-xl p-5 border border-border/30 hover:shadow-sm transition-shadow">
                   <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                   <span className="text-base text-foreground">{item}</span>
                 </div>
@@ -223,7 +223,7 @@ export default function SciencePage() {
       </section>
 
       {/* White Paper + Disclaimer */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-3xl px-6 text-center">
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">Evidence & Research Base</h2>

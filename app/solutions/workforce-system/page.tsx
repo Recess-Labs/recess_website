@@ -11,7 +11,7 @@ export default function WorkforceSystemPage() {
   return (
     <SolutionDetail
       icon={Shield}
-      color="#FFF2E2"
+      color="#F0ECF5"
       num="01"
       title={"Recess Foundation\u2122"}
       tagline="Trauma-Informed Workforce Standards & Training"
