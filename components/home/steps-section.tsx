@@ -63,7 +63,7 @@ export function StepsSection() {
         <FadeInSection delay={500} className="mt-16">
           <div className="bg-background rounded-3xl border border-border/30 shadow-lg overflow-hidden">
             {/* Top accent bar */}
-            <div className="h-1.5 bg-gradient-to-r from-[#FFF2E2] via-[#AAF5D4] to-[#D4EDF9]" />
+            <div className="h-1.5 bg-gradient-to-r from-[#D4CCE0] via-[#8D7AA0] to-[#D4CCE0]" />
             <div className="p-8 lg:p-12">
               <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-3">The Result</p>
               <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground max-w-2xl">

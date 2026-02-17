@@ -16,10 +16,11 @@ const phases = [
   {
     phase: "Phase 1",
     icon: Shield,
-    title: "Recess Foundation\u2122",
-    color: "#FFF2E2",
-    tagline: "Zero-Commitment Entry Point",
-    description: "We come in without commitment. Foundation begins with sharing neuroscience-informed knowledge about trauma exposure with your leadership team. No contracts. No platform rollout. Just clarity about what repeated exposure does to the nervous system and how it shows up in your workforce. If it resonates, we work together to build operational standards around it.",
+    title: "Educate & Align Leadership",
+    product: "Recess Foundation\u2122",
+    color: "#F0ECF5",
+    tagline: "Start here -- no commitment required",
+    description: "We begin by sharing neuroscience-informed knowledge about trauma exposure with your leadership team. No contracts. No platform rollout. Just clarity about what repeated exposure does to the nervous system and how it shows up in your workforce. If it resonates, we work together to build operational standards around it. Foundation can be deployed as a standalone layer -- many organizations start and stay here.",
     items: [
       "Trauma exposure education for leadership",
       "Workforce-wide awareness workshops",
@@ -31,10 +32,11 @@ const phases = [
   {
     phase: "Phase 2",
     icon: Smartphone,
-    title: "Recess Frontline Ally\u2122",
-    color: "#AAF5D4",
-    tagline: "Repair the Nervous System Between Shifts",
-    description: "Once your leadership understands the biological impact of repeated exposure, we deploy Frontline Ally to your staff. This is where science becomes daily practice. Staff complete a brief check-in, the system detects strain patterns, and personalized stabilization protocols are delivered in ~10 minutes -- designed specifically for secondary trauma, moral injury, and compassion fatigue.",
+    title: "Stabilize the Frontline",
+    product: "Recess Frontline Ally\u2122",
+    color: "#F0ECF5",
+    tagline: "Repair the nervous system between shifts",
+    description: "Once your leadership understands the biological impact of repeated exposure, we deploy individual stabilization tools to your staff. This is where science becomes daily practice. Staff complete a brief check-in, the system detects strain patterns, and personalized stabilization protocols are delivered in ~10 minutes -- designed specifically for secondary trauma, moral injury, and compassion fatigue.",
     items: [
       "Brief emotional check-in for staff",
       "AI-driven strain pattern detection",
@@ -46,10 +48,11 @@ const phases = [
   {
     phase: "Phase 3",
     icon: BarChart3,
-    title: "Recess Signal\u2122",
-    color: "#D4EDF9",
-    tagline: "Predict and Prevent Workforce Instability",
-    description: "With Foundation setting the standard and Ally repairing individuals, Signal gives your leadership eyes on the system as a whole. AI-powered analytics detect emerging trauma load patterns and forecast workforce instability before it shows up in HR metrics. Leaders move from reactive crisis management to proactive stabilization.",
+    title: "Predict & Prevent Instability",
+    product: "Recess Signal\u2122",
+    color: "#F0ECF5",
+    tagline: "Move from reactive to proactive",
+    description: "With standards in place and individuals stabilized, the final layer gives your leadership eyes on the system as a whole. AI-powered analytics detect emerging trauma load patterns and forecast workforce instability before it shows up in HR metrics. Leaders move from reactive crisis management to proactive stabilization.",
     items: [
       "Emotional strain & overload indicators",
       "Turnover vulnerability signals",
@@ -98,10 +101,10 @@ export default function SolutionsPage() {
           <FadeInSection>
             <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-4">How We Work With Organizations</p>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight text-balance">
-              Recess is designed to be deployed in phases -- meeting your organization where it is.
+              Deploy in phases. Start with zero commitment. Scale when ready.
             </h2>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              {"We don't ask for commitment upfront. Foundation starts with education. If it fits, we build from there. Each phase adds a new layer of infrastructure -- from standards to stabilization to intelligence."}
+              {"We don't ask for commitment upfront. We begin with education -- sharing what the science says about trauma exposure and how it shows up in your workforce. If it resonates, we build from there. Each phase can stand on its own or integrate into a full system. You choose the pace."}
             </p>
           </FadeInSection>
         </div>
@@ -124,11 +127,12 @@ export default function SolutionsPage() {
                     </div>
                   </div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight">{p.title}</h2>
-                  <p className="mt-2 text-base text-accent font-medium font-serif">{p.tagline}</p>
+                  <p className="mt-1.5 text-sm text-accent font-serif font-semibold">Powered by {p.product}</p>
+                  <p className="mt-2 text-base text-muted-foreground font-medium font-serif italic">{p.tagline}</p>
                   <p className="mt-4 text-base text-muted-foreground leading-relaxed">{p.description}</p>
                   <div className="mt-6">
                     <Link href={p.href} className="inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent hover:gap-2.5 transition-all">
-                      Learn more about {p.title} <ArrowRight className="w-3.5 h-3.5" />
+                      Learn more about {p.product} <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -152,7 +156,7 @@ export default function SolutionsPage() {
       ))}
 
       {/* Expected outcomes */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
+      <section className="py-16 lg:py-20 bg-background">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8">Expected Outcomes</h2>
