@@ -22,10 +22,10 @@ const industries = [
 ]
 
 const resources = [
-  { label: "Help Center", href: "#" },
+  { label: "Help Center", href: "#help-center" },
   { label: "See your risk", href: "https://pulse.withrecess.com", external: true },
-  { label: "Articles", href: "#" },
-  { label: "Flow with Recess (Podcast)", href: "#" },
+  { label: "Articles", href: "#articles" },
+  { label: "Flow with Recess (Podcast)", href: "#podcast" },
 ]
 
 export function SiteNav() {
