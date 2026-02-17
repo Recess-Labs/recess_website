@@ -126,11 +126,11 @@ export default function AboutPage() {
 
               {/* Right side: "Not a wellness platform" callout */}
               <div className="lg:mt-14">
-                <div className="relative rounded-2xl border-2 border-[#E8A94C] bg-[#FFFBF0] p-7 shadow-md overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#E8A94C]" />
+                <div className="relative rounded-2xl border-2 border-[#8D7AA0] bg-[#F0ECF5] p-7 shadow-md overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#8D7AA0] via-[#A394B5] to-[#8D7AA0]" />
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 rounded-full bg-[#E8A94C] flex items-center justify-center shrink-0 shadow-sm">
-                      <AlertTriangle className="w-6 h-6 text-[#FFFBF0]" />
+                    <div className="w-12 h-12 rounded-full bg-[#8D7AA0] flex items-center justify-center shrink-0 shadow-sm">
+                      <AlertTriangle className="w-6 h-6 text-background" />
                     </div>
                     <div>
                       <p className="font-serif font-bold text-foreground text-xl leading-tight">We are not a wellness platform.</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   <p className="text-base text-muted-foreground leading-relaxed">
                     We are a science-backed system designed for high-exposure environments where stability is operationally critical.
                   </p>
-                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#E8A94C] opacity-40" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#8D7AA0] opacity-30" />
                 </div>
               </div>
             </div>
@@ -223,11 +223,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Leadership Team */}
+            {/* Advisory Board */}
             <div className="mb-16">
-              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Leadership Team</p>
+              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Advisory Board</p>
               <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
-                {leadership.map((p, i) => (
+                {advisors.map((p, i) => (
                   <PersonCard key={i} person={p} />
                 ))}
               </div>
@@ -244,11 +244,11 @@ export default function AboutPage() {
               <div className="flex-1 h-px bg-border" />
             </div>
 
-            {/* Advisory Board */}
+            {/* Leadership Team */}
             <div>
-              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Advisory Board</p>
+              <p className="font-serif font-bold text-foreground text-xl mb-8 text-center">Leadership Team</p>
               <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
-                {advisors.map((p, i) => (
+                {leadership.map((p, i) => (
                   <PersonCard key={i} person={p} />
                 ))}
               </div>
