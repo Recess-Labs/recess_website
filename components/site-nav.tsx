@@ -59,7 +59,7 @@ export function SiteNav() {
         {/* CTA */}
         <div className="hidden lg:block">
           <Button asChild size="sm" className="rounded-full font-serif font-semibold px-5 bg-foreground text-background hover:bg-foreground/90">
-            <Link href="/get-started">Schedule a Call</Link>
+            <Link href="/get-started">Schedule Free Strategy Call</Link>
           </Button>
         </div>
 
@@ -85,7 +85,7 @@ export function SiteNav() {
           <Link href="/science" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Our Science</Link>
           <Link href="/about" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>About</Link>
           <Button asChild size="sm" className="rounded-full font-serif font-semibold mt-2 bg-foreground text-background">
-            <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule a Call</Link>
+            <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule Free Strategy Call</Link>
           </Button>
         </div>
       )}
