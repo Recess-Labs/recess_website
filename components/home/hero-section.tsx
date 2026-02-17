@@ -67,41 +67,93 @@ export function HeroSection() {
           </FadeInSection>
         </div>
 
-        {/* Pattern visualization with inline drawing */}
-        <FadeInSection delay={400} className="mt-20">
-          <div className="relative bg-[#F5F5FF] rounded-3xl p-8 md:p-12 border border-border/30">
-            <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-6 text-center">The Pattern We Address</p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
-              {[
-                { label: "Exposure", desc: "Crisis, grief, distress", color: "#D4EDF9" },
-                { label: "Overload", desc: "Nervous system activation", color: "#FFEDAC" },
-                { label: "Instability", desc: "Turnover, leave, errors", color: "#FFCCE5" },
-              ].map((step, i) => (
-                <div key={step.label} className="flex items-center gap-4">
-                  <div className={`px-8 py-5 rounded-2xl border text-center transition-all hover:scale-105 ${
-                    i === 2 ? "bg-foreground text-background border-foreground shadow-lg" : "bg-background border-border/40 shadow-sm"
-                  }`} style={i < 2 ? { borderColor: step.color, borderWidth: 2 } : {}}>
-                    <p className={`font-serif text-xl md:text-2xl font-bold ${i === 2 ? "" : "text-foreground"}`}>{step.label}</p>
-                    <p className={`text-sm mt-1 ${i === 2 ? "text-background/60" : "text-muted-foreground"}`}>{step.desc}</p>
+        {/* Pattern visualization */}
+        <FadeInSection delay={400} className="mt-24">
+          <div className="relative bg-[#F5F5FF] rounded-3xl p-10 md:p-16 border border-border/30 overflow-hidden">
+            {/* Decorative background wave */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04]" preserveAspectRatio="none" viewBox="0 0 800 400">
+              <path d="M0 300 Q200 200 400 300 T800 300 V400 H0Z" fill="#29285D" />
+            </svg>
+
+            <p className="font-serif text-sm md:text-base font-bold text-accent uppercase tracking-widest mb-10 text-center">The Pattern We Address</p>
+
+            {/* Desktop: horizontal flow */}
+            <div className="hidden md:grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-0">
+              {/* Exposure */}
+              <div className="rounded-2xl border-2 p-8 text-center bg-background shadow-sm transition-all hover:shadow-md hover:-translate-y-1" style={{ borderColor: "#D4EDF9" }}>
+                <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#D4EDF9" }}>
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" stroke="#29285D" strokeWidth="1.5" fill="none" /><path d="M12 8v4l3 3" stroke="#29285D" strokeWidth="1.5" strokeLinecap="round" /></svg>
+                </div>
+                <p className="font-serif text-2xl lg:text-3xl font-bold text-foreground">Exposure</p>
+                <p className="text-base lg:text-lg text-muted-foreground mt-2">Crisis, grief, distress</p>
+              </div>
+
+              {/* Arrow 1 */}
+              <div className="flex items-center justify-center px-2">
+                <svg width="56" height="24" viewBox="0 0 56 24" fill="none">
+                  <path d="M0 12h48M44 6l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              {/* Overload */}
+              <div className="relative rounded-2xl border-2 p-8 text-center bg-background shadow-sm transition-all hover:shadow-md hover:-translate-y-1" style={{ borderColor: "#FFEDAC" }}>
+                <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#FFEDAC" }}>
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#29285D" strokeWidth="1.5" fill="none" strokeLinejoin="round" /></svg>
+                </div>
+                <p className="font-serif text-2xl lg:text-3xl font-bold text-foreground">Overload</p>
+                <p className="text-base lg:text-lg text-muted-foreground mt-2">Nervous system activation</p>
+                {/* Recess intervenes badge */}
+                <div className="absolute -right-16 top-1/2 -translate-y-1/2 z-10">
+                  <div className="bg-[#AAF5D4] text-foreground rounded-full px-4 py-2 text-sm font-serif font-bold shadow-md whitespace-nowrap border border-[#AAF5D4]">
+                    Recess intervenes here
                   </div>
-                  {i < 2 && (
-                    <div className="hidden md:flex items-center">
-                      <svg width="48" height="24" viewBox="0 0 48 24" fill="none" className="text-accent">
-                        <path d="M0 12h40M36 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {i === 0 && (
-                        <div className="absolute left-1/2 -translate-x-1/2 -bottom-3">
-                          <div className="bg-[#AAF5D4] text-foreground rounded-full px-4 py-1 text-xs font-serif font-bold shadow-sm whitespace-nowrap">
-                            Recess intervenes here
-                          </div>
-                        </div>
-                      )}
+                </div>
+              </div>
+
+              {/* Arrow 2 */}
+              <div className="flex items-center justify-center px-2">
+                <svg width="56" height="24" viewBox="0 0 56 24" fill="none">
+                  <path d="M0 12h48M44 6l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              {/* Instability */}
+              <div className="rounded-2xl p-8 text-center bg-foreground text-background shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 border-2 border-foreground">
+                <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center bg-background/10">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7"><path d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" /></svg>
+                </div>
+                <p className="font-serif text-2xl lg:text-3xl font-bold">Instability</p>
+                <p className="text-base lg:text-lg text-background/60 mt-2">Turnover, leave, errors</p>
+              </div>
+            </div>
+
+            {/* Mobile: vertical flow */}
+            <div className="flex md:hidden flex-col items-center gap-4">
+              {[
+                { label: "Exposure", desc: "Crisis, grief, distress", color: "#D4EDF9", dark: false },
+                { label: "Overload", desc: "Nervous system activation", color: "#FFEDAC", dark: false },
+                { label: "Instability", desc: "Turnover, leave, errors", color: "#FFCCE5", dark: true },
+              ].map((step, i) => (
+                <div key={step.label} className="flex flex-col items-center gap-4 w-full">
+                  <div className={`w-full rounded-2xl border-2 p-6 text-center ${step.dark ? "bg-foreground text-background border-foreground" : "bg-background border-border/40"}`} style={!step.dark ? { borderColor: step.color } : {}}>
+                    <p className={`font-serif text-2xl font-bold ${step.dark ? "" : "text-foreground"}`}>{step.label}</p>
+                    <p className={`text-base mt-1 ${step.dark ? "text-background/60" : "text-muted-foreground"}`}>{step.desc}</p>
+                  </div>
+                  {i === 1 && (
+                    <div className="bg-[#AAF5D4] text-foreground rounded-full px-5 py-2 text-sm font-serif font-bold shadow-md">
+                      Recess intervenes here
                     </div>
+                  )}
+                  {i < 2 && (
+                    <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
+                      <path d="M12 0v24M6 20l6 6 6-6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   )}
                 </div>
               ))}
             </div>
-            <p className="mt-8 text-base md:text-lg text-foreground text-center max-w-2xl mx-auto font-serif leading-relaxed">
+
+            <p className="mt-10 text-lg md:text-xl text-foreground text-center max-w-3xl mx-auto font-serif leading-relaxed font-medium">
               Recess intervenes between overload and instability -- stabilizing staff before strain becomes turnover.
             </p>
           </div>
