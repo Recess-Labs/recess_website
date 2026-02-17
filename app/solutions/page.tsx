@@ -67,7 +67,7 @@ export default function SolutionsPage() {
   return (
     <PageWrapper>
       {/* Hero */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#F5F5FF" }}>
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="text-center max-w-3xl mx-auto">

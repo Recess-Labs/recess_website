@@ -68,7 +68,7 @@ export default function AboutPage() {
   return (
     <PageWrapper>
       {/* Vision Hero */}
-      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
+      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
         <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1400 500">
           <path d="M0 350 Q350 300 700 350 T1400 330" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.06" />
           <path d="M0 380 Q350 330 700 380 T1400 360" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.04" />

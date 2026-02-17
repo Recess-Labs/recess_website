@@ -11,7 +11,7 @@ export function HeroSection() {
   const [hoveredCta, setHoveredCta] = useState(false)
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
+    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
       {/* Animated decorative flowing lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient orbs */}

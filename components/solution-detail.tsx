@@ -29,7 +29,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
   return (
     <PageWrapper>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
+      <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
         {/* Decorative flowing lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1440 600">
           <path d="M-100 400 Q300 300 720 380 T1540 320" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.08">
