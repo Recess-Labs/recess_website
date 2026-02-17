@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 const solutions = [
-  { label: "Trauma-Informed Workforce System", href: "/solutions/workforce-system" },
-  { label: "Recess Frontline Ally App", href: "/solutions/ally-app" },
-  { label: "Emotional Operating Dashboard", href: "/solutions/dashboard" },
+  { label: "Recess Foundation\u2122", href: "/solutions/workforce-system" },
+  { label: "Recess Frontline Ally\u2122", href: "/solutions/ally-app" },
+  { label: "Recess Signal\u2122", href: "/solutions/dashboard" },
   { label: "divider", href: "" },
-  { label: "Full Implementation", href: "/solutions/implementation" },
+  { label: "Full System & Implementation", href: "/solutions/implementation" },
 ]
 
 const industries = [

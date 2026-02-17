@@ -5,22 +5,25 @@ import { Shield, Smartphone, BarChart3, ArrowRight, CheckCircle2 } from "lucide-
 const systems = [
   {
     icon: Shield,
-    title: "Trauma-Informed Workforce System",
-    desc: "Establish shared language, leader training, and practical response protocols so trauma exposure is addressed consistently.",
+    title: "Recess Foundation\u2122",
+    subtitle: "Trauma-Informed Workforce Standards & Training",
+    desc: "Establish shared language, leadership alignment, and structured response pathways \u2014 so trauma exposure is addressed consistently across teams, not informally.",
     checks: ["Aligns leadership around trauma exposure", "Reduces reactive management", "Creates consistent response to overload", "Strengthens duty-of-care compliance"],
     href: "/solutions/workforce-system",
   },
   {
     icon: Smartphone,
-    title: "Recess Frontline Ally App",
-    desc: "Short, neuroscience-based stabilization protocols designed for secondary trauma, moral injury, and acute overload.",
-    checks: ["Personalized relief in minutes", "Designed for use during or after shifts", "Reduces trauma disturbance and cumulative strain", "Low lift — no therapy, no downtime required"],
+    title: "Recess Frontline Ally\u2122",
+    subtitle: "Real-Time Trauma Stabilization for Professionals",
+    desc: "Deliver short, neuroscience-informed protocols staff can use during or after difficult moments to regulate nervous system overload and reduce cumulative strain.",
+    checks: ["Personalized relief in minutes", "Designed for use during or after shifts", "Reduces trauma disturbance and cumulative strain", "Low lift \u2014 no therapy, no downtime required"],
     href: "/solutions/ally-app",
   },
   {
     icon: BarChart3,
-    title: "Emotional Operating Dashboard",
-    desc: "Early visibility into trauma load, rising emotional risk, and emerging instability patterns for leadership.",
+    title: "Recess Signal\u2122",
+    subtitle: "AI-Powered Trauma Load & Turnover Risk Intelligence",
+    desc: "Detect emerging strain patterns, forecast turnover vulnerability, and give leaders early visibility into workforce instability \u2014 before it shows up in HR data.",
     checks: ["Identify risk trends early", "Forecast turnover vulnerability", "Receive trauma-informed recommendations", "Strengthen workforce stability proactively"],
     href: "/solutions/dashboard",
   },
@@ -34,10 +37,10 @@ export function SystemSection() {
           <div className="text-center max-w-2xl mx-auto">
             <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-3">How Recess Works</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground tracking-tight text-balance">
-              Explore the Recess System
+              Stabilize Trauma Exposure in Three Layers
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Deploy one layer to strengthen a specific gap or integrate all three for full workforce stabilization.
+              Recess provides emotional infrastructure designed specifically for trauma-exposed workforces.
             </p>
           </div>
         </FadeInSection>
@@ -49,7 +52,8 @@ export function SystemSection() {
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
                   <s.icon className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-foreground mb-2">{s.title}</h3>
+                <h3 className="font-serif text-lg font-bold text-foreground">{s.title}</h3>
+                <p className="text-xs text-accent font-medium mb-2">{s.subtitle}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
                 <ul className="flex flex-col gap-2 mb-6">
                   {s.checks.map((c, j) => (
@@ -67,9 +71,10 @@ export function SystemSection() {
         </div>
 
         <FadeInSection delay={400} className="mt-8 text-center">
-          <Link href="/solutions/implementation" className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 font-serif font-medium transition-colors">
-            Explore the full system and implementation options <ArrowRight className="w-3.5 h-3.5" />
+          <Link href="/solutions" className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 font-serif font-medium transition-colors">
+            {"Explore the Recess System \u2192"}
           </Link>
+          <p className="mt-2 text-xs text-muted-foreground">{"Foundation \u2022 Frontline Ally \u2022 Signal"}</p>
         </FadeInSection>
       </div>
     </section>
