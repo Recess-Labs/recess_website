@@ -69,7 +69,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8">{props.howTitle}</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {props.howItems.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 bg-[#FAFAF8] rounded-xl p-5 border border-border/30 shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="flex items-start gap-3 bg-[#F5F5FF] rounded-xl p-5 border border-border/30 shadow-sm hover:shadow-md transition-shadow">
                   <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                   <span className="text-base text-foreground">{item}</span>
                 </div>
@@ -80,7 +80,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
       </section>
 
       {/* Without vs With -- visual comparison */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: "#FAFAF8" }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="grid md:grid-cols-2 gap-6">
@@ -106,20 +106,27 @@ export function SolutionDetail(props: SolutionDetailProps) {
                 </ul>
               </div>
 
-              {/* With Recess */}
-              <div className="rounded-2xl p-7 border-2 relative overflow-hidden" style={{ backgroundColor: props.color + "30", borderColor: props.color }}>
-                {/* Green top stripe */}
-                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: "#AAF5D4" }} />
+              {/* With Recess -- branded purple */}
+              <div className="rounded-2xl p-7 border-2 border-[#8D7AA0] relative overflow-hidden" style={{ backgroundColor: "#F0ECF5" }}>
+                {/* Purple top stripe */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#8D7AA0] via-[#A394B5] to-[#8D7AA0]" />
+                {/* Recess wave logo watermark */}
+                <svg className="absolute top-4 right-4 w-10 h-10 opacity-[0.12]" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="20" r="18" stroke="#8D7AA0" strokeWidth="1.5" />
+                  <path d="M12 20 Q16 12 20 20 Q24 28 28 20" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" fill="none" />
+                </svg>
                 <div className="flex items-center gap-2 mb-5">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: props.color }}>
-                    <CheckCircle2 className="w-4 h-4 text-foreground" />
+                  <div className="w-8 h-8 rounded-full bg-[#8D7AA0] flex items-center justify-center">
+                    <CheckCircle2 className="w-4 h-4 text-background" />
                   </div>
                   <h3 className="font-serif text-lg font-bold text-foreground">{props.withTitle}</h3>
                 </div>
                 <ul className="flex flex-col gap-3">
                   {props.withItems.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-base text-foreground font-medium">
-                      <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 rounded-full bg-[#8D7AA0] flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-3 h-3 text-background" />
+                      </div>
                       {item}
                     </li>
                   ))}

@@ -112,7 +112,7 @@ export default function SolutionsPage() {
 
       {/* Phase cards */}
       {phases.map((p, i) => (
-        <section key={i} className={`${i % 2 === 0 ? "bg-[#FAFAF8]" : "bg-background"} py-16 lg:py-20`}>
+        <section key={i} className={`${i % 2 === 0 ? "bg-[#F5F5FF]" : "bg-background"} py-16 lg:py-20`}>
           <div className="mx-auto max-w-7xl px-6">
             <FadeInSection>
               <div className="grid lg:grid-cols-2 gap-12 items-start">
