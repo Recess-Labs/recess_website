@@ -55,7 +55,7 @@ export function CostBand() {
             href="https://pulse.withrecess.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-serif font-semibold text-lg text-background bg-primary-foreground border-2 border-primary-foreground/20 hover:bg-[#B75283] hover:border-[#B75283] transition-all duration-300 hover:scale-[1.02] shadow-md"
+            className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-serif font-semibold text-lg border bg-primary-foreground/5 border-primary-foreground/20 text-primary-foreground hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all duration-300 hover:scale-[1.02] shadow-md"
           >
             Understand Your Operational Risk <ArrowRight className="w-5 h-5" />
           </a>

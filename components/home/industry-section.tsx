@@ -18,8 +18,12 @@ const industries = [
     icon: (
       <svg viewBox="0 0 72 72" fill="none" className="w-16 h-16">
         <rect width="72" height="72" rx="18" fill="#FFCCE5" />
-        <path d="M36 20 C31 20, 22 25, 22 33 C22 43, 36 52, 36 52 C36 52, 50 43, 50 33 C50 25, 41 20, 36 20Z" fill="#8D7AA0" opacity="0.25" stroke="#29285D" strokeWidth="1.5" />
-        <path d="M32 33h8 M36 29v8" stroke="#29285D" strokeWidth="2" strokeLinecap="round" />
+        {/* Stethoscope icon */}
+        <path d="M26 28c0-4 3-7 7-7h0c4 0 7 3 7 7v8c0 4-3 7-7 7h0" stroke="#29285D" strokeWidth="2" fill="none" strokeLinecap="round" />
+        <circle cx="33" cy="48" r="4" stroke="#29285D" strokeWidth="2" fill="#8D7AA0" opacity="0.25" />
+        <circle cx="44" cy="36" r="3" fill="#29285D" />
+        <circle cx="44" cy="36" r="1.5" fill="#FFCCE5" />
+        <path d="M40 28v4c0 2.2 1.8 4 4 4h0c2.2 0 4-1.8 4-4v-4" stroke="#29285D" strokeWidth="2" fill="none" strokeLinecap="round" />
       </svg>
     ),
   },

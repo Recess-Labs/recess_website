@@ -69,7 +69,7 @@ const solutions = [
 export default function SolutionsPage() {
   return (
     <PageWrapper>
-      <section className="bg-background py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="text-center max-w-3xl mx-auto">

@@ -92,7 +92,7 @@ export function SystemSection() {
                   }`}
                 >
                   <span className="w-3 h-3 rounded-full" style={{ backgroundColor: activeTab === i ? popColors[i] : "transparent", border: activeTab !== i ? `2px solid ${popColors[i]}` : "none" }} />
-                  {s.key === "foundation" ? "Foundation" : s.key === "ally" ? "Frontline Ally" : "Signal"}
+                  {s.title}
                 </button>
               ))}
             </div>
@@ -120,7 +120,7 @@ export function SystemSection() {
                     {active.desc}
                   </p>
                   <Link href={active.href} className="inline-flex items-center gap-2 text-base font-serif font-semibold text-foreground hover:text-accent transition-all group">
-                    Learn more about {active.key === "foundation" ? "Foundation" : active.key === "ally" ? "Frontline Ally" : "Signal"}
+                    Learn more about {active.title}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -149,7 +149,7 @@ export function SystemSection() {
               Explore the Full System <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </Button>
-          <p className="text-sm text-muted-foreground font-serif">{"Foundation\u2122 \u2022 Frontline Ally\u2122 \u2022 Signal\u2122"}</p>
+          <p className="text-sm text-muted-foreground font-serif">{"Recess Foundation\u2122 \u2022 Recess Frontline Ally\u2122 \u2022 Recess Signal\u2122"}</p>
         </FadeInSection>
       </div>
     </section>

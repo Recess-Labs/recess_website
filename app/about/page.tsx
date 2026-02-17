@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <PageWrapper>
       {/* Vision */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
             <div className="max-w-3xl">

@@ -38,7 +38,7 @@ const phases = [
 export default function ImplementationPage() {
   return (
     <PageWrapper>
-      <section className="bg-background py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground tracking-tight text-balance">

@@ -40,9 +40,9 @@ export function SiteNav() {
           <Image
             src="/images/recess-logo-colour.png"
             alt="Recess"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
+            width={160}
+            height={50}
+            className="h-10 w-auto"
             priority
           />
         </Link>

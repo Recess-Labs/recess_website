@@ -39,7 +39,7 @@ const roles = [
 export default function GetStartedPage() {
   return (
     <PageWrapper>
-      <section className="bg-background py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeInSection>

@@ -98,6 +98,15 @@
   animation: float 6s ease-in-out 0.5s infinite;
 }
 
+/* Gentle sway for decorative elements */
+@keyframes sway {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(6px) rotate(0.5deg); }
+}
+.animate-sway {
+  animation: sway 8s ease-in-out infinite;
+}
+
 /* Subtle shimmer for interactive elements */
 @keyframes shimmer {
   0% { background-position: -200% 0; }

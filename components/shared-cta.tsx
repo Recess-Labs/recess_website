@@ -20,10 +20,10 @@ export function SharedCTA() {
           <span className="text-xs font-sans font-medium text-background/60 tracking-wide">30-minute discovery call</span>
         </div>
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-background text-balance">
-          If Trauma Exposure Is Structural in Your Workforce, Let{"'"}s Talk.
+          {"If your workforce is exposed to trauma as part of the job, Let's Talk."}
         </h2>
         <p className="mt-5 text-lg text-background/50 leading-relaxed max-w-lg mx-auto">
-          In 30 minutes, you{"'"}ll see how the system works -- and whether it fits your environment.
+          {"In 30 minutes, you'll see how the system works -- and whether it fits your environment."}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <div className="relative">
@@ -42,7 +42,7 @@ export function SharedCTA() {
             <div className="absolute inset-0 rounded-full bg-background/20 animate-pulse-ring" />
           </div>
           <a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer" className="text-sm text-background/40 hover:text-background/70 underline underline-offset-4 transition-colors">
-            Or start with the Pulse Assessment
+            Or start with the Frontline Emotional Risk Assessment
           </a>
         </div>
       </div>

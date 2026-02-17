@@ -11,39 +11,70 @@ export function HeroSection() {
   const [hoveredCta, setHoveredCta] = useState(false)
 
   return (
-    <section className="relative bg-background py-20 lg:py-28 overflow-hidden">
-      {/* Decorative background lines and orbs */}
+    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+      {/* Animated decorative flowing lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient orbs */}
-        <div className="absolute top-20 -left-40 w-[500px] h-[500px] rounded-full bg-[#F5F5FF] blur-[100px] opacity-70" />
-        <div className="absolute -bottom-20 right-0 w-96 h-96 rounded-full bg-[#FFF2E2] blur-[80px] opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#AAF5D4] blur-[120px] opacity-[0.08]" />
+        <div className="absolute top-20 -left-40 w-[500px] h-[500px] rounded-full blur-[100px] opacity-40" style={{ backgroundColor: "#F5F5FF" }} />
+        <div className="absolute -bottom-20 right-0 w-96 h-96 rounded-full blur-[80px] opacity-30" style={{ backgroundColor: "#FFF2E2" }} />
 
-        {/* Decorative flowing lines */}
+        {/* Animated flowing SVG lines */}
         <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1400 800" fill="none">
-          {/* Curved flowing lines across hero */}
-          <path d="M-100 400 C200 300 400 500 700 350 S1100 200 1500 400" stroke="#8D7AA0" strokeWidth="1" opacity="0.08" fill="none" />
-          <path d="M-100 450 C200 350 400 550 700 400 S1100 250 1500 450" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.06" fill="none" />
-          <path d="M-100 500 C200 400 400 600 700 450 S1100 300 1500 500" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.04" fill="none" />
+          {/* Primary wave - animated */}
+          <path d="M-100 350 C100 200 300 500 600 300 S900 100 1100 350 S1300 500 1500 350" stroke="#8D7AA0" strokeWidth="1.5" opacity="0.12" fill="none">
+            <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+              M-100 350 C100 200 300 500 600 300 S900 100 1100 350 S1300 500 1500 350;
+              M-100 380 C100 250 300 450 600 350 S900 150 1100 300 S1300 450 1500 380;
+              M-100 350 C100 200 300 500 600 300 S900 100 1100 350 S1300 500 1500 350
+            " />
+          </path>
+          {/* Secondary wave */}
+          <path d="M-100 420 C150 300 350 550 650 380 S950 200 1150 420 S1350 550 1550 420" stroke="#8D7AA0" strokeWidth="1" opacity="0.08" fill="none">
+            <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+              M-100 420 C150 300 350 550 650 380 S950 200 1150 420 S1350 550 1550 420;
+              M-100 440 C150 350 350 500 650 420 S950 250 1150 380 S1350 500 1550 440;
+              M-100 420 C150 300 350 550 650 380 S950 200 1150 420 S1350 550 1550 420
+            " />
+          </path>
+          {/* Tertiary wave */}
+          <path d="M-100 490 C200 400 400 600 700 450 S1000 300 1200 490 S1400 600 1600 490" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.06" fill="none">
+            <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
+              M-100 490 C200 400 400 600 700 450 S1000 300 1200 490 S1400 600 1600 490;
+              M-100 470 C200 380 400 560 700 430 S1000 320 1200 470 S1400 560 1600 470;
+              M-100 490 C200 400 400 600 700 450 S1000 300 1200 490 S1400 600 1600 490
+            " />
+          </path>
 
-          {/* Diagonal accent lines */}
-          <line x1="1100" y1="0" x2="1400" y2="300" stroke="#E8E0EC" strokeWidth="1" opacity="0.3" />
-          <line x1="1150" y1="0" x2="1450" y2="300" stroke="#E8E0EC" strokeWidth="0.5" opacity="0.2" />
-          <line x1="1200" y1="0" x2="1500" y2="300" stroke="#E8E0EC" strokeWidth="0.5" opacity="0.15" />
+          {/* Diagonal accents top right */}
+          <line x1="1050" y1="0" x2="1400" y2="350" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.06">
+            <animate attributeName="opacity" values="0.06;0.12;0.06" dur="6s" repeatCount="indefinite" />
+          </line>
+          <line x1="1100" y1="0" x2="1450" y2="350" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.04">
+            <animate attributeName="opacity" values="0.04;0.09;0.04" dur="7s" repeatCount="indefinite" />
+          </line>
 
-          {/* Subtle dots pattern top right */}
-          {Array.from({ length: 8 }).map((_, row) =>
-            Array.from({ length: 6 }).map((_, col) => (
+          {/* Subtle dot grid */}
+          {Array.from({ length: 6 }).map((_, row) =>
+            Array.from({ length: 5 }).map((_, col) => (
               <circle
                 key={`${row}-${col}`}
-                cx={1050 + col * 28}
-                cy={50 + row * 28}
+                cx={1080 + col * 30}
+                cy={60 + row * 30}
                 r="1.5"
                 fill="#8D7AA0"
-                opacity="0.1"
+                opacity="0.08"
               />
             ))
           )}
+
+          {/* Curving decorative arcs */}
+          <path d="M0 700 Q350 600 700 700" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.05" fill="none">
+            <animate attributeName="d" dur="9s" repeatCount="indefinite" values="
+              M0 700 Q350 600 700 700;
+              M0 700 Q350 650 700 700;
+              M0 700 Q350 600 700 700
+            " />
+          </path>
         </svg>
       </div>
 
@@ -52,7 +83,7 @@ export function HeroSection() {
           {/* Text */}
           <FadeInSection>
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#F5F5FF] rounded-full px-4 py-1.5 mb-6 border border-border/40">
+              <div className="inline-flex items-center gap-2 bg-background rounded-full px-4 py-1.5 mb-6 border border-border/40 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#AAF5D4] animate-pulse" />
                 <span className="text-xs font-sans font-medium text-muted-foreground tracking-wide">Trusted by frontline organizations globally</span>
               </div>
@@ -81,7 +112,7 @@ export function HeroSection() {
                   </Button>
                   <div className="absolute inset-0 rounded-full bg-foreground/20 animate-pulse-ring" />
                 </div>
-                <Button asChild variant="outline" size="lg" className="rounded-full font-serif font-semibold px-7 h-12 text-base border-border hover:bg-[#F5F5FF] transition-all hover:scale-[1.02]">
+                <Button asChild variant="outline" size="lg" className="rounded-full font-serif font-semibold px-7 h-12 text-base border-border bg-background text-foreground hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all hover:scale-[1.02]">
                   <a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer">
                     <Play className="w-3.5 h-3.5 mr-1.5" fill="currentColor" />
                     Take the Frontline Team Emotional Health Index
@@ -95,13 +126,16 @@ export function HeroSection() {
           <FadeInSection delay={200}>
             <div className="relative flex items-center justify-center lg:justify-end">
               {/* Decorative ring behind phone */}
-              <div className="absolute w-[360px] h-[360px] md:w-[420px] md:h-[420px] rounded-full border border-[#E8E0EC] opacity-40" />
-              <div className="absolute w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full border border-accent/10 animate-[spin_40s_linear_infinite]" style={{ borderStyle: "dashed" }} />
+              <div className="absolute w-[360px] h-[360px] md:w-[420px] md:h-[420px] rounded-full border border-[#8D7AA0]/15" />
+              <div className="absolute w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full border border-[#8D7AA0]/10 animate-[spin_40s_linear_infinite]" style={{ borderStyle: "dashed" }} />
+              {/* Extra decorative circle */}
+              <div className="absolute w-[440px] h-[440px] md:w-[500px] md:h-[500px] rounded-full border border-[#8D7AA0]/5" />
 
               {/* Floating accent dots */}
-              <div className="absolute top-8 right-8 w-3 h-3 rounded-full bg-[#AAF5D4] animate-float opacity-60" />
-              <div className="absolute bottom-16 left-4 w-2 h-2 rounded-full bg-[#FFEDAC] animate-float-delayed opacity-60" />
-              <div className="absolute top-1/3 left-0 w-2.5 h-2.5 rounded-full bg-[#FFCCE5] animate-float-slow opacity-50" />
+              <div className="absolute top-4 right-12 w-3 h-3 rounded-full bg-[#AAF5D4] animate-float opacity-60" />
+              <div className="absolute bottom-20 left-4 w-2 h-2 rounded-full bg-[#FFEDAC] animate-float-delayed opacity-60" />
+              <div className="absolute top-1/3 -left-4 w-2.5 h-2.5 rounded-full bg-[#FFCCE5] animate-float-slow opacity-50" />
+              <div className="absolute bottom-8 right-4 w-2 h-2 rounded-full bg-[#8D7AA0] animate-float opacity-40" />
 
               {/* Floating product tags */}
               <div className="absolute -left-2 md:left-0 top-16 bg-background rounded-xl px-3 py-2 shadow-lg border border-border/30 animate-float-delayed z-10">
@@ -139,7 +173,7 @@ export function HeroSection() {
 
         {/* Pattern visualization */}
         <FadeInSection delay={400} className="mt-24">
-          <div className="relative bg-[#F5F5FF] rounded-3xl p-10 md:p-16 border border-border/30 overflow-hidden">
+          <div className="relative bg-background rounded-3xl p-10 md:p-16 border border-border/30 overflow-hidden shadow-sm">
             {/* Decorative background wave */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04]" preserveAspectRatio="none" viewBox="0 0 800 400">
               <path d="M0 300 Q200 200 400 300 T800 300 V400 H0Z" fill="#29285D" />
@@ -159,32 +193,31 @@ export function HeroSection() {
               </div>
 
               {/* Arrow 1 */}
-              <div className="flex items-center justify-center px-2">
-                <svg width="56" height="24" viewBox="0 0 56 24" fill="none">
-                  <path d="M0 12h48M44 6l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <div className="flex items-center justify-center px-3">
+                <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                  <path d="M0 12h52M48 6l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
               {/* Overload */}
-              <div className="relative rounded-2xl border-2 p-8 text-center bg-background shadow-sm transition-all hover:shadow-md hover:-translate-y-1" style={{ borderColor: "#FFEDAC" }}>
+              <div className="rounded-2xl border-2 p-8 text-center bg-background shadow-sm transition-all hover:shadow-md hover:-translate-y-1" style={{ borderColor: "#FFEDAC" }}>
                 <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#FFEDAC" }}>
                   <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#29285D" strokeWidth="1.5" fill="none" strokeLinejoin="round" /></svg>
                 </div>
                 <p className="font-serif text-2xl lg:text-3xl font-bold text-foreground">Overload</p>
                 <p className="text-base lg:text-lg text-muted-foreground mt-2">Nervous system activation</p>
-                {/* Recess intervenes badge */}
-                <div className="absolute -right-16 top-1/2 -translate-y-1/2 z-10">
-                  <div className="bg-[#AAF5D4] text-foreground rounded-full px-4 py-2 text-sm font-serif font-bold shadow-md whitespace-nowrap border border-[#AAF5D4]">
-                    Recess intervenes here
-                  </div>
-                </div>
               </div>
 
-              {/* Arrow 2 */}
-              <div className="flex items-center justify-center px-2">
-                <svg width="56" height="24" viewBox="0 0 56 24" fill="none">
-                  <path d="M0 12h48M44 6l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              {/* Intervention arrow with Recess branding */}
+              <div className="flex flex-col items-center justify-center px-3 gap-1">
+                <svg width="60" height="50" viewBox="0 0 60 50" fill="none">
+                  {/* Swirl indicating intervention */}
+                  <path d="M0 25 C10 25, 15 10, 25 10 S35 20, 30 30 S20 40, 25 40 C30 40, 35 35, 40 25 L52 25" stroke="#8D7AA0" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M48 19l6 6-6 6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Small Recess dot */}
+                  <circle cx="30" cy="25" r="4" fill="#AAF5D4" stroke="#29285D" strokeWidth="1" />
                 </svg>
+                <span className="text-xs font-serif font-bold text-accent whitespace-nowrap">Recess</span>
               </div>
 
               {/* Instability */}
@@ -210,11 +243,15 @@ export function HeroSection() {
                     <p className={`text-base mt-1 ${step.dark ? "text-background/60" : "text-muted-foreground"}`}>{step.desc}</p>
                   </div>
                   {i === 1 && (
-                    <div className="bg-[#AAF5D4] text-foreground rounded-full px-5 py-2 text-sm font-serif font-bold shadow-md">
-                      Recess intervenes here
+                    <div className="flex flex-col items-center gap-1">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 0 C20 10, 10 15, 10 20 S15 30, 20 30 S30 25, 30 20 S25 10, 20 0" stroke="#8D7AA0" strokeWidth="1.5" fill="none" />
+                        <circle cx="20" cy="20" r="4" fill="#AAF5D4" stroke="#29285D" strokeWidth="1" />
+                      </svg>
+                      <span className="text-xs font-serif font-bold text-accent">Recess intervenes</span>
                     </div>
                   )}
-                  {i < 2 && (
+                  {i < 2 && i !== 1 && (
                     <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
                       <path d="M12 0v24M6 20l6 6 6-6" stroke="#8D7AA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

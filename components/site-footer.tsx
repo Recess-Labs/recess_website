@@ -11,21 +11,21 @@ export function SiteFooter() {
               <Image
                 src="/images/recess-logo-white.png"
                 alt="Recess"
-                width={120}
-                height={40}
-                className="h-7 w-auto"
+                width={160}
+                height={50}
+                className="h-10 w-auto"
               />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/60 leading-relaxed">
-              Emotional infrastructure for trauma-exposed workforces.
+              Empowering frontline workers with support and resources to make a difference in the lives they touch.
             </p>
           </div>
           <div>
             <p className="font-serif font-semibold text-sm mb-4 text-primary-foreground/80">Solutions</p>
             <ul className="flex flex-col gap-2.5">
-              <li><Link href="/solutions/workforce-system" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Foundation</Link></li>
-              <li><Link href="/solutions/ally-app" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Ally</Link></li>
-              <li><Link href="/solutions/dashboard" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Signal</Link></li>
+              <li><Link href="/solutions/workforce-system" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">{`Recess Foundation\u2122`}</Link></li>
+              <li><Link href="/solutions/ally-app" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">{`Recess Frontline Ally\u2122`}</Link></li>
+              <li><Link href="/solutions/dashboard" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">{`Recess Signal\u2122`}</Link></li>
               <li><Link href="/solutions/implementation" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Implementation</Link></li>
             </ul>
           </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
             <ul className="flex flex-col gap-2.5">
               <li><Link href="/science" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Our Science</Link></li>
               <li><Link href="/about" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">About</Link></li>
-              <li><a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Risk Assessment</a></li>
+              <li><a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Emotional Risk Index</a></li>
             </ul>
           </div>
         </div>
