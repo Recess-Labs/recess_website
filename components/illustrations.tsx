@@ -25,60 +25,81 @@ export function ExposureDiagram() {
 
 export function SystemMapIllustration() {
   return (
-    <svg viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-2xl">
+    <svg viewBox="0 0 820 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-3xl">
+      {/* Subtle background glow */}
+      <rect x="30" y="60" width="760" height="220" rx="24" fill="#F5F5FF" opacity="0.35" />
+
+      {/* Recess wave logo mark */}
+      <circle cx="410" cy="24" r="14" fill="#29285D" opacity="0.08" />
+      <path d="M402 24 Q406 18 410 24 Q414 30 418 24" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+
       {/* Top label */}
-      <text x="360" y="20" textAnchor="middle" fill="#8D7AA0" fontWeight="700" fontSize="11" fontFamily="system-ui" letterSpacing="3">THE RECESS SYSTEM</text>
-      <line x1="140" y1="30" x2="580" y2="30" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.3" />
+      <text x="410" y="56" textAnchor="middle" fill="#29285D" fontWeight="800" fontSize="13" fontFamily="system-ui" letterSpacing="4">THE RECESS SYSTEM</text>
+      <line x1="160" y1="66" x2="660" y2="66" stroke="#8D7AA0" strokeWidth="0.8" opacity="0.2" />
 
       {/* Foundation Card */}
-      <rect x="0" y="50" width="210" height="140" rx="20" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="20" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
-      {/* Foundation icon - building blocks */}
-      <rect x="28" y="92" width="24" height="12" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
-      <rect x="34" y="80" width="12" height="14" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
-      <line x1="40" y1="88" x2="40" y2="94" stroke="#8D7AA0" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="40" cy="85" r="2" fill="#8D7AA0" />
-      <text x="20" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Foundation\u2122"}</text>
-      <text x="20" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Standards + training</text>
-      <text x="20" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">Align leadership around</text>
-      <text x="20" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">trauma exposure</text>
+      <rect x="30" y="84" width="230" height="180" rx="20" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="30" y="84" width="230" height="4" rx="2" fill="#D4A06A" opacity="0.5" />
+      <rect x="54" y="108" width="44" height="44" rx="12" fill="#29285D" opacity="0.07" />
+      {/* Foundation icon */}
+      <rect x="63" y="132" width="26" height="12" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <rect x="70" y="118" width="12" height="16" rx="3" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <line x1="76" y1="128" x2="76" y2="134" stroke="#8D7AA0" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="76" cy="124" r="2.5" fill="#8D7AA0" />
+      <text x="54" y="178" fill="#29285D" fontWeight="800" fontSize="15" fontFamily="system-ui">{"Recess Foundation\u2122"}</text>
+      <text x="54" y="198" fill="#777698" fontSize="11.5" fontFamily="system-ui" fontWeight="500">Standards + training</text>
+      <text x="54" y="222" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">Align leadership around</text>
+      <text x="54" y="238" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">trauma exposure</text>
 
-      {/* Connection line 1 */}
-      <path d="M215 120 L250 120" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
-      <circle cx="250" cy="120" r="3" fill="#8D7AA0" opacity="0.4" />
+      {/* Connection 1 */}
+      <path d="M265 174 L295 174" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.5" />
+      <circle cx="280" cy="174" r="4" fill="#8D7AA0" opacity="0.15">
+        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle r="2.5" fill="#8D7AA0" opacity="0.6">
+        <animateMotion dur="1.5s" repeatCount="indefinite" path="M265 174 L295 174" />
+      </circle>
 
       {/* Frontline Ally Card */}
-      <rect x="255" y="50" width="210" height="140" rx="20" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="275" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
-      {/* Ally icon - wave circle */}
-      <circle cx="295" cy="90" r="12" stroke="#29285D" strokeWidth="1.5" fill="none" />
-      <path d="M285 90 Q289 84 295 90 Q301 96 305 90" stroke="#8D7AA0" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <circle cx="295" cy="90" r="4" fill="#29285D" opacity="0.12" />
-      <text x="275" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Frontline Ally\u2122"}</text>
-      <text x="275" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Real-time stabilization</text>
-      <text x="275" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">Personalized relief in</text>
-      <text x="275" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">minutes, not sessions</text>
+      <rect x="295" y="84" width="230" height="180" rx="20" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="295" y="84" width="230" height="4" rx="2" fill="#5CC89E" opacity="0.5" />
+      <rect x="319" y="108" width="44" height="44" rx="12" fill="#29285D" opacity="0.07" />
+      {/* Ally icon */}
+      <circle cx="341" cy="130" r="14" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <path d="M330 130 Q335 122 341 130 Q347 138 352 130" stroke="#8D7AA0" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <circle cx="341" cy="126" r="4.5" fill="#29285D" opacity="0.1" />
+      <text x="319" y="178" fill="#29285D" fontWeight="800" fontSize="15" fontFamily="system-ui">{"Recess Frontline Ally\u2122"}</text>
+      <text x="319" y="198" fill="#777698" fontSize="11.5" fontFamily="system-ui" fontWeight="500">Real-time stabilization</text>
+      <text x="319" y="222" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">Personalized relief in</text>
+      <text x="319" y="238" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">minutes, not sessions</text>
 
-      {/* Connection line 2 */}
-      <path d="M470 120 L505 120" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" />
-      <circle cx="505" cy="120" r="3" fill="#8D7AA0" opacity="0.4" />
+      {/* Connection 2 */}
+      <path d="M530 174 L560 174" stroke="#8D7AA0" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.5" />
+      <circle cx="545" cy="174" r="4" fill="#8D7AA0" opacity="0.15">
+        <animate attributeName="r" values="3;5;3" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle r="2.5" fill="#8D7AA0" opacity="0.6">
+        <animateMotion dur="1.8s" repeatCount="indefinite" path="M530 174 L560 174" />
+      </circle>
 
       {/* Signal Card */}
-      <rect x="510" y="50" width="210" height="140" rx="20" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
-      <rect x="530" y="70" width="40" height="40" rx="10" fill="#29285D" opacity="0.08" />
-      {/* Signal icon - chart bars */}
-      <rect x="534" y="78" width="24" height="24" rx="5" stroke="#29285D" strokeWidth="1.5" fill="none" />
-      <line x1="540" y1="98" x2="540" y2="88" stroke="#8D7AA0" strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="546" y1="98" x2="546" y2="82" stroke="#29285D" strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="552" y1="98" x2="552" y2="92" stroke="#8D7AA0" strokeWidth="2.5" strokeLinecap="round" />
-      <text x="530" y="132" fill="#29285D" fontWeight="700" fontSize="14" fontFamily="system-ui">{"Recess Signal\u2122"}</text>
-      <text x="530" y="150" fill="#777698" fontSize="10" fontFamily="system-ui">Predict + prevent</text>
-      <text x="530" y="174" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">AI-powered turnover risk</text>
-      <text x="530" y="186" fill="#8D7AA0" fontSize="10" fontFamily="system-ui" fontWeight="500">intelligence</text>
+      <rect x="560" y="84" width="230" height="180" rx="20" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
+      <rect x="560" y="84" width="230" height="4" rx="2" fill="#7DBCE0" opacity="0.5" />
+      <rect x="584" y="108" width="44" height="44" rx="12" fill="#29285D" opacity="0.07" />
+      {/* Signal icon */}
+      <rect x="590" y="118" width="28" height="26" rx="5" stroke="#29285D" strokeWidth="1.5" fill="none" />
+      <line x1="597" y1="140" x2="597" y2="128" stroke="#8D7AA0" strokeWidth="3" strokeLinecap="round" />
+      <line x1="604" y1="140" x2="604" y2="122" stroke="#29285D" strokeWidth="3" strokeLinecap="round" />
+      <line x1="611" y1="140" x2="611" y2="132" stroke="#8D7AA0" strokeWidth="3" strokeLinecap="round" />
+      <text x="584" y="178" fill="#29285D" fontWeight="800" fontSize="15" fontFamily="system-ui">{"Recess Signal\u2122"}</text>
+      <text x="584" y="198" fill="#777698" fontSize="11.5" fontFamily="system-ui" fontWeight="500">Predict + prevent</text>
+      <text x="584" y="222" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">AI-powered turnover risk</text>
+      <text x="584" y="238" fill="#8D7AA0" fontSize="11" fontFamily="system-ui" fontWeight="500">intelligence</text>
 
-      {/* Bottom connecting arc */}
-      <path d="M105 195 Q360 230 615 195" stroke="#8D7AA0" strokeWidth="1" strokeDasharray="4 3" opacity="0.3" fill="none" />
-      <text x="360" y="228" textAnchor="middle" fill="#8D7AA0" fontSize="9" fontFamily="system-ui" opacity="0.6">Integrated Emotional Infrastructure</text>
+      {/* Bottom branded bar */}
+      <path d="M145 280 Q410 310 675 280" stroke="#8D7AA0" strokeWidth="1" strokeDasharray="5 4" opacity="0.25" fill="none" />
+      <rect x="310" y="298" width="200" height="30" rx="15" fill="#29285D" opacity="0.06" />
+      <text x="410" y="318" textAnchor="middle" fill="#29285D" fontSize="10.5" fontFamily="system-ui" fontWeight="600" letterSpacing="1" opacity="0.5">Integrated Emotional Infrastructure</text>
     </svg>
   )
 }
