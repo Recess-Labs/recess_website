@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { FadeInSection } from "@/components/fade-in-section"
 import { ArrowRight, Play } from "lucide-react"
@@ -11,9 +12,40 @@ export function HeroSection() {
 
   return (
     <section className="relative bg-background py-20 lg:py-28 overflow-hidden">
-      {/* Subtle background orbs */}
-      <div className="absolute top-20 -left-40 w-96 h-96 rounded-full bg-[#F5F5FF] blur-3xl opacity-60 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#FFF2E2] blur-3xl opacity-40 pointer-events-none" />
+      {/* Decorative background lines and orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Soft gradient orbs */}
+        <div className="absolute top-20 -left-40 w-[500px] h-[500px] rounded-full bg-[#F5F5FF] blur-[100px] opacity-70" />
+        <div className="absolute -bottom-20 right-0 w-96 h-96 rounded-full bg-[#FFF2E2] blur-[80px] opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#AAF5D4] blur-[120px] opacity-[0.08]" />
+
+        {/* Decorative flowing lines */}
+        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1400 800" fill="none">
+          {/* Curved flowing lines across hero */}
+          <path d="M-100 400 C200 300 400 500 700 350 S1100 200 1500 400" stroke="#8D7AA0" strokeWidth="1" opacity="0.08" fill="none" />
+          <path d="M-100 450 C200 350 400 550 700 400 S1100 250 1500 450" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.06" fill="none" />
+          <path d="M-100 500 C200 400 400 600 700 450 S1100 300 1500 500" stroke="#8D7AA0" strokeWidth="0.5" opacity="0.04" fill="none" />
+
+          {/* Diagonal accent lines */}
+          <line x1="1100" y1="0" x2="1400" y2="300" stroke="#E8E0EC" strokeWidth="1" opacity="0.3" />
+          <line x1="1150" y1="0" x2="1450" y2="300" stroke="#E8E0EC" strokeWidth="0.5" opacity="0.2" />
+          <line x1="1200" y1="0" x2="1500" y2="300" stroke="#E8E0EC" strokeWidth="0.5" opacity="0.15" />
+
+          {/* Subtle dots pattern top right */}
+          {Array.from({ length: 8 }).map((_, row) =>
+            Array.from({ length: 6 }).map((_, col) => (
+              <circle
+                key={`${row}-${col}`}
+                cx={1050 + col * 28}
+                cy={50 + row * 28}
+                r="1.5"
+                fill="#8D7AA0"
+                opacity="0.1"
+              />
+            ))
+          )}
+        </svg>
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -59,10 +91,48 @@ export function HeroSection() {
             </div>
           </FadeInSection>
 
-          {/* Animated illustration showing the pattern */}
+          {/* Real app phone image with decorative elements */}
           <FadeInSection delay={200}>
-            <div className="relative flex items-center justify-center">
-              <PatternIllustration />
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Decorative ring behind phone */}
+              <div className="absolute w-[360px] h-[360px] md:w-[420px] md:h-[420px] rounded-full border border-[#E8E0EC] opacity-40" />
+              <div className="absolute w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full border border-accent/10 animate-[spin_40s_linear_infinite]" style={{ borderStyle: "dashed" }} />
+
+              {/* Floating accent dots */}
+              <div className="absolute top-8 right-8 w-3 h-3 rounded-full bg-[#AAF5D4] animate-float opacity-60" />
+              <div className="absolute bottom-16 left-4 w-2 h-2 rounded-full bg-[#FFEDAC] animate-float-delayed opacity-60" />
+              <div className="absolute top-1/3 left-0 w-2.5 h-2.5 rounded-full bg-[#FFCCE5] animate-float-slow opacity-50" />
+
+              {/* Floating product tags */}
+              <div className="absolute -left-2 md:left-0 top-16 bg-background rounded-xl px-3 py-2 shadow-lg border border-border/30 animate-float-delayed z-10">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ backgroundColor: "#FFF2E2" }}>
+                    <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5"><path d="M8 2L2 8l6 6 6-6-6-6z" stroke="#29285D" strokeWidth="1.2" fill="none" /><path d="M8 5v3" stroke="#29285D" strokeWidth="1" strokeLinecap="round" /></svg>
+                  </div>
+                  <span className="text-xs font-serif font-semibold text-foreground">Foundation</span>
+                </div>
+              </div>
+
+              <div className="absolute -right-2 md:right-4 bottom-28 bg-background rounded-xl px-3 py-2 shadow-lg border border-border/30 animate-float z-10">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ backgroundColor: "#D4EDF9" }}>
+                    <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5"><path d="M3 5h10v7a1 1 0 01-1 1H4a1 1 0 01-1-1V5z" stroke="#29285D" strokeWidth="1.2" fill="none" /><path d="M5 8h6M5 10.5h4" stroke="#29285D" strokeWidth="0.8" strokeLinecap="round" /></svg>
+                  </div>
+                  <span className="text-xs font-serif font-semibold text-foreground">Signal</span>
+                </div>
+              </div>
+
+              {/* The actual phone image */}
+              <div className="relative z-[5]">
+                <Image
+                  src="/images/recess-app-phone.png"
+                  alt="Recess Frontline Ally app showing daily check-in, flow state tracking, and personalized stabilization protocols on a smartphone"
+                  width={420}
+                  height={520}
+                  className="drop-shadow-2xl"
+                  priority
+                />
+              </div>
             </div>
           </FadeInSection>
         </div>
@@ -160,72 +230,5 @@ export function HeroSection() {
         </FadeInSection>
       </div>
     </section>
-  )
-}
-
-/* Animated hero illustration - abstract nervous system with calm/active states */
-function PatternIllustration() {
-  return (
-    <div className="relative w-full max-w-[480px] aspect-square">
-      {/* Base circle - representing organizational stability */}
-      <svg viewBox="0 0 400 400" fill="none" className="w-full h-full">
-        {/* Outer calm ring */}
-        <circle cx="200" cy="200" r="180" stroke="#E8E0EC" strokeWidth="1" strokeDasharray="8 4" className="animate-[spin_60s_linear_infinite]" />
-        <circle cx="200" cy="200" r="150" stroke="#8D7AA0" strokeWidth="1.5" opacity="0.3" />
-
-        {/* Core brain/nervous system shape */}
-        <ellipse cx="200" cy="170" rx="70" ry="60" fill="#F5F5FF" stroke="#8D7AA0" strokeWidth="2" />
-        {/* Brain folds */}
-        <path d="M160 155 Q180 140 200 155 Q220 170 240 155" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.5" />
-        <path d="M165 175 Q185 160 205 175 Q225 190 245 175" stroke="#8D7AA0" strokeWidth="1.5" fill="none" opacity="0.5" />
-
-        {/* Signal waves emanating - animated */}
-        <circle cx="200" cy="170" r="85" stroke="#8D7AA0" strokeWidth="1" fill="none" opacity="0.2">
-          <animate attributeName="r" values="85;110;85" dur="3s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="200" cy="170" r="95" stroke="#8D7AA0" strokeWidth="0.5" fill="none" opacity="0.15">
-          <animate attributeName="r" values="95;125;95" dur="3s" begin="0.5s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.15;0;0.15" dur="3s" begin="0.5s" repeatCount="indefinite" />
-        </circle>
-
-        {/* Foundation layer */}
-        <rect x="50" y="290" width="100" height="56" rx="14" fill="#FFF2E2" stroke="#E8E0EC" strokeWidth="1.5" />
-        <text x="100" y="314" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Foundation</text>
-        <text x="100" y="330" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Standards</text>
-        {/* Connector */}
-        <path d="M100 290 Q100 240 160 200" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeDasharray="4 3" opacity="0.4" />
-
-        {/* Ally layer */}
-        <rect x="155" y="310" width="90" height="56" rx="14" fill="#AAF5D4" stroke="#E8E0EC" strokeWidth="1.5" />
-        <text x="200" y="334" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Ally</text>
-        <text x="200" y="350" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Stabilize</text>
-        <path d="M200 310 Q200 260 200 230" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeDasharray="4 3" opacity="0.4" />
-
-        {/* Signal layer */}
-        <rect x="250" y="290" width="100" height="56" rx="14" fill="#D4EDF9" stroke="#E8E0EC" strokeWidth="1.5" />
-        <text x="300" y="314" textAnchor="middle" fill="#29285D" fontWeight="600" fontSize="11" fontFamily="system-ui">Signal</text>
-        <text x="300" y="330" textAnchor="middle" fill="#777698" fontSize="8" fontFamily="system-ui">Predict</text>
-        <path d="M300 290 Q300 240 240 200" stroke="#8D7AA0" strokeWidth="1.5" fill="none" strokeDasharray="4 3" opacity="0.4" />
-
-        {/* Animated dot traveling paths */}
-        <circle r="3" fill="#8D7AA0">
-          <animateMotion dur="4s" repeatCount="indefinite" path="M100 290 Q100 240 160 200" />
-        </circle>
-        <circle r="3" fill="#8D7AA0">
-          <animateMotion dur="3.5s" repeatCount="indefinite" path="M200 310 Q200 260 200 230" begin="0.5s" />
-        </circle>
-        <circle r="3" fill="#8D7AA0">
-          <animateMotion dur="4.2s" repeatCount="indefinite" path="M300 290 Q300 240 240 200" begin="1s" />
-        </circle>
-
-        {/* Center glow */}
-        <circle cx="200" cy="170" r="15" fill="#8D7AA0" opacity="0.15">
-          <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.15;0.08;0.15" dur="2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="200" cy="170" r="6" fill="#8D7AA0" opacity="0.3" />
-      </svg>
-    </div>
   )
 }
