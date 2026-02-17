@@ -3,7 +3,7 @@ import { SolutionDetail } from "@/components/solution-detail"
 import { Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Trauma-Informed Workforce System",
+  title: "Recess Foundation\u2122 | Trauma-Informed Workforce Standards",
   description: "Build the foundation for stability with consistent trauma response protocols.",
 }
 
@@ -11,32 +11,35 @@ export default function WorkforceSystemPage() {
   return (
     <SolutionDetail
       icon={Shield}
-      title="Build the Foundation for Stability"
-      tagline="Most organizations are 'trauma-informed' in principle — but lack operational structure."
-      intro="The Recess Workforce System translates trauma awareness into consistent action. Establish shared language, leader training, and practical response protocols so trauma exposure is addressed consistently across teams."
-      howTitle="What We Implement"
+      color="#FFF2E2"
+      num="01"
+      title={"Recess Foundation\u2122"}
+      tagline="Trauma-Informed Workforce Standards & Training"
+      intro="Trauma-informed principles are widespread. Operational structure is not. Recess Foundation translates trauma-informed awareness into consistent, system-level practice. We come in without commitment -- sharing foundational knowledge about what repeated exposure does to the nervous system before building operational standards around it."
+      howTitle={"What's Included"}
       howItems={[
-        "Shared language for trauma exposure",
-        "Leader education on nervous system impact",
+        "Workforce-wide trauma-informed workshops",
+        "Leadership calibration & nervous system education",
         "Practical response pathways after difficult events",
-        "Structured escalation and support protocols",
         "Integration into existing policies and workflows",
+        "Shared language for trauma exposure across teams",
+        "Structured escalation and support protocols",
       ]}
-      withoutTitle="Without structure"
+      withoutTitle="Without Structure"
       withoutItems={[
-        "Support is inconsistent",
-        "Managers respond differently",
-        "Strain accumulates informally",
-        "Instability becomes normalized",
+        "Managers respond inconsistently to staff distress",
+        "Strain accumulates informally with no pathway",
+        "Emotional overload becomes normalized",
+        "Duty-of-care gaps increase organizational risk",
       ]}
-      withTitle="With structure"
+      withTitle={"With Recess Foundation\u2122"}
       withItems={[
-        "Response becomes predictable",
-        "Leaders feel equipped",
-        "Teams know what to expect",
-        "Duty-of-care strengthens",
+        "Response becomes predictable and consistent",
+        "Leaders feel equipped to support their teams",
+        "Teams know what to expect after difficult events",
+        "Trauma exposure is addressed proactively",
       ]}
-      closerLine="Trauma exposure is structural. Your response should be too."
+      closerLine={"Trauma exposure is structural. Your standards should be too."}
       ctaLabel="Talk to Our Team"
       ctaHref="/get-started"
     />

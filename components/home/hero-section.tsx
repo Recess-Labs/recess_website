@@ -106,7 +106,7 @@ export function HeroSection() {
                     onMouseLeave={() => setHoveredCta(false)}
                   >
                     <Link href="/get-started">
-                      Schedule a Free Strategy Call
+                      Schedule Free Strategy Call
                       <ArrowRight className={`w-4 h-4 ml-1 transition-transform ${hoveredCta ? "translate-x-1" : ""}`} />
                     </Link>
                   </Button>

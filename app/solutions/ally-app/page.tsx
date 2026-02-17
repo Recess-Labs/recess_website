@@ -3,7 +3,7 @@ import { SolutionDetail } from "@/components/solution-detail"
 import { Smartphone } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Frontline Ally App",
+  title: "Recess Frontline Ally\u2122 | Real-Time Trauma Stabilization",
   description: "Repair overload in minutes with neuroscience-based stabilization protocols.",
 }
 
@@ -11,31 +11,35 @@ export default function AllyAppPage() {
   return (
     <SolutionDetail
       icon={Smartphone}
-      title="Repair Overload in Minutes"
-      tagline="Training improves awareness. It doesn't repair the biological impact after repeated exposure."
-      intro="The Frontline Ally App provides short, science-based protocols designed specifically for secondary trauma, moral injury, and acute emotional overload. Staff complete a brief emotional check-in, the app identifies strain patterns, and personalized stabilization protocols are delivered. Sessions take ~10 minutes and fit into real shifts."
+      color="#AAF5D4"
+      num="02"
+      title={"Recess Frontline Ally\u2122"}
+      tagline="Real-Time Trauma Stabilization for Professionals"
+      intro="Training builds awareness. It does not repair nervous system activation after repeated exposure. Recess Frontline Ally provides short, neuroscience-informed stabilization protocols designed specifically for secondary trauma, moral injury, compassion fatigue, and acute emotional overload. Sessions take ~10 minutes and fit into real shifts."
       howTitle="How It Works"
       howItems={[
         "Staff complete a brief emotional check-in",
-        "The app identifies strain patterns",
+        "The system detects strain patterns using AI",
         "Personalized stabilization protocols are delivered",
-        "Sessions take ~10 minutes and fit into real shifts",
+        "Sessions take ~10 minutes and fit into real workflows",
+        "Built on AIP theory and polyvagal-informed regulation",
+        "Tracks recovery patterns over time",
       ]}
-      withoutTitle="Without repair"
+      withoutTitle="Without Repair"
       withoutItems={[
-        "Stress accumulates biologically",
-        "Emotional reactivity increases",
-        "Decision quality declines",
-        "Burnout accelerates",
+        "Stress accumulates biologically after each shift",
+        "Emotional reactivity increases over time",
+        "Decision quality declines under pressure",
+        "Burnout accelerates into turnover",
       ]}
-      withTitle="With repair"
+      withTitle={"With Recess Frontline Ally\u2122"}
       withItems={[
-        "Strain is reduced in real time",
-        "Recovery becomes structured",
-        "Cumulative overload decreases",
-        "Stability improves over time",
+        "Strain is reduced in real time between shifts",
+        "Recovery becomes structured and predictable",
+        "Cumulative overload decreases measurably",
+        "Stability improves across the workforce",
       ]}
-      closerLine="Built on evidence-informed trauma protocols. Learn more about the science behind the approach."
+      closerLine={"Built specifically for secondary trauma and repeated exposure \u2014 not general stress."}
       ctaLabel="Explore the Science"
       ctaHref="/science"
     />

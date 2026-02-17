@@ -12,7 +12,7 @@ const solutions = [
   { label: "Recess Frontline Ally\u2122", href: "/solutions/ally-app" },
   { label: "Recess Signal\u2122", href: "/solutions/dashboard" },
   { label: "divider", href: "" },
-  { label: "Full System & Implementation", href: "/solutions/implementation" },
+  { label: "Full System & Implementation", href: "/solutions" },
 ]
 
 const industries = [
@@ -49,7 +49,7 @@ export function SiteNav() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
-          <DropdownNavItem label="Solutions" href="/solutions" items={solutions} active={pathname.startsWith("/solutions")} />
+          <DropdownNavItem label="Solutions" items={solutions} active={pathname.startsWith("/solutions")} />
           <DropdownNavItem label="Industries" items={industries} active={pathname.startsWith("/industries")} />
           <NavItem label="Our Science" href="/science" active={pathname === "/science"} />
           <NavItem label="About" href="/about" active={pathname === "/about"} />
@@ -72,7 +72,7 @@ export function SiteNav() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-border/60 bg-background px-6 py-6 flex flex-col gap-4">
-          <MobileGroup title="Solutions" href="/solutions">
+          <MobileGroup title="Solutions">
             {solutions.filter(s => s.label !== "divider").map(s => (
               <Link key={s.href} href={s.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{s.label}</Link>
             ))}

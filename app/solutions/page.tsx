@@ -12,56 +12,50 @@ export const metadata: Metadata = {
   description: "Explore the Recess System: workforce standards, frontline stabilization, and leadership intelligence.",
 }
 
-const solutions = [
+const phases = [
   {
+    phase: "Phase 1",
     icon: Shield,
-    num: "01",
     title: "Recess Foundation\u2122",
-    tagline: "Trauma-Informed Workforce Standards & Training",
-    desc: "Trauma-informed principles are widespread. Operational structure is not. Recess Foundation\u2122 translates trauma-informed awareness into consistent, system-level practice.",
-    checks: [
-      "Workforce-wide trauma-informed workshops",
-      "Leadership calibration & nervous system education",
-      "Practical response pathways after difficult events",
+    color: "#FFF2E2",
+    tagline: "Zero-Commitment Entry Point",
+    description: "We come in without commitment. Foundation begins with sharing neuroscience-informed knowledge about trauma exposure with your leadership team. No contracts. No platform rollout. Just clarity about what repeated exposure does to the nervous system and how it shows up in your workforce. If it resonates, we work together to build operational standards around it.",
+    items: [
+      "Trauma exposure education for leadership",
+      "Workforce-wide awareness workshops",
+      "Practical post-incident response pathways",
       "Integration into existing policies and workflows",
     ],
-    withoutItems: ["Managers respond inconsistently", "Strain accumulates informally", "Emotional overload becomes normalized", "Duty-of-care gaps increase risk"],
-    withItems: ["Response becomes predictable", "Leaders feel equipped", "Teams know what to expect", "Trauma exposure is addressed proactively"],
-    closerLine: "Trauma exposure is structural. Your standards should be too.",
     href: "/solutions/workforce-system",
   },
   {
+    phase: "Phase 2",
     icon: Smartphone,
-    num: "02",
     title: "Recess Frontline Ally\u2122",
-    tagline: "Real-Time Trauma Stabilization for Professionals",
-    desc: "Training builds awareness. It does not repair nervous system activation after repeated exposure. Recess Frontline Ally\u2122 provides short, neuroscience-informed stabilization protocols designed specifically for secondary trauma, moral injury, compassion fatigue, and acute emotional overload.",
-    checks: [
-      "Staff complete a brief check-in",
-      "The system detects strain patterns",
-      "Personalized stabilization protocols are delivered",
-      "Sessions take ~10 minutes and fit into real workflows",
+    color: "#AAF5D4",
+    tagline: "Repair the Nervous System Between Shifts",
+    description: "Once your leadership understands the biological impact of repeated exposure, we deploy Frontline Ally to your staff. This is where science becomes daily practice. Staff complete a brief check-in, the system detects strain patterns, and personalized stabilization protocols are delivered in ~10 minutes -- designed specifically for secondary trauma, moral injury, and compassion fatigue.",
+    items: [
+      "Brief emotional check-in for staff",
+      "AI-driven strain pattern detection",
+      "Personalized stabilization protocols (~10 min)",
+      "Fits into real shifts and real workflows",
     ],
-    withoutItems: ["Stress accumulates biologically", "Emotional reactivity increases", "Decision quality declines", "Burnout accelerates"],
-    withItems: ["Strain is reduced in real time", "Recovery becomes predictable", "Cumulative overload decreases", "Stability improves over time"],
-    closerLine: "Built specifically for secondary trauma and repeated exposure \u2014 not general stress.",
     href: "/solutions/ally-app",
   },
   {
+    phase: "Phase 3",
     icon: BarChart3,
-    num: "03",
     title: "Recess Signal\u2122",
-    tagline: "AI-Powered Trauma Load & Turnover Risk Intelligence",
-    desc: "Turnover and extended leave are lagging indicators. Recess Signal\u2122 uses AI to detect emerging trauma load patterns and forecast workforce instability before it becomes visible in HR metrics.",
-    checks: [
-      "Emotional strain indicators",
-      "Engagement & usage patterns",
-      "Biometric activation data",
-      "Organizational trend analysis",
+    color: "#D4EDF9",
+    tagline: "Predict and Prevent Workforce Instability",
+    description: "With Foundation setting the standard and Ally repairing individuals, Signal gives your leadership eyes on the system as a whole. AI-powered analytics detect emerging trauma load patterns and forecast workforce instability before it shows up in HR metrics. Leaders move from reactive crisis management to proactive stabilization.",
+    items: [
+      "Emotional strain & overload indicators",
+      "Turnover vulnerability signals",
+      "Team-level stability metrics",
+      "Targeted intervention recommendations",
     ],
-    withoutItems: ["Instability is discovered too late", "Turnover feels unpredictable", "Leaders react instead of prevent", "Crisis management consumes resources"],
-    withItems: ["Intervene before exits occur", "Adjust staffing proactively", "Deploy targeted stabilization strategies", "Reduce reactive crisis management"],
-    closerLine: "Instability becomes measurable. Prevention becomes actionable.",
     href: "/solutions/dashboard",
   },
 ]
@@ -69,6 +63,7 @@ const solutions = [
 export default function SolutionsPage() {
   return (
     <PageWrapper>
+      {/* Hero */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FDF0ED" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
@@ -77,91 +72,119 @@ export default function SolutionsPage() {
                 {"The Recess System\u2122"}
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                Three layers of emotional infrastructure for trauma-exposed workforces. Deploy one layer to strengthen a specific gap — or integrate all three to stabilize your workforce at scale.
+                Three layers of emotional infrastructure for trauma-exposed workforces. Deploy one layer to strengthen a specific gap -- or integrate all three to stabilize your workforce at scale.
               </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button asChild className="rounded-full font-serif font-semibold px-7 h-12 bg-foreground text-background hover:bg-foreground/90">
+                  <Link href="/get-started">Schedule Free Strategy Call</Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full font-serif font-semibold px-7 h-12 border-border hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all">
+                  <a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer">
+                    Take the Frontline Emotional Health Index
+                  </a>
+                </Button>
+              </div>
             </div>
           </FadeInSection>
-          <FadeInSection delay={200} className="mt-12 flex justify-center">
+          <FadeInSection delay={200} className="mt-14 flex justify-center">
             <SystemMapIllustration />
           </FadeInSection>
         </div>
       </section>
 
-      {solutions.map((s, i) => {
-        const solutionColors = ["#FFF2E2", "#AAF5D4", "#D4EDF9"]
-        return (
-        <section key={i} className={`${i % 2 === 0 ? "bg-[#F5F5FF]" : "bg-background"} py-16 lg:py-20`}>
+      {/* How We Come In section */}
+      <section className="bg-background py-16 lg:py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <FadeInSection>
+            <p className="font-serif text-xs font-bold text-accent uppercase tracking-widest mb-4">How We Work With Organizations</p>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight text-balance">
+              Recess is designed to be deployed in phases -- meeting your organization where it is.
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {"We don't ask for commitment upfront. Foundation starts with education. If it fits, we build from there. Each phase adds a new layer of infrastructure -- from standards to stabilization to intelligence."}
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* Phase cards */}
+      {phases.map((p, i) => (
+        <section key={i} className={`${i % 2 === 0 ? "bg-[#FAFAF8]" : "bg-background"} py-16 lg:py-20`}>
           <div className="mx-auto max-w-7xl px-6">
             <FadeInSection>
-              <div className="flex flex-col gap-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: solutionColors[i] }}>
-                        <s.icon className="w-6 h-6 text-foreground" />
-                      </div>
-                      <span className="font-serif text-xs font-bold text-accent uppercase tracking-widest">{s.num}</span>
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* Left: content */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center" style={{ backgroundColor: p.color }}>
+                      <p.icon className="w-7 h-7 text-foreground" />
                     </div>
-                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight">{s.title}</h2>
-                    <p className="mt-2 text-accent font-medium">{s.tagline}</p>
-                    <p className="mt-4 text-muted-foreground leading-relaxed">{s.desc}</p>
-                    <Link href={s.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent hover:gap-2.5 transition-all">
-                      Learn More <ArrowRight className="w-3.5 h-3.5" />
+                    <div>
+                      <span className="font-serif text-xs font-bold text-accent uppercase tracking-widest">{p.phase}</span>
+                    </div>
+                  </div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground tracking-tight">{p.title}</h2>
+                  <p className="mt-2 text-base text-accent font-medium font-serif">{p.tagline}</p>
+                  <p className="mt-4 text-base text-muted-foreground leading-relaxed">{p.description}</p>
+                  <div className="mt-6">
+                    <Link href={p.href} className="inline-flex items-center gap-1.5 text-sm font-serif font-semibold text-foreground hover:text-accent hover:gap-2.5 transition-all">
+                      Learn more about {p.title} <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
-                  <div>
-                    <p className="text-xs font-serif font-bold text-muted-foreground uppercase tracking-widest mb-3">What It Includes</p>
-                    <ul className="flex flex-col gap-3">
-                      {s.checks.map((c, j) => (
-                        <li key={j} className="flex items-start gap-3 bg-background rounded-xl p-4 border border-border/30">
-                          <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                          <span className="text-sm text-foreground">{c}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-background rounded-xl p-6 border border-border/30">
-                    <p className="text-xs font-serif font-bold text-muted-foreground uppercase tracking-widest mb-3">Without structure</p>
-                    <ul className="flex flex-col gap-2">
-                      {s.withoutItems.map((item, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-destructive mt-0.5 shrink-0">{"--"}</span> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="rounded-xl p-6 border" style={{ backgroundColor: solutionColors[i] + "40", borderColor: solutionColors[i] }}>
-                    <p className="text-xs font-serif font-bold text-foreground uppercase tracking-widest mb-3">With Recess</p>
-                    <ul className="flex flex-col gap-2">
-                      {s.withItems.map((item, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+
+                {/* Right: what's included */}
+                <div>
+                  <p className="text-xs font-serif font-bold text-muted-foreground uppercase tracking-widest mb-4">{"What's Included"}</p>
+                  <ul className="flex flex-col gap-3">
+                    {p.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3 bg-background rounded-xl p-5 border border-border/30 shadow-sm hover:shadow-md transition-shadow">
+                        <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                        <span className="text-base text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-center text-sm font-serif font-medium text-foreground italic">{s.closerLine}</p>
               </div>
             </FadeInSection>
           </div>
         </section>
-        )
-      })}
+      ))}
 
+      {/* Expected outcomes */}
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <FadeInSection>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8">Expected Outcomes</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                { metric: "Up to 30%", label: "Reduction in turnover" },
+                { metric: "Fewer", label: "Crisis-driven leaves" },
+                { metric: "Stronger", label: "Decision quality under pressure" },
+                { metric: "Better", label: "Service & care outcomes" },
+              ].map((item, i) => (
+                <div key={i} className="bg-background rounded-xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+                  <p className="font-serif text-2xl font-bold text-accent">{item.metric}</p>
+                  <p className="text-sm text-muted-foreground mt-1.5">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* Not sure where to start CTA */}
       <section className="bg-foreground py-14 lg:py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <FadeInSection>
-            <p className="font-serif text-lg font-semibold text-background">Not Sure Where to Start?</p>
-            <p className="mt-2 text-background/50 leading-relaxed">
+            <p className="font-serif text-xl font-semibold text-background">Not Sure Where to Start?</p>
+            <p className="mt-3 text-background/50 leading-relaxed">
               Recess can be implemented in phases -- or deployed as a fully integrated system.<br />
               Foundation sets the standards. Frontline Ally stabilizes individuals. Signal protects the system.
             </p>
             <div className="mt-6">
               <Button asChild className="rounded-full font-serif font-semibold px-7 bg-background text-foreground hover:bg-background/90 hover:scale-[1.02] transition-all">
-                <Link href="/get-started">Schedule a Free Strategy Call</Link>
+                <Link href="/get-started">Schedule Free Strategy Call</Link>
               </Button>
             </div>
           </FadeInSection>

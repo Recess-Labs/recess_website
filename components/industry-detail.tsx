@@ -52,7 +52,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
                 <p className="mt-5 text-base text-muted-foreground leading-relaxed">{props.intro}</p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <Button asChild className="rounded-full font-serif font-semibold px-7 bg-foreground text-background hover:bg-foreground/90">
-                    <Link href="/get-started">Schedule a Free Strategy Call</Link>
+                    <Link href="/get-started">Schedule Free Strategy Call</Link>
                   </Button>
                   <Button asChild variant="outline" className="rounded-full font-serif font-semibold px-7 border-border hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all">
                     <Link href="/solutions">Explore the Recess System</Link>
