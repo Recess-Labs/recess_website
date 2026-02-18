@@ -43,7 +43,7 @@ export function WhitePaperModal() {
         {!submitted ? (
           <>
             <DialogHeader>
-              <DialogTitle className="font-serif text-xl text-foreground">Download the Full White Paper</DialogTitle>
+              <DialogTitle className="font-serif text-xl text-foreground">Lost Productivity, Lost Profits Recess White Paper</DialogTitle>
             </DialogHeader>
             <p className="text-sm text-muted-foreground mb-4">
               Access the full research citations, REPAIR&#8482; architecture, and early outcomes.
