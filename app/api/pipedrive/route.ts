@@ -129,7 +129,7 @@ export async function POST(request: Request) {
     // Lead labels use UUIDs from /v1/leadLabels, passed as label_ids array
     // Source is auto-set to "API" by Pipedrive for API-created leads
     const leadBody: Record<string, unknown> = {
-      title: `${organization} Lead`,
+      title: `${organization} lead`,
       person_id: personId,
       organization_id: orgId,
     }
