@@ -11,21 +11,51 @@ export function IntercomProvider() {
       return
     }
 
-    // Load Intercom messenger
-    window.intercomSettings = {
-      api_base: 'https://api-iam.intercom.io',
-      app_id: appId,
+    console.log('[v0] Initializing Intercom with App ID:', appId)
+
+    // Initialize Intercom function
+    ;(function () {
+      const w = window as any
+      const ic = w.Intercom
+      if (typeof ic === 'function') {
+        ic('reattach_activator')
+        ic('update', w.intercomSettings)
+      } else {
+        const d = document
+        const i: any = function () {
+          i.c(arguments)
+        }
+        i.q = []
+        i.c = function (args: any) {
+          i.q.push(args)
+        }
+        w.Intercom = i
+        const l = function () {
+          const s = d.createElement('script')
+          s.type = 'text/javascript'
+          s.async = true
+          s.src = `https://widget.intercom.io/widget/${appId}`
+          const x = d.getElementsByTagName('script')[0]
+          x.parentNode?.insertBefore(s, x)
+        }
+        if (document.readyState === 'complete') {
+          l()
+        } else if (w.attachEvent) {
+          w.attachEvent('onload', l)
+        } else {
+          w.addEventListener('load', l, false)
+        }
+      }
+    })()
+
+    // Boot Intercom
+    if (window.Intercom) {
+      window.Intercom('boot', {
+        app_id: appId,
+      })
     }
 
-    // Create and load Intercom script
-    const script = document.createElement('script')
-    script.src = 'https://js.intercom-cdn.com/frame.js'
-    script.async = true
-
-    document.head.appendChild(script)
-
     return () => {
-      // Cleanup Intercom if needed
       if (window.Intercom) {
         window.Intercom('shutdown')
       }
@@ -35,14 +65,11 @@ export function IntercomProvider() {
   return null
 }
 
-// Type definition for window.intercomSettings
+// Type definition for window
 declare global {
   interface Window {
-    intercomSettings?: {
-      api_base?: string
-      app_id?: string
-      [key: string]: any
-    }
+    intercomSettings?: any
     Intercom?: (action: string, ...args: any[]) => void
+    attachEvent?: (event: string, listener: EventListener) => void
   }
 }
