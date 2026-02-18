@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     const [personLabelId, orgLabelId, wpLeadLabelId] = await Promise.all([
       findFieldOptionId("person", "label", "CARE LEADER"),
       findFieldOptionId("organization", "label", "WORKING"),
-      findLeadLabelId("Whitepaper download"),
+      findLeadLabelId("Whitepaper Download"),
     ])
     console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId, "Lead label:", wpLeadLabelId)
 
