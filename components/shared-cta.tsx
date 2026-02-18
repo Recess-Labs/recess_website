@@ -23,7 +23,7 @@ export function SharedCTA() {
           {"If your workforce is exposed to trauma as part of the job, Let's Talk."}
         </h2>
         <p className="mt-5 text-lg text-background/50 leading-relaxed max-w-lg mx-auto">
-          {"In 30 minutes, you'll see how the system works -- and whether it fits your environment."}
+          {"In 30 minutes, you'll see how the system works, and whether it fits your environment."}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <div className="relative">

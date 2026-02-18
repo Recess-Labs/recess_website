@@ -9,9 +9,30 @@ import { CheckCircle2, Download } from "lucide-react"
 
 export function WhitePaperModal() {
   const [submitted, setSubmitted] = useState(false)
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [organization, setOrganization] = useState("")
+
+  const isFormValid = firstName.trim() !== "" && lastName.trim() !== "" && email.trim() !== "" && organization.trim() !== ""
+
+  const handleDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/lost_productivity_white_paper.pdf'
+    link.download = 'Recess-Lost-Productivity-White-Paper.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
-    <Dialog onOpenChange={() => setSubmitted(false)}>
+    <Dialog onOpenChange={() => {
+      setSubmitted(false)
+      setFirstName("")
+      setLastName("")
+      setEmail("")
+      setOrganization("")
+    }}>
       <DialogTrigger asChild>
         <Button className="rounded-full font-serif font-semibold px-8 bg-foreground text-background hover:bg-foreground/90">
           <Download className="w-4 h-4 mr-2" />
@@ -22,7 +43,7 @@ export function WhitePaperModal() {
         {!submitted ? (
           <>
             <DialogHeader>
-              <DialogTitle className="font-serif text-xl text-foreground">Download the Full White Paper</DialogTitle>
+              <DialogTitle className="font-serif text-xl text-foreground">Lost Productivity, Lost Profits Recess White Paper</DialogTitle>
             </DialogHeader>
             <p className="text-sm text-muted-foreground mb-4">
               Access the full research citations, REPAIR&#8482; architecture, and early outcomes.
@@ -34,29 +55,64 @@ export function WhitePaperModal() {
               }}
               className="space-y-4"
             >
-              <div>
-                <Label htmlFor="wp-name" className="text-xs font-medium text-foreground">Name</Label>
-                <Input id="wp-name" required placeholder="Full name" className="mt-1" />
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <Label htmlFor="wp-first-name" className="text-xs font-medium text-foreground">First Name *</Label>
+                  <Input 
+                    id="wp-first-name" 
+                    required 
+                    placeholder="First name" 
+                    className="mt-1"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="wp-last-name" className="text-xs font-medium text-foreground">Last Name *</Label>
+                  <Input 
+                    id="wp-last-name" 
+                    required 
+                    placeholder="Last name" 
+                    className="mt-1"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
               </div>
               <div>
-                <Label htmlFor="wp-email" className="text-xs font-medium text-foreground">Work Email</Label>
-                <Input id="wp-email" type="email" required placeholder="you@organization.com" className="mt-1" />
+                <Label htmlFor="wp-email" className="text-xs font-medium text-foreground">Work Email *</Label>
+                <Input 
+                  id="wp-email" 
+                  type="email" 
+                  required 
+                  placeholder="you@organization.com" 
+                  className="mt-1"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div>
-                <Label htmlFor="wp-org" className="text-xs font-medium text-foreground">Organization</Label>
-                <Input id="wp-org" required placeholder="Your organization" className="mt-1" />
-              </div>
-              <div>
-                <Label htmlFor="wp-role" className="text-xs font-medium text-foreground">Role</Label>
-                <Input id="wp-role" required placeholder="Your role" className="mt-1" />
+                <Label htmlFor="wp-org" className="text-xs font-medium text-foreground">Organization *</Label>
+                <Input 
+                  id="wp-org" 
+                  required 
+                  placeholder="Your organization" 
+                  className="mt-1"
+                  value={organization}
+                  onChange={(e) => setOrganization(e.target.value)}
+                />
               </div>
               <div className="bg-secondary rounded-lg p-3">
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   <span className="font-semibold text-foreground">Includes:</span> Full research citations (secondary trauma literature, AIP/EMDR foundations, polyvagal, HRV), REPAIR&#8482; architecture, and early outcomes.
                 </p>
               </div>
-              <Button type="submit" className="w-full rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90">
-                Get the White Paper
+              <Button 
+                type="submit" 
+                className="w-full rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={!isFormValid}
+              >
+                Download White Paper
               </Button>
             </form>
           </>
@@ -67,7 +123,10 @@ export function WhitePaperModal() {
             </div>
             <h3 className="font-serif text-lg font-bold text-foreground mb-2">Thank you!</h3>
             <p className="text-sm text-muted-foreground mb-6">Your white paper is ready to download.</p>
-            <Button className="rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90">
+            <Button 
+              onClick={handleDownload}
+              className="rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90"
+            >
               <Download className="w-4 h-4 mr-2" />
               Download White Paper (PDF)
             </Button>
