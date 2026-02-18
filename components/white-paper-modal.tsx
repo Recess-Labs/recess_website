@@ -18,8 +18,8 @@ export function WhitePaperModal() {
 
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/recess-white-paper.pdf'
-    link.download = 'Recess-White-Paper.pdf'
+    link.href = '/lost_productivity_white_paper.pdf'
+    link.download = 'Lost-Productivity-White-Paper.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
