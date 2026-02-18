@@ -37,21 +37,25 @@ async function pipedriveGet(endpoint: string) {
   return data.data
 }
 
-// Look up label ID by name for a given entity type
-async function findLabelId(entityType: "person" | "organization", labelName: string): Promise<number | undefined> {
+// Look up a field option ID by name for a given entity type and field key
+async function findFieldOptionId(
+  entityType: "person" | "organization" | "deal" | "lead",
+  fieldKey: string,
+  optionName: string,
+): Promise<number | undefined> {
   try {
     const fields = await pipedriveGet(`/${entityType}Fields`)
-    const labelField = fields?.find((f: { key: string }) => f.key === "label")
-    if (labelField?.options) {
-      console.log(`[v0] ${entityType} label options:`, JSON.stringify(labelField.options))
-      const match = labelField.options.find(
-        (opt: { label: string }) => opt.label.toUpperCase() === labelName.toUpperCase()
+    const field = fields?.find((f: { key: string }) => f.key === fieldKey)
+    if (field?.options) {
+      console.log(`[v0] ${entityType} "${fieldKey}" options:`, JSON.stringify(field.options))
+      const match = field.options.find(
+        (opt: { label: string }) => opt.label.toUpperCase() === optionName.toUpperCase()
       )
-      console.log(`[v0] ${entityType} label "${labelName}" matched ID:`, match?.id)
+      console.log(`[v0] ${entityType} "${fieldKey}" option "${optionName}" matched ID:`, match?.id)
       return match?.id
     }
   } catch (e) {
-    console.error(`[v0] Failed to look up ${entityType} label "${labelName}":`, e)
+    console.error(`[v0] Failed to look up ${entityType} field "${fieldKey}" option "${optionName}":`, e)
   }
   return undefined
 }
@@ -74,15 +78,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 })
     }
 
-    // Look up label IDs by name
-    console.log("[v0] Looking up label IDs...")
-    const [personLabelId, orgLabelId] = await Promise.all([
-      findLabelId("person", "CARE LEADER"),
-      findLabelId("organization", "WORKING"),
+    // Look up label IDs and channel ID by name
+    console.log("[v0] Looking up field option IDs...")
+    const [personLabelId, orgLabelId, channelId] = await Promise.all([
+      findFieldOptionId("person", "label", "CARE LEADER"),
+      findFieldOptionId("organization", "label", "WORKING"),
+      findFieldOptionId("deal", "channel", "Whitepaper download"),
     ])
-    console.log("[v0] Label IDs - Person:", personLabelId, "Org:", orgLabelId)
+    console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId, "Channel:", channelId)
 
-    // 1. Create the Organization with label "WORKING"
+    // 1. Create the Organization
     const orgBody: Record<string, unknown> = { name: organization }
     if (orgLabelId) orgBody.label = orgLabelId
     const org = await pipedrivePost("/organizations", orgBody)
@@ -102,15 +107,17 @@ export async function POST(request: Request) {
     const personId = person.id
     console.log("[v0] Created person:", personId)
 
-    // 3. Create the Lead linked to Person and Organization
+    // 3. Create the Lead with title "{company name} Lead"
     // Source channel set to "Whitepaper download"
-    const lead = await pipedrivePost("/leads", {
-      title: `${whitePaperTitle} - ${firstName} ${lastName}`,
+    const leadBody: Record<string, unknown> = {
+      title: `${organization} Lead`,
       person_id: personId,
       organization_id: orgId,
-      channel: "Whitepaper download",
-      channel_id: "whitepaper-download",
-    })
+    }
+    if (channelId) leadBody.channel = channelId
+    leadBody.channel_id = whitePaperTitle
+
+    const lead = await pipedrivePost("/leads", leadBody)
     console.log("[v0] Created lead:", lead.id)
 
     return NextResponse.json({
