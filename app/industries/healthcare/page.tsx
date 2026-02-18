@@ -13,7 +13,7 @@ export default function HealthcarePage() {
       icon={<HealthcareIcon />}
       title="Healthcare & Behavioral Health"
       tagline="When trauma exposure is part of care delivery, workforce stability becomes a clinical risk."
-      intro="In healthcare and behavioral health, crisis is not occasional — it's structural. Staff carry grief, violence, high acuity needs, moral injury, and constant emotional intensity. Over time, trauma exposure accumulates in the body and brain. The result isn't just burnout — it's operational instability that impacts care."
+      intro="In healthcare and behavioral health, crisis is not occasional -- it is structural. Staff carry grief, violence, high acuity needs, moral injury, and constant emotional intensity. Over time, trauma exposure accumulates in the body and brain. The result is not just burnout -- it is operational instability that impacts care."
       heroImage="/images/industries/healthcare.jpg"
       heroImageAlt="Healthcare professionals in a hospital environment supporting each other through the emotional demands of patient care"
       seenTitle="What leaders are seeing"
@@ -25,7 +25,7 @@ export default function HealthcarePage() {
       ]}
       costLine="Many sites absorb >$1M annually in preventable instability costs when turnover, absences, and disruption compound."
       whyTitle="Why traditional supports aren't enough"
-      whyDesc="Training, EAP, and wellness programs can help — but they don't create a mechanism to:"
+      whyDesc="Training, EAP, and wellness programs can help -- but they do not create a mechanism to:"
       whyItems={[
         "Detect trauma load early",
         "Reduce nervous system overload during real shifts",

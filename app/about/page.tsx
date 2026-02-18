@@ -97,7 +97,7 @@ export default function AboutPage() {
                     Recess is a neuroscience-informed technology company focused on stabilizing trauma-exposed workforces.
                   </p>
                   <p>
-                    We work with healthcare systems, schools, and public safety agencies to address the biological impact of repeated trauma exposure — before it becomes turnover, extended leave, incident risk, and operational instability.
+                    We work with healthcare systems, schools, and public safety agencies to address the biological impact of repeated trauma exposure -- before it becomes turnover, extended leave, incident risk, and operational instability.
                   </p>
                 </div>
 

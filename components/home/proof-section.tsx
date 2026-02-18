@@ -7,7 +7,7 @@ export function ProofSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInSection>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-center text-balance">
-            Emotional Overload Is Often Invisible — Until It Isn{"'"}t
+            Emotional Overload Is Often Invisible -- Until It Isn{"'"}t
           </h2>
         </FadeInSection>
 
@@ -56,7 +56,7 @@ export function ProofSection() {
 
         <FadeInSection delay={300} className="mt-8 text-center">
           <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Recess is built for the moment after the hardest moments — so trauma load doesn{"'"}t silently accumulate into exits and incidents.
+            Recess is built for the moment after the hardest moments -- so trauma load doesn{"'"}t silently accumulate into exits and incidents.
           </p>
         </FadeInSection>
 

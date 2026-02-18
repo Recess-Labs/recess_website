@@ -14,7 +14,7 @@ const benefits = [
   {
     step: "1",
     title: "Where Trauma Exposure Is Creating Hidden Risk",
-    desc: "How repeated exposure translates into turnover, extended leave, and operational strain — and what signals to look for.",
+    desc: "How repeated exposure translates into turnover, extended leave, and operational strain -- and what signals to look for.",
   },
   {
     step: "2",
@@ -49,7 +49,7 @@ export default function GetStartedPage() {
                   See How Recess Stabilizes Trauma-Exposed Teams
                 </h1>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Recess helps trauma-exposed organizations detect risk early and stabilize teams before it leads to turnover, leave, or operational disruption. In this 30-minute call, you&#39;ll see how our system works — and whether it fits your workforce.
+                  Recess helps trauma-exposed organizations detect risk early and stabilize teams before it leads to turnover, leave, or operational disruption. In this 30-minute call, you&#39;ll see how our system works -- and whether it fits your workforce.
                 </p>
 
                 <h3 className="font-serif text-lg font-bold text-foreground mt-10 mb-6">

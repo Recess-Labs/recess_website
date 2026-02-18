@@ -23,8 +23,8 @@ export default function EducationPage() {
         "Increased behavioral escalations as staff capacity shrinks",
         "Rising sick leave and extended absences that destabilize scheduling",
       ]}
-      costLine="Every exit creates replacement cost, training burden, and performance disruption — often repeating year after year."
-      whyTitle="Why 'wellness' isn't enough"
+      costLine="Every exit creates replacement cost, training burden, and performance disruption -- often repeating year after year."
+      whyTitle="Why wellness is not enough"
       whyDesc="Educator wellbeing initiatives are common. But most systems still lack a way to:"
       whyItems={[
         "Measure emotional overload early",
