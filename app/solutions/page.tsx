@@ -19,8 +19,8 @@ const phases = [
     title: "Educate & Align Leadership",
     product: "Recess Foundation\u2122",
     color: "#F0ECF5",
-    tagline: "Start here -- no commitment required",
-    description: "We begin by sharing neuroscience-informed knowledge about trauma exposure with your leadership team. No contracts. No platform rollout. Just clarity about what repeated exposure does to the nervous system and how it shows up in your workforce. If it resonates, we work together to build operational standards around it. Foundation can be deployed as a standalone layer -- many organizations start and stay here.",
+    tagline: "Start here, no commitment required",
+    description: "We begin by sharing neuroscience-informed knowledge about trauma exposure with your leadership team. No contracts. No platform rollout. Just clarity about what repeated exposure does to the nervous system and how it shows up in your workforce. If it resonates, we work together to build operational standards around it. Foundation can be deployed as a standalone layer, many organizations start and stay here.",
     items: [
       "Trauma exposure education for leadership",
       "Workforce-wide awareness workshops",
@@ -36,7 +36,7 @@ const phases = [
     product: "Recess Frontline Ally\u2122",
     color: "#F0ECF5",
     tagline: "Repair the nervous system between shifts",
-    description: "Once your leadership understands the biological impact of repeated exposure, we deploy individual stabilization tools to your staff. This is where science becomes daily practice. Staff complete a brief check-in, the system detects strain patterns, and personalized stabilization protocols are delivered in ~10 minutes -- designed specifically for secondary trauma, moral injury, and compassion fatigue.",
+    description: "Once your leadership understands the biological impact of repeated exposure, we deploy individual stabilization tools to your staff. This is where science becomes daily practice. Staff complete a brief check-in, the system detects strain patterns, and personalized stabilization protocols are delivered in ~10 minutes, designed specifically for secondary trauma, moral injury, and compassion fatigue.",
     items: [
       "Brief emotional check-in for staff",
       "AI-driven strain pattern detection",
@@ -104,7 +104,7 @@ export default function SolutionsPage() {
               Deploy in phases. Start with zero commitment. Scale when ready.
             </h2>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              {"We don't ask for commitment upfront. We begin with education -- sharing what the science says about trauma exposure and how it shows up in your workforce. If it resonates, we build from there. Each phase can stand on its own or integrate into a full system. You choose the pace."}
+              {"We don't ask for commitment upfront. We begin with education, sharing what the science says about trauma exposure and how it shows up in your workforce. If it resonates, we build from there. Each phase can stand on its own or integrate into a full system. You choose the pace."}
             </p>
           </FadeInSection>
         </div>
@@ -183,7 +183,7 @@ export default function SolutionsPage() {
           <FadeInSection>
             <p className="font-serif text-xl font-semibold text-background">Not Sure Where to Start?</p>
             <p className="mt-3 text-background/50 leading-relaxed">
-              Recess can be implemented in phases -- or deployed as a fully integrated system.<br />
+              Recess can be implemented in phases, or deployed as a fully integrated system.<br />
               Foundation sets the standards. Frontline Ally stabilizes individuals. Signal protects the system.
             </p>
             <div className="mt-6">

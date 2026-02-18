@@ -78,7 +78,7 @@ export default function AboutPage() {
             <div className="max-w-3xl">
               <p className="text-accent font-serif font-semibold text-sm uppercase tracking-widest mb-5">Our Vision</p>
               <h1 className="font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground tracking-tight leading-relaxed text-balance">
-                To support 1 million frontline professionals by 2030 -- ensuring the people who absorb crisis for a living are protected by systems built for that reality.
+                To support 1 million frontline professionals by 2030, ensuring the people who absorb crisis for a living are protected by systems built for that reality.
               </h1>
             </div>
           </FadeInSection>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                     Recess is a neuroscience-informed technology company focused on stabilizing trauma-exposed workforces.
                   </p>
                   <p>
-                    We work with healthcare systems, schools, and public safety agencies to address the biological impact of repeated trauma exposure -- before it becomes turnover, extended leave, incident risk, and operational instability.
+                    We work with healthcare systems, schools, and public safety agencies to address the biological impact of repeated trauma exposure, before it becomes turnover, extended leave, incident risk, and operational instability.
                   </p>
                 </div>
 

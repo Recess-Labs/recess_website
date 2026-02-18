@@ -152,8 +152,8 @@ export default function SciencePage() {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Polyvagal theory -- how the autonomic nervous system regulates safety and threat",
-                  "Heart Rate Variability (HRV) research -- a measurable indicator of stress and recovery",
+                  "Polyvagal theory, how the autonomic nervous system regulates safety and threat",
+                  "Heart Rate Variability (HRV) research, a measurable indicator of stress and recovery",
                   "Secondary trauma and occupational stress literature",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-base text-foreground bg-[#F5F5FF] rounded-xl p-5 border border-border/30">
@@ -182,14 +182,14 @@ export default function SciencePage() {
                 {"The REPAIR\u2122 Engine"}
               </h2>
               <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                {"At the center of Recess is the REPAIR\u2122 Engine -- our AI-driven personalization model that integrates three inputs to tailor stabilization in real time."}
+                {"At the center of Recess is the REPAIR\u2122 Engine, our AI-driven personalization model that integrates three inputs to tailor stabilization in real time."}
               </p>
             </div>
             <div className="flex justify-center mb-10">
               <RepairEngineDiagram />
             </div>
             <p className="text-center text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {"By synthesizing emotional signals, engagement patterns, and biometric input, REPAIR\u2122 adjusts pacing, modality, and protocol intensity -- creating a self-paced experience matched to the user\u2019s current activation level."}
+              {"By synthesizing emotional signals, engagement patterns, and biometric input, REPAIR\u2122 adjusts pacing, modality, and protocol intensity, creating a self-paced experience matched to the user\u2019s current activation level."}
             </p>
           </FadeInSection>
         </div>
@@ -228,7 +228,7 @@ export default function SciencePage() {
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">Evidence & Research Base</h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
-              The research foundations behind Recess -- including secondary trauma literature, AIP processing theory, polyvagal research, and HRV-based stress science -- are detailed in our White Paper.
+              The research foundations behind Recess, including secondary trauma literature, AIP processing theory, polyvagal research, and HRV-based stress science, are detailed in our White Paper.
             </p>
             <WhitePaperModal />
 

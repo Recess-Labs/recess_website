@@ -261,7 +261,7 @@ export function HeroSection() {
             </div>
 
             <p className="mt-10 text-lg md:text-xl text-foreground text-center max-w-3xl mx-auto font-serif leading-relaxed font-medium">
-              Recess intervenes between overload and instability -- stabilizing staff before strain becomes turnover.
+              Recess intervenes between overload and instability, stabilizing staff before strain becomes turnover.
             </p>
           </div>
         </FadeInSection>
