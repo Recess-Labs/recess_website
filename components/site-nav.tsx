@@ -22,9 +22,6 @@ const industries = [
 ]
 
 const resources = [
-  { label: "White Paper: Lost Productivity, Lost Profits", href: "/lost_productivity_white_paper.pdf", external: true },
-  { label: "White Paper: Brain Based Solution for Burnout", href: "/brain_based_solution_white_paper.pdf", external: true },
-  { label: "divider", href: "" },
   { label: "Help Center", href: "#help-center" },
   { label: "See your risk", href: "https://pulse.withrecess.com", external: true },
   { label: "Articles", href: "#articles" },
