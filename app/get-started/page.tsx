@@ -92,24 +92,16 @@ export default function GetStartedPage() {
                   We&#39;ll map your exposure, identify risk points, and show you what stabilization can look like.
                 </p>
 
-                {/* Placeholder for scheduling embed */}
-                <div className="bg-background rounded-xl border border-border/40 p-10 text-center mb-6">
-                  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 mx-auto mb-4">
-                    <rect width="64" height="64" rx="16" fill="#F5F5FF" />
-                    <rect x="16" y="14" width="32" height="36" rx="4" stroke="#8D7AA0" strokeWidth="1.5" fill="none" />
-                    <line x1="16" y1="24" x2="48" y2="24" stroke="#8D7AA0" strokeWidth="1.5" />
-                    <circle cx="26" cy="18" r="2" fill="#29285D" />
-                    <circle cx="38" cy="18" r="2" fill="#29285D" />
-                    <rect x="22" y="30" width="8" height="6" rx="1" fill="#8D7AA0" opacity="0.3" />
-                    <rect x="34" y="30" width="8" height="6" rx="1" fill="#8D7AA0" opacity="0.3" />
-                    <rect x="22" y="40" width="8" height="6" rx="1" fill="#29285D" opacity="0.15" />
-                    <rect x="34" y="40" width="8" height="6" rx="1" fill="#8D7AA0" opacity="0.3" />
-                  </svg>
-                  <p className="text-sm text-muted-foreground mb-4">Calendar scheduling widget loads here</p>
-                  <Button className="rounded-full font-serif font-semibold px-8 bg-foreground text-background hover:bg-foreground/90">
-                    Schedule Your Free Strategy Call
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                {/* Pipedrive Scheduler */}
+                <div className="bg-background rounded-xl border border-border/40 overflow-hidden mb-6">
+                  <iframe
+                    src="https://withrecess.pipedrive.com/scheduler/bE7DW9FO/insight-discussion"
+                    title="Schedule a Strategy Call with Recess"
+                    width="100%"
+                    height="600"
+                    style={{ maxWidth: "800px", border: "none" }}
+                    allowFullScreen
+                  />
                 </div>
 
                 <div className="border-t border-border/40 pt-5">
