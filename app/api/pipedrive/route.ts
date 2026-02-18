@@ -78,14 +78,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 })
     }
 
-    // Look up label IDs and channel ID by name
+    // Look up label IDs and source name by name
     console.log("[v0] Looking up field option IDs...")
-    const [personLabelId, orgLabelId, channelId] = await Promise.all([
+    const [personLabelId, orgLabelId] = await Promise.all([
       findFieldOptionId("person", "label", "CARE LEADER"),
       findFieldOptionId("organization", "label", "WORKING"),
-      findFieldOptionId("deal", "channel", "Whitepaper download"),
     ])
-    console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId, "Channel:", channelId)
+    console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId)
 
     // 1. Create the Organization
     const orgBody: Record<string, unknown> = { name: organization }
@@ -108,14 +107,13 @@ export async function POST(request: Request) {
     console.log("[v0] Created person:", personId)
 
     // 3. Create the Lead with title "{company name} Lead"
-    // Source channel set to "Whitepaper download"
+    // Set source_name to "Whitepaper download"
     const leadBody: Record<string, unknown> = {
       title: `${organization} Lead`,
       person_id: personId,
       organization_id: orgId,
+      source_name: "Whitepaper download",
     }
-    if (channelId) leadBody.channel = channelId
-    leadBody.channel_id = whitePaperTitle
 
     const lead = await pipedrivePost("/leads", leadBody)
     console.log("[v0] Created lead:", lead.id)
