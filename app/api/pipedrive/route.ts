@@ -37,9 +37,9 @@ async function pipedriveGet(endpoint: string) {
   return data.data
 }
 
-// Look up a field option ID by name for a given entity type and field key
+// Look up a person/org field option ID by name
 async function findFieldOptionId(
-  entityType: "person" | "organization" | "deal" | "lead",
+  entityType: "person" | "organization",
   fieldKey: string,
   optionName: string,
 ): Promise<number | undefined> {
@@ -60,6 +60,24 @@ async function findFieldOptionId(
   return undefined
 }
 
+// Look up a lead label UUID by name from /v1/leadLabels
+async function findLeadLabelId(labelName: string): Promise<string | undefined> {
+  try {
+    const labels = await pipedriveGet("/leadLabels")
+    console.log(`[v0] Lead labels:`, JSON.stringify(labels))
+    if (Array.isArray(labels)) {
+      const match = labels.find(
+        (l: { name: string }) => l.name.toUpperCase() === labelName.toUpperCase()
+      )
+      console.log(`[v0] Lead label "${labelName}" matched:`, match?.id)
+      return match?.id
+    }
+  } catch (e) {
+    console.error(`[v0] Failed to look up lead label "${labelName}":`, e)
+  }
+  return undefined
+}
+
 export async function POST(request: Request) {
   const token = getApiToken()
   console.log(`[v0] Pipedrive API route called. Token exists: ${!!token}, Token length: ${token?.length ?? 0}`)
@@ -71,20 +89,21 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { firstName, lastName, email, organization, whitePaperTitle } = body
+    const { firstName, lastName, email, organization } = body
     console.log("[v0] Request body:", JSON.stringify(body))
 
     if (!firstName || !lastName || !email || !organization) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 })
     }
 
-    // Look up label IDs and source name by name
+    // Look up label IDs
     console.log("[v0] Looking up field option IDs...")
-    const [personLabelId, orgLabelId] = await Promise.all([
+    const [personLabelId, orgLabelId, wpLeadLabelId] = await Promise.all([
       findFieldOptionId("person", "label", "CARE LEADER"),
       findFieldOptionId("organization", "label", "WORKING"),
+      findLeadLabelId("Whitepaper download"),
     ])
-    console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId)
+    console.log("[v0] IDs - Person label:", personLabelId, "Org label:", orgLabelId, "Lead label:", wpLeadLabelId)
 
     // 1. Create the Organization
     const orgBody: Record<string, unknown> = { name: organization }
@@ -107,13 +126,14 @@ export async function POST(request: Request) {
     console.log("[v0] Created person:", personId)
 
     // 3. Create the Lead with title "{company name} Lead"
-    // Set source_name to "Whitepaper download"
+    // Lead labels use UUIDs from /v1/leadLabels, passed as label_ids array
+    // Source is auto-set to "API" by Pipedrive for API-created leads
     const leadBody: Record<string, unknown> = {
       title: `${organization} Lead`,
       person_id: personId,
       organization_id: orgId,
-      source_name: "Whitepaper download",
     }
+    if (wpLeadLabelId) leadBody.label_ids = [wpLeadLabelId]
 
     const lead = await pipedrivePost("/leads", leadBody)
     console.log("[v0] Created lead:", lead.id)
