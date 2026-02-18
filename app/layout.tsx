@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Rubik, DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { IntercomProvider } from "@/components/intercom-provider"
 import "./globals.css"
 
 const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" })
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rubik.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
+        <IntercomProvider />
         {children}
         <Analytics />
       </body>
