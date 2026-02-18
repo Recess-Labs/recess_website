@@ -16,6 +16,15 @@ export function WhitePaperModal() {
 
   const isFormValid = firstName.trim() !== "" && lastName.trim() !== "" && email.trim() !== "" && organization.trim() !== ""
 
+  const handleDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/recess-white-paper.pdf'
+    link.download = 'Recess-White-Paper.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <Dialog onOpenChange={() => {
       setSubmitted(false)
@@ -114,7 +123,10 @@ export function WhitePaperModal() {
             </div>
             <h3 className="font-serif text-lg font-bold text-foreground mb-2">Thank you!</h3>
             <p className="text-sm text-muted-foreground mb-6">Your white paper is ready to download.</p>
-            <Button className="rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90">
+            <Button 
+              onClick={handleDownload}
+              className="rounded-full font-serif font-semibold bg-foreground text-background hover:bg-foreground/90"
+            >
               <Download className="w-4 h-4 mr-2" />
               Download White Paper (PDF)
             </Button>
