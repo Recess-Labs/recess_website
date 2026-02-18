@@ -20,7 +20,7 @@ export function ImageBreak() {
                 Your people are absorbing the weight of the work every day.
               </p>
               <p className="mt-4 text-lg md:text-xl text-background/70 leading-relaxed">
-                Recess gives them -- and you -- a way to stabilize before it breaks.
+                Recess gives them, and you, a way to stabilize before it breaks.
               </p>
             </div>
           </div>

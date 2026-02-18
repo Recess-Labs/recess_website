@@ -13,7 +13,7 @@ const systems = [
     key: "foundation",
     title: "Recess Foundation\u2122",
     subtitle: "Trauma-Informed Workforce Standards & Training",
-    desc: "Establish shared language, leadership alignment, and structured response pathways -- so trauma exposure is addressed consistently across teams, not informally.",
+    desc: "Establish shared language, leadership alignment, and structured response pathways, so trauma exposure is addressed consistently across teams, not informally.",
     checks: ["Aligns leadership around trauma exposure", "Reduces reactive management", "Creates consistent response to overload", "Strengthens duty-of-care compliance"],
     href: "/solutions/workforce-system",
     icon: (
@@ -30,7 +30,7 @@ const systems = [
     title: "Recess Frontline Ally\u2122",
     subtitle: "Real-Time Trauma Stabilization for Professionals",
     desc: "Deliver short, neuroscience-informed protocols staff can use during or after difficult moments to regulate nervous system overload and reduce cumulative strain.",
-    checks: ["Personalized relief in minutes", "Designed for use during or after shifts", "Reduces trauma disturbance and cumulative strain", "Low lift -- no therapy, no downtime required"],
+    checks: ["Personalized relief in minutes", "Designed for use during or after shifts", "Reduces trauma disturbance and cumulative strain", "Low lift, no therapy, no downtime required"],
     href: "/solutions/ally-app",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
@@ -44,7 +44,7 @@ const systems = [
     key: "signal",
     title: "Recess Signal\u2122",
     subtitle: "AI-Powered Trauma Load & Turnover Risk Intelligence",
-    desc: "Detect emerging strain patterns, forecast turnover vulnerability, and give leaders early visibility into workforce instability -- before it shows up in HR data.",
+    desc: "Detect emerging strain patterns, forecast turnover vulnerability, and give leaders early visibility into workforce instability, before it shows up in HR data.",
     checks: ["Identify risk trends early", "Forecast turnover vulnerability", "Receive trauma-informed recommendations", "Strengthen workforce stability proactively"],
     href: "/solutions/dashboard",
     icon: (

@@ -15,7 +15,7 @@ export default function WorkforceSystemPage() {
       num="01"
       title={"Recess Foundation\u2122"}
       tagline="Trauma-Informed Workforce Standards & Training"
-      intro="Trauma-informed principles are widespread. Operational structure is not. Recess Foundation translates trauma-informed awareness into consistent, system-level practice. We come in without commitment -- sharing foundational knowledge about what repeated exposure does to the nervous system before building operational standards around it."
+      intro="Trauma-informed principles are widespread. Operational structure is not. Recess Foundation translates trauma-informed awareness into consistent, system-level practice. We come in without commitment, sharing foundational knowledge about what repeated exposure does to the nervous system before building operational standards around it."
       howTitle={"What's Included"}
       howItems={[
         "Workforce-wide trauma-informed workshops",

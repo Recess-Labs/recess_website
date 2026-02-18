@@ -154,7 +154,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
               Your people show up every day carrying more than anyone should ask.
             </h2>
             <p className="mt-5 text-lg text-background/60 leading-relaxed max-w-2xl mx-auto">
-              Recess gives them a system that shows up for them in return -- stabilizing the nervous system, reducing the load, and keeping your best people on the floor, in the classroom, and on the line.
+              Recess gives them a system that shows up for them in return, stabilizing the nervous system, reducing the load, and keeping your best people on the floor, in the classroom, and on the line.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="w-16 h-px bg-[#AAF5D4]/30" />
@@ -168,7 +168,7 @@ export function IndustryDetail(props: IndustryDetailProps) {
         </div>
       </section>
 
-      {/* How Recess stabilizes -- staged steps */}
+      {/* How Recess stabilizes, staged steps */}
       <section className="bg-background py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>

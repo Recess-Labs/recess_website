@@ -75,7 +75,7 @@ export default function SolutionsPage() {
                 {"The Recess System\u2122"}
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                Three layers of emotional infrastructure for trauma-exposed workforces. Deploy one layer to strengthen a specific gap -- or integrate all three to stabilize your workforce at scale.
+                Three layers of emotional infrastructure for trauma-exposed workforces. Deploy one layer to strengthen a specific gap, or integrate all three to stabilize your workforce at scale.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button asChild className="rounded-full font-serif font-semibold px-7 h-12 bg-foreground text-background hover:bg-foreground/90">

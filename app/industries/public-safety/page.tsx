@@ -59,7 +59,7 @@ export default function PublicSafetyPage() {
       icon={<PublicSafetyIcon />}
       title="Public Safety"
       tagline="In public safety, emotional overload becomes legal exposure."
-      intro="Police, fire, EMS, dispatch, and corrections operate in environments where trauma exposure is routine -- and where a single moment of overload can escalate into incident, scrutiny, and consequence. In these roles, the biggest workforce stability driver is often extended leave: injury leave, stress leave, disability claims, and long recovery periods that tear holes in staffing and readiness."
+      intro="Police, fire, EMS, dispatch, and corrections operate in environments where trauma exposure is routine, and where a single moment of overload can escalate into incident, scrutiny, and consequence. In these roles, the biggest workforce stability driver is often extended leave: injury leave, stress leave, disability claims, and long recovery periods that tear holes in staffing and readiness."
       heroImage="/images/industries/public-safety.jpg"
       heroImageAlt="First responders at a station in a quiet moment between calls, showing the human side of public safety work"
       seenTitle="What leaders are seeing"
@@ -72,7 +72,7 @@ export default function PublicSafetyPage() {
       ]}
       costLine="Many agencies absorb >$2M per site annually in preventable instability costs when absences, turnover, overtime, and disruption compound."
       whyTitle="Why traditional approaches fall short"
-      whyDesc="Training and peer programs matter -- but without a mechanism to:"
+      whyDesc="Training and peer programs matter, but without a mechanism to:"
       whyItems={[
         "Detect rising overload early",
         "Provide real-time stabilization after exposure",

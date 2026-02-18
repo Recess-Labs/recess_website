@@ -79,7 +79,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
         </div>
       </section>
 
-      {/* Without vs With -- visual comparison */}
+      {/* Without vs With, visual comparison */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: "#F5F5FF" }}>
         <div className="mx-auto max-w-7xl px-6">
           <FadeInSection>
@@ -106,7 +106,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
                 </ul>
               </div>
 
-              {/* With Recess -- branded purple */}
+              {/* With Recess, branded purple */}
               <div className="rounded-2xl p-7 border-2 border-[#8D7AA0] relative overflow-hidden" style={{ backgroundColor: "#F0ECF5" }}>
                 {/* Purple top stripe */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#8D7AA0] via-[#A394B5] to-[#8D7AA0]" />
@@ -157,7 +157,7 @@ export function SolutionDetail(props: SolutionDetailProps) {
           <FadeInSection>
             <p className="font-serif text-xl font-semibold text-background">Not Sure Where to Start?</p>
             <p className="mt-3 text-background/50 leading-relaxed">
-              Recess can be implemented in phases -- or deployed as a fully integrated system.<br />
+              Recess can be implemented in phases, or deployed as a fully integrated system.<br />
               Foundation sets the standards. Frontline Ally stabilizes individuals. Signal protects the system.
             </p>
             <div className="mt-6">

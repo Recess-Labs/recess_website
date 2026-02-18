@@ -14,13 +14,13 @@ const steps = [
     step: 2 as const,
     title: "Relieve Overload in Real Time",
     subtitle: "Stabilize after hard moments.",
-    desc: "Short, neuroscience-based protocols designed for use during or after difficult interactions -- built for real shifts.",
+    desc: "Short, neuroscience-based protocols designed for use during or after difficult interactions, built for real shifts.",
   },
   {
     step: 3 as const,
     title: "Predict & Prevent Instability",
     subtitle: "Lead before crisis spreads.",
-    desc: "Dashboard trends and clear leader actions. Prevention becomes proactive -- not reactive.",
+    desc: "Dashboard trends and clear leader actions. Prevention becomes proactive, not reactive.",
   },
 ]
 

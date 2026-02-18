@@ -7,7 +7,7 @@ import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Our Science",
-  description: "The neuroscience and trauma-processing research behind Recess -- built specifically for secondary trauma and repeated exposure.",
+  description: "The neuroscience and trauma-processing research behind Recess, built specifically for secondary trauma and repeated exposure.",
 }
 
 export default function SciencePage() {
@@ -53,7 +53,7 @@ export default function SciencePage() {
                     </svg>
                   </div>
                   <p className="text-base text-foreground font-serif font-semibold leading-relaxed">
-                    Built specifically for secondary trauma and repeated exposure -- not general stress.
+                    Built specifically for secondary trauma and repeated exposure, not general stress.
                   </p>
                 </div>
                 <div className="h-1 bg-gradient-to-r from-[#8D7AA0]/40 via-[#29285D]/20 to-[#8D7AA0]/40" />
@@ -104,7 +104,7 @@ export default function SciencePage() {
                 Built on the Adaptive Information Processing (AIP) Model
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Recess draws from the Adaptive Information Processing (AIP) model -- the foundation behind EMDR. The AIP model proposes that distressing experiences can become maladaptively stored, leaving the body and brain more reactive in future situations.
+                Recess draws from the Adaptive Information Processing (AIP) model, the foundation behind EMDR. The AIP model proposes that distressing experiences can become maladaptively stored, leaving the body and brain more reactive in future situations.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mb-6">
                 Traditional therapy helps reprocess these experiences in clinical settings. Recess adapts core AIP principles into structured, guided protocols designed specifically for:
