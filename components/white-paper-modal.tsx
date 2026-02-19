@@ -16,7 +16,7 @@ interface WhitePaperModalProps {
 
 export function WhitePaperModal({
   title = "Recess White Paper: Combatting Burnout, Secondary Trauma, and Compassion Fatigue with Brain-Based Science",
-  fileName = "/recess_burnout_white_paper.pdf",
+  fileName = "/burnout_secondary_trauma_solution.pdf",
   downloadName = "Recess-White-Paper-Combatting-Burnout-Secondary-Trauma.pdf",
   buttonLabel = "Download the White Paper",
 }: WhitePaperModalProps) {

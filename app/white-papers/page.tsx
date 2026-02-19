@@ -28,7 +28,7 @@ const whitePapers = [
     description:
       "This paper details the neuroscience foundations behind the Recess platform, including Adaptive Information Processing (AIP), polyvagal theory, HRV-based stress science, and the REPAIR\u2122 architecture. It demonstrates how structured bilateral stimulation and nervous system regulation can reduce secondary traumatic stress, compassion fatigue, and burnout in high-exposure professionals.",
     coverImage: "/images/white-papers/burnout-trauma-cover.jpg",
-    fileName: "/recess_burnout_white_paper.pdf",
+    fileName: "/burnout_secondary_trauma_solution.pdf",
     downloadName: "Recess-White-Paper-Combatting-Burnout-Secondary-Trauma.pdf",
     tags: ["Neuroscience", "REPAIR\u2122 Architecture", "Brain-Based Solutions"],
   },
