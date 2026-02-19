@@ -228,7 +228,7 @@ export default function SciencePage() {
           <FadeInSection>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">Evidence & Research Base</h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
-              The research foundations behind Recess, including secondary trauma literature, AIP processing theory, polyvagal research, and HRV-based stress science, are detailed in our white paper: <span className="font-semibold text-foreground">Lost Productivity, Lost Profits Recess White Paper</span>.
+              The research foundations behind Recess, including secondary trauma literature, AIP processing theory, polyvagal research, and HRV-based stress science, are detailed in our white paper: <span className="font-semibold text-foreground">Recess White Paper: Combatting Burnout, Secondary Trauma, and Compassion Fatigue with Brain-Based Science</span>.
             </p>
             <WhitePaperModal />
 

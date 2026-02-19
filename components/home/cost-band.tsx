@@ -17,35 +17,36 @@ export function CostBand() {
         </FadeInSection>
         <div className="grid md:grid-cols-3 gap-6">
           <FadeInSection delay={0}>
-            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-7 border border-primary-foreground/10">
+            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-6 md:p-7 border border-primary-foreground/10 h-full">
               <CostIcon type="nurse" />
-              <div>
-                <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={40} suffix="K" />-$<AnimatedCounter end={60} suffix="K" />
+              <div className="min-w-0">
+                <p className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground whitespace-nowrap">
+                  $<AnimatedCounter end={60} suffix="K+" />
                 </p>
                 <p className="text-sm text-primary-foreground/50 mt-1">To replace one experienced nurse</p>
               </div>
             </div>
           </FadeInSection>
           <FadeInSection delay={100}>
-            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-7 border border-primary-foreground/10">
+            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-6 md:p-7 border border-primary-foreground/10 h-full">
               <CostIcon type="officer" />
-              <div>
-                <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={100} suffix="K+" />
+              <div className="min-w-0">
+                <p className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground whitespace-nowrap">
+                  $<AnimatedCounter end={100} suffix="K" />-$<AnimatedCounter end={200} suffix="K" />
                 </p>
                 <p className="text-sm text-primary-foreground/50 mt-1">To replace one experienced officer</p>
               </div>
             </div>
           </FadeInSection>
           <FadeInSection delay={200}>
-            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-7 border border-primary-foreground/10">
+            <div className="flex items-center gap-4 bg-primary-foreground/5 rounded-2xl p-6 md:p-7 border border-primary-foreground/10 h-full">
               <CostIcon type="site" />
-              <div>
-                <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={1} suffix="M" />-$<AnimatedCounter end={2} suffix="M+" />
+              <div className="min-w-0">
+                <p className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground whitespace-nowrap">
+                  $<AnimatedCounter end={2} suffix="M" />-$<AnimatedCounter end={2.5} suffix="M" />
                 </p>
-                <p className="text-sm text-primary-foreground/50 mt-1">Per site annual preventable instability</p>
+                <p className="text-sm text-primary-foreground/50 mt-1">Annual preventable cost</p>
+                <p className="text-xs text-primary-foreground/35 mt-0.5">Modeled for a 1,000-employee healthcare org</p>
               </div>
             </div>
           </FadeInSection>

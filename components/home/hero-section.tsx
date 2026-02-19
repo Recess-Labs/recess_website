@@ -11,7 +11,7 @@ export function HeroSection() {
   const [hoveredCta, setHoveredCta] = useState(false)
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
+    <section className="relative py-16 md:py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: "#FDF0ED" }}>
       {/* Animated decorative flowing lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient orbs */}
@@ -78,7 +78,7 @@ export function HeroSection() {
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text */}
           <FadeInSection>
@@ -87,7 +87,7 @@ export function HeroSection() {
                 <span className="w-2 h-2 rounded-full bg-[#AAF5D4] animate-pulse" />
                 <span className="text-xs font-sans font-medium text-muted-foreground tracking-wide">Trusted by frontline organizations globally</span>
               </div>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.08] text-balance">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.08] text-balance">
                 Emotional Infrastructure for Trauma-Exposed Workforces
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
@@ -112,10 +112,11 @@ export function HeroSection() {
                   </Button>
                   <div className="absolute inset-0 rounded-full bg-foreground/20 animate-pulse-ring" />
                 </div>
-                <Button asChild variant="outline" size="lg" className="rounded-full font-serif font-semibold px-7 h-12 text-base border-border bg-background text-foreground hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all hover:scale-[1.02]">
+                <Button asChild variant="outline" size="lg" className="rounded-full font-serif font-semibold px-5 sm:px-7 h-12 text-sm sm:text-base border-border bg-background text-foreground hover:bg-[#8D7AA0] hover:text-background hover:border-[#8D7AA0] transition-all hover:scale-[1.02]">
                   <a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer">
-                    <Play className="w-3.5 h-3.5 mr-1.5" fill="currentColor" />
-                    Take the Frontline Team Emotional Health Index
+                    <Play className="w-3.5 h-3.5 mr-1.5 shrink-0" fill="currentColor" />
+                    <span className="hidden sm:inline">Take the Frontline Team Emotional Health Index</span>
+                    <span className="sm:hidden">Frontline Emotional Health Index</span>
                   </a>
                 </Button>
               </div>
@@ -124,12 +125,12 @@ export function HeroSection() {
 
           {/* Real app phone image with decorative elements */}
           <FadeInSection delay={200}>
-            <div className="relative flex items-center justify-center lg:justify-end">
+            <div className="relative flex items-center justify-center lg:justify-end overflow-hidden">
               {/* Decorative ring behind phone */}
-              <div className="absolute w-[360px] h-[360px] md:w-[420px] md:h-[420px] rounded-full border border-[#8D7AA0]/15" />
-              <div className="absolute w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full border border-[#8D7AA0]/10 animate-[spin_40s_linear_infinite]" style={{ borderStyle: "dashed" }} />
+              <div className="absolute w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] rounded-full border border-[#8D7AA0]/15" />
+              <div className="absolute w-[230px] h-[230px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] rounded-full border border-[#8D7AA0]/10 animate-[spin_40s_linear_infinite]" style={{ borderStyle: "dashed" }} />
               {/* Extra decorative circle */}
-              <div className="absolute w-[440px] h-[440px] md:w-[500px] md:h-[500px] rounded-full border border-[#8D7AA0]/5" />
+              <div className="absolute w-[320px] h-[320px] sm:w-[440px] sm:h-[440px] md:w-[500px] md:h-[500px] rounded-full border border-[#8D7AA0]/5" />
 
               {/* Floating accent dots */}
               <div className="absolute top-4 right-12 w-3 h-3 rounded-full bg-[#AAF5D4] animate-float opacity-60" />

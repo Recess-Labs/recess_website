@@ -22,10 +22,10 @@ const industries = [
 ]
 
 const resources = [
-  { label: "Help Center", href: "#help-center" },
-  { label: "See your risk", href: "https://pulse.withrecess.com", external: true },
-  { label: "Articles", href: "#articles" },
-  { label: "Flow with Recess (Podcast)", href: "#podcast" },
+  { label: "See Your Risk", href: "https://pulse.withrecess.com", external: true },
+  { label: "Flow With Recess Podcast", href: "/podcast" },
+  { label: "Blog", href: "/blog" },
+  { label: "White Papers", href: "/white-papers" },
 ]
 
 export function SiteNav() {
@@ -84,6 +84,15 @@ export function SiteNav() {
           </MobileGroup>
           <Link href="/science" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Our Science</Link>
           <Link href="/about" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>About</Link>
+          <MobileGroup title="Resources">
+            {resources.filter(r => r.label !== "divider").map(r => (
+              r.external ? (
+                <a key={r.href} href={r.href} target="_blank" rel="noopener noreferrer" className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{r.label}</a>
+              ) : (
+                <Link key={r.href} href={r.href} className="block text-sm text-muted-foreground py-1 hover:text-foreground" onClick={() => setMobileOpen(false)}>{r.label}</Link>
+              )
+            ))}
+          </MobileGroup>
           <Button asChild size="sm" className="rounded-full font-serif font-semibold mt-2 bg-foreground text-background">
             <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule Free Strategy Call</Link>
           </Button>
