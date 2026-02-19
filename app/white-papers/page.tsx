@@ -19,7 +19,7 @@ const whitePapers = [
       "This white paper explores the hidden financial toll of workforce disengagement in care-intensive industries. Drawing on secondary trauma research, economic modeling, and organizational psychology, it presents a data-driven case for trauma-informed workforce stabilization and outlines the Recess approach to reducing preventable turnover, leave, and operational disruption.",
     coverImage: "/images/white-papers/lost-productivity-cover.jpg",
     fileName: "/lost_productivity_white_paper.pdf",
-    downloadName: "Lost-Productivity-Lost-Profits-Recess-White-Paper.pdf",
+    downloadName: "Recess-White-Paper-Lost-Productivity-Lost-Profits.pdf",
     tags: ["Workforce Economics", "Disengagement", "Turnover Costs"],
   },
   {
