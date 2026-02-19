@@ -21,7 +21,7 @@ export function CostBand() {
               <CostIcon type="nurse" />
               <div>
                 <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={40} suffix="K" />-$<AnimatedCounter end={60} suffix="K" />
+                  $<AnimatedCounter end={60} suffix="K+" />
                 </p>
                 <p className="text-sm text-primary-foreground/50 mt-1">To replace one experienced nurse</p>
               </div>
@@ -32,7 +32,7 @@ export function CostBand() {
               <CostIcon type="officer" />
               <div>
                 <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={100} suffix="K+" />
+                  $<AnimatedCounter end={100} suffix="K" />-$<AnimatedCounter end={200} suffix="K" />
                 </p>
                 <p className="text-sm text-primary-foreground/50 mt-1">To replace one experienced officer</p>
               </div>
@@ -43,9 +43,9 @@ export function CostBand() {
               <CostIcon type="site" />
               <div>
                 <p className="font-serif text-3xl font-bold text-primary-foreground">
-                  $<AnimatedCounter end={1} suffix="M" />-$<AnimatedCounter end={2} suffix="M+" />
+                  $<AnimatedCounter end={2} suffix="M" />-$<AnimatedCounter end={2.5} suffix="M" />
                 </p>
-                <p className="text-sm text-primary-foreground/50 mt-1">Per site annual preventable instability</p>
+                <p className="text-sm text-primary-foreground/50 mt-1">Per 1,000 employee org annual preventable instability</p>
               </div>
             </div>
           </FadeInSection>

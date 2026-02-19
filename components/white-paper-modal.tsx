@@ -7,7 +7,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CheckCircle2, Download, Loader2 } from "lucide-react"
 
-export function WhitePaperModal() {
+interface WhitePaperModalProps {
+  title?: string
+  fileName?: string
+  downloadName?: string
+  buttonLabel?: string
+}
+
+export function WhitePaperModal({
+  title = "Recess White Paper: Combatting Burnout, Secondary Trauma, and Compassion Fatigue with Brain-Based Science",
+  fileName = "/recess_burnout_white_paper.pdf",
+  downloadName = "Recess-White-Paper-Combatting-Burnout-Secondary-Trauma.pdf",
+  buttonLabel = "Download the White Paper",
+}: WhitePaperModalProps) {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState("")
@@ -20,8 +32,8 @@ export function WhitePaperModal() {
 
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/lost_productivity_white_paper.pdf'
-    link.download = 'Lost-Productivity-Lost-Profits-Recess-White-Paper.pdf'
+    link.href = fileName
+    link.download = downloadName
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -41,7 +53,7 @@ export function WhitePaperModal() {
           lastName: lastName.trim(),
           email: email.trim(),
           organization: organization.trim(),
-          whitePaperTitle: "Lost Productivity, Lost Profits",
+          whitePaperTitle: title,
         }),
       })
 
@@ -73,14 +85,14 @@ export function WhitePaperModal() {
       <DialogTrigger asChild>
         <Button className="rounded-full font-serif font-semibold px-8 bg-foreground text-background hover:bg-foreground/90">
           <Download className="w-4 h-4 mr-2" />
-          Download the White Paper
+          {buttonLabel}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         {!submitted ? (
           <>
             <DialogHeader>
-              <DialogTitle className="font-serif text-xl text-foreground">Lost Productivity, Lost Profits Recess White Paper</DialogTitle>
+              <DialogTitle className="font-serif text-xl text-foreground">{title}</DialogTitle>
               <DialogDescription className="text-sm text-muted-foreground">
                 Access the full research citations, REPAIR&#8482; architecture, and early outcomes.
               </DialogDescription>
