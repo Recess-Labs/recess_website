@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const advisors = [
   {
-    name: "Ayelet Hirshfeld, PhD",
+    name: "Dr. Ayelet Hirshfeld, PhD",
     role: "AI in Mental Health | Stanford Postdoctoral Researcher | Trauma & High-Risk Workforce Specialist",
     image: "/images/team/ayelet-hirshfeld.webp",
   },
@@ -22,7 +22,7 @@ const advisors = [
     image: "/images/team/michael-lawrence.jpg",
   },
   {
-    name: "Kwame Johnson, MD",
+    name: "Dr. Kwame Johnson, MD",
     role: "Enterprise Clinical AI | Duke-Trained Physician | Former Google & Microsoft",
     image: "/images/team/kwame-johnson.jpg",
   },
