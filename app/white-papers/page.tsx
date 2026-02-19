@@ -19,7 +19,7 @@ const whitePapers = [
       "This white paper explores the hidden financial toll of workforce disengagement in care-intensive industries. Drawing on secondary trauma research, economic modeling, and organizational psychology, it presents a data-driven case for trauma-informed workforce stabilization and outlines the Recess approach to reducing preventable turnover, leave, and operational disruption.",
     coverImage: "/images/white-papers/lost-productivity-cover.jpg",
     fileName: "/lost_productivity_white_paper.pdf",
-    downloadName: "Lost-Productivity-Lost-Profits-Recess-White-Paper.pdf",
+    downloadName: "Recess-White-Paper-Lost-Productivity-Lost-Profits.pdf",
     tags: ["Workforce Economics", "Disengagement", "Turnover Costs"],
   },
   {
@@ -28,7 +28,7 @@ const whitePapers = [
     description:
       "This paper details the neuroscience foundations behind the Recess platform, including Adaptive Information Processing (AIP), polyvagal theory, HRV-based stress science, and the REPAIR\u2122 architecture. It demonstrates how structured bilateral stimulation and nervous system regulation can reduce secondary traumatic stress, compassion fatigue, and burnout in high-exposure professionals.",
     coverImage: "/images/white-papers/burnout-trauma-cover.jpg",
-    fileName: "/recess_burnout_white_paper.pdf",
+    fileName: "/burnout_secondary_trauma_solution.pdf",
     downloadName: "Recess-White-Paper-Combatting-Burnout-Secondary-Trauma.pdf",
     tags: ["Neuroscience", "REPAIR\u2122 Architecture", "Brain-Based Solutions"],
   },
