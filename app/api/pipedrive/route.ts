@@ -1,0 +1,136 @@
+import { NextResponse } from "next/server"
+
+const PIPEDRIVE_DOMAIN = "withrecess"
+const PIPEDRIVE_BASE_URL = `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1`
+
+function getApiToken() {
+  return process.env.PIPEDRIVE_API_TOKEN
+}
+
+async function pipedrivePost(endpoint: string, body: Record<string, unknown>) {
+  const token = getApiToken()
+  const url = `${PIPEDRIVE_BASE_URL}${endpoint}?api_token=${token}`
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  })
+  const data = await res.json()
+  if (!data.success) {
+    throw new Error(data.error || `Pipedrive API error on ${endpoint}`)
+  }
+  return data.data
+}
+
+async function pipedriveGet(endpoint: string) {
+  const token = getApiToken()
+  const url = `${PIPEDRIVE_BASE_URL}${endpoint}?api_token=${token}`
+  const res = await fetch(url)
+  const data = await res.json()
+  if (!data.success) {
+    throw new Error(data.error || `Pipedrive GET error on ${endpoint}`)
+  }
+  return data.data
+}
+
+// Look up a person/org field option ID by name
+async function findFieldOptionId(
+  entityType: "person" | "organization",
+  fieldKey: string,
+  optionName: string,
+): Promise<number | undefined> {
+  try {
+    const fields = await pipedriveGet(`/${entityType}Fields`)
+    const field = fields?.find((f: { key: string }) => f.key === fieldKey)
+    if (field?.options) {
+      const match = field.options.find(
+        (opt: { label: string }) => opt.label.toUpperCase() === optionName.toUpperCase()
+      )
+      return match?.id
+    }
+  } catch (e) {
+  }
+  return undefined
+}
+
+// Look up a lead label UUID by name from /v1/leadLabels
+async function findLeadLabelId(labelName: string): Promise<string | undefined> {
+  try {
+    const labels = await pipedriveGet("/leadLabels")
+    if (Array.isArray(labels)) {
+      const match = labels.find(
+        (l: { name: string }) => l.name.toUpperCase() === labelName.toUpperCase()
+      )
+      return match?.id
+    }
+  } catch (e) {
+  }
+  return undefined
+}
+
+export async function POST(request: Request) {
+  const token = getApiToken()
+
+  try {
+    if (!token) {
+      return NextResponse.json({ error: "Pipedrive API token not configured" }, { status: 500 })
+    }
+
+    const body = await request.json()
+    const { firstName, lastName, email, organization } = body
+
+    if (!firstName || !lastName || !email || !organization) {
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 })
+    }
+
+    // Look up label IDs
+    const [personLabelId, orgLabelId, wpLeadLabelId] = await Promise.all([
+      findFieldOptionId("person", "label", "CARE LEADER"),
+      findFieldOptionId("organization", "label", "WORKING"),
+      findLeadLabelId("Whitepaper Download"),
+    ])
+
+    // 1. Create the Organization
+    const orgBody: Record<string, unknown> = { name: organization }
+    if (orgLabelId) orgBody.label = orgLabelId
+    const org = await pipedrivePost("/organizations", orgBody)
+    const orgId = org.id
+
+    // 2. Create the Person with label "CARE LEADER", linked to the Organization
+    const personBody: Record<string, unknown> = {
+      name: `${firstName} ${lastName}`,
+      first_name: firstName,
+      last_name: lastName,
+      email: [{ value: email, primary: true, label: "work" }],
+      org_id: orgId,
+    }
+    if (personLabelId) personBody.label = personLabelId
+    const person = await pipedrivePost("/persons", personBody)
+    const personId = person.id
+
+    // 3. Create the Lead with title "{company name} Lead"
+    // Lead labels use UUIDs from /v1/leadLabels, passed as label_ids array
+    // Source is auto-set to "API" by Pipedrive for API-created leads
+    const leadBody: Record<string, unknown> = {
+      title: `${organization} lead`,
+      person_id: personId,
+      organization_id: orgId,
+      channel: 122, // Whitepaper Download
+    }
+    if (wpLeadLabelId) leadBody.label_ids = [wpLeadLabelId]
+
+    const lead = await pipedrivePost("/leads", leadBody)
+
+    return NextResponse.json({
+      success: true,
+      personId,
+      orgId,
+      leadId: lead.id,
+    })
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to create Pipedrive records" },
+      { status: 500 }
+    )
+  }
+}

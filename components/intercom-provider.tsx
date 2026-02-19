@@ -11,8 +11,6 @@ export function IntercomProvider() {
       return
     }
 
-    console.log('[v0] Initializing Intercom with App ID:', appId)
-
     // Initialize Intercom function
     ;(function () {
       const w = window as any
