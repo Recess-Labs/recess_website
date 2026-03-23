@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const advisors = [
   {
     name: "Dr. Ayelet Hirshfeld, PhD",
-    role: "Clinical Psychologist | AI in Mental Health | Trauma & High-Risk Workforce Specialist | Stanford CAPS–Trained Postdoctoral Fellow | UCL Healthcare Executive Programme",
+    role: "Clinical Psychologist | AI in Mental Health | Trauma & High-Risk Workforce Specialist | Stanford-trained Postdoctoral Fellow",
     image: "/images/team/ayelet-hirshfeld.webp",
   },
   {
