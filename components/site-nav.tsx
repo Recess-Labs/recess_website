@@ -54,6 +54,7 @@ export function SiteNav() {
           <NavItem label="Our Science" href="/science" active={pathname === "/science"} />
           <NavItem label="About" href="/about" active={pathname === "/about"} />
           <DropdownNavItem label="Resources" items={resources} active={false} />
+          <NavItem label="Champions" href="/champions" active={pathname === "/champions"} />
         </div>
 
         {/* CTA */}
@@ -93,6 +94,7 @@ export function SiteNav() {
               )
             ))}
           </MobileGroup>
+          <Link href="/champions" className="text-sm font-medium text-foreground" onClick={() => setMobileOpen(false)}>Champions</Link>
           <Button asChild size="sm" className="rounded-full font-serif font-semibold mt-2 bg-foreground text-background">
             <Link href="/get-started" onClick={() => setMobileOpen(false)}>Schedule Free Strategy Call</Link>
           </Button>

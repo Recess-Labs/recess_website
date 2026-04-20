@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/home/problem-section"
 import { CostBand } from "@/components/home/cost-band"
 import { ProofSection } from "@/components/home/proof-section"
 import { StepsSection } from "@/components/home/steps-section"
+import { ChampionsBanner } from "@/components/home/champions-banner"
 import { SystemSection } from "@/components/home/system-section"
 import { IndustrySection } from "@/components/home/industry-section"
 import { WhyNowSection } from "@/components/home/why-now-section"
@@ -23,6 +24,7 @@ export default function HomePage() {
       <CostBand />
       <ProofSection />
       <StepsSection />
+      <ChampionsBanner />
       <ImageBreak />
       <SystemSection />
       <IndustrySection />
