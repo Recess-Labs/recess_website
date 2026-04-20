@@ -1,7 +1,7 @@
 "use client"
 
 import { FadeInSection } from "@/components/fade-in-section"
-import { ArrowDown, Star, Zap, Shield } from "lucide-react"
+import { ArrowDown, Star, Zap, Shield, Sparkles } from "lucide-react"
 
 export function ChampionHero() {
   const scrollToForm = () => {
@@ -9,117 +9,156 @@ export function ChampionHero() {
   }
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ backgroundColor: "#04342C" }}>
-      {/* Animated gradient orbs */}
-      <div className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full bg-[#1D9E75]/30 blur-[120px] animate-pulse pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#5DCAA5]/20 blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] rounded-full bg-[#AAF5D4]/10 blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#29285D]">
+      {/* Animated gradient orbs - using brand pop colors */}
+      <div className="absolute top-10 right-10 w-[600px] h-[600px] rounded-full bg-[#8D7AA0]/40 blur-[150px] animate-pulse pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#FFCCE5]/30 blur-[120px] animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[#AAF5D4]/20 blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-[#FFF2E2]/25 blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: "0.5s" }} />
       
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+      {/* Animated flowing lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" preserveAspectRatio="none" viewBox="0 0 1400 800" fill="none">
+        <path d="M-100 400 C200 200 400 600 700 350 S1000 100 1200 400 S1400 600 1600 400" stroke="#8D7AA0" strokeWidth="2" opacity="0.5" fill="none">
+          <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+            M-100 400 C200 200 400 600 700 350 S1000 100 1200 400 S1400 600 1600 400;
+            M-100 380 C200 280 400 500 700 400 S1000 200 1200 350 S1400 500 1600 380;
+            M-100 400 C200 200 400 600 700 350 S1000 100 1200 400 S1400 600 1600 400
+          " />
+        </path>
+        <path d="M-100 500 C300 300 500 700 800 450 S1100 200 1300 500" stroke="#FFCCE5" strokeWidth="1.5" opacity="0.3" fill="none">
+          <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
+            M-100 500 C300 300 500 700 800 450 S1100 200 1300 500;
+            M-100 520 C300 400 500 600 800 480 S1100 300 1300 480;
+            M-100 500 C300 300 500 700 800 450 S1100 200 1300 500
+          " />
+        </path>
+      </svg>
 
-      <div className="relative mx-auto max-w-6xl px-6 py-24 lg:py-32">
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" }} />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left column - content */}
           <div>
             <FadeInSection>
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-8">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#5DCAA5] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#5DCAA5]" />
+              {/* Eyebrow with glow */}
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-8 shadow-lg shadow-[#8D7AA0]/20">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#AAF5D4] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#AAF5D4]" />
                 </span>
-                <span className="text-xs font-sans font-semibold text-[#5DCAA5] tracking-widest uppercase">
+                <span className="text-sm font-sans font-semibold text-white tracking-wide">
                   Exclusive Founding Group
                 </span>
               </div>
 
-              {/* Main headline */}
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-                Become a Recess
+              {/* Main headline - bigger and bolder */}
+              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.95]">
+                Become a
                 <br />
-                <span className="text-[#5DCAA5]">Champion</span>
+                <span className="relative">
+                  <span className="relative z-10 bg-gradient-to-r from-[#FFCCE5] via-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">
+                    Champion
+                  </span>
+                  <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#FFCCE5]/30 via-[#AAF5D4]/30 to-[#FFEDAC]/30 blur-lg" />
+                </span>
               </h1>
 
-              <p className="mt-6 text-xl text-[#9FE1CB] leading-relaxed max-w-lg">
+              <p className="mt-8 text-xl md:text-2xl text-white/70 leading-relaxed max-w-lg">
                 Early access. Locked pricing. A direct voice in what we build — for frontline professionals who want in from the start.
               </p>
 
-              {/* CTA */}
-              <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+              {/* CTA with hover effects */}
+              <div className="mt-10 flex flex-col sm:flex-row items-start gap-5">
                 <button
                   onClick={scrollToForm}
-                  className="group relative inline-flex items-center gap-3 rounded-xl px-8 py-4 font-serif font-bold text-lg bg-[#1D9E75] text-white hover:bg-[#25B385] transition-all shadow-2xl shadow-[#1D9E75]/30 hover:shadow-[#1D9E75]/50 hover:-translate-y-0.5"
+                  className="group relative inline-flex items-center gap-3 rounded-2xl px-10 py-5 font-serif font-bold text-xl bg-gradient-to-r from-[#8D7AA0] to-[#A08DB3] text-white hover:from-[#9D8AB0] hover:to-[#B09DC3] transition-all shadow-2xl shadow-[#8D7AA0]/40 hover:shadow-[#8D7AA0]/60 hover:-translate-y-1 hover:scale-[1.02]"
                 >
+                  <Sparkles className="w-5 h-5" />
                   Apply to Join
                   <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 </button>
-                <div className="flex items-center gap-2 text-[#5DCAA5]">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-[#1D9E75] border-2 border-[#04342C] flex items-center justify-center text-xs font-bold text-white">S</div>
-                    <div className="w-8 h-8 rounded-full bg-[#25B385] border-2 border-[#04342C] flex items-center justify-center text-xs font-bold text-white">M</div>
-                    <div className="w-8 h-8 rounded-full bg-[#5DCAA5] border-2 border-[#04342C] flex items-center justify-center text-xs font-bold text-[#04342C]">J</div>
+                <div className="flex items-center gap-3 text-white/60">
+                  <div className="flex -space-x-3">
+                    {["#FFCCE5", "#AAF5D4", "#FFEDAC", "#D4EDF9"].map((color, i) => (
+                      <div 
+                        key={i} 
+                        className="w-10 h-10 rounded-full border-2 border-[#29285D] flex items-center justify-center text-sm font-bold text-[#29285D] shadow-lg"
+                        style={{ backgroundColor: color }}
+                      >
+                        {["S", "M", "J", "K"][i]}
+                      </div>
+                    ))}
                   </div>
-                  <span className="text-sm">Join 47 founding members</span>
+                  <span className="text-sm font-medium">47 founding members joined</span>
                 </div>
               </div>
             </FadeInSection>
           </div>
 
-          {/* Right column - stats cards */}
+          {/* Right column - premium pricing card */}
           <FadeInSection delay={200}>
             <div className="relative">
-              {/* Main pricing card */}
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <div className="absolute -top-3 -right-3 bg-[#5DCAA5] text-[#04342C] text-xs font-bold px-3 py-1 rounded-full">
+              {/* Floating badges */}
+              <div className="absolute -top-4 -left-4 bg-[#AAF5D4] text-[#29285D] text-sm font-bold px-4 py-2 rounded-xl shadow-xl z-10 flex items-center gap-2">
+                <Zap className="w-4 h-4" />
+                First access
+              </div>
+              
+              {/* Main pricing card with glass effect */}
+              <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-10 shadow-2xl">
+                <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+                
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-[#FFCCE5] to-[#FFEDAC] text-[#29285D] text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   FOUNDING RATE
                 </div>
                 
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#1D9E75]/20 flex items-center justify-center">
-                    <Star className="w-7 h-7 text-[#5DCAA5]" />
+                <div className="flex items-center gap-5 mb-8 pt-4">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8D7AA0] to-[#29285D] flex items-center justify-center shadow-xl">
+                    <Star className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-[#9FE1CB]">Champion Pricing</p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-2xl text-[#9FE1CB]/50 line-through">$249</span>
-                      <span className="text-4xl font-serif font-bold text-white">$99</span>
-                      <span className="text-[#9FE1CB]">/year</span>
+                    <p className="text-sm text-white/60 mb-1">Champion Pricing</p>
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-3xl text-white/40 line-through font-serif">$249</span>
+                      <span className="text-6xl font-serif font-bold text-white">$99</span>
+                      <span className="text-white/60">/year</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-6" />
+                <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-8" />
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/5 rounded-2xl p-4 text-center">
-                    <p className="text-3xl font-serif font-bold text-[#5DCAA5]">12</p>
-                    <p className="text-sm text-[#9FE1CB] mt-1">months free</p>
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
+                    <p className="text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">12</p>
+                    <p className="text-sm text-white/60 mt-1">months free</p>
                   </div>
-                  <div className="bg-white/5 rounded-2xl p-4 text-center">
-                    <p className="text-3xl font-serif font-bold text-white">Forever</p>
-                    <p className="text-sm text-[#9FE1CB] mt-1">rate locked</p>
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
+                    <p className="text-4xl font-serif font-bold text-white">Forever</p>
+                    <p className="text-sm text-white/60 mt-1">rate locked</p>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center gap-3 text-[#9FE1CB] text-sm">
-                  <Shield className="w-4 h-4 text-[#5DCAA5]" />
-                  <span>Your rate never changes — no matter what</span>
+                <div className="flex items-center gap-3 text-white/70 text-sm bg-[#AAF5D4]/10 rounded-xl p-4 border border-[#AAF5D4]/20">
+                  <Shield className="w-5 h-5 text-[#AAF5D4] flex-shrink-0" />
+                  <span>Your rate never changes — no matter what happens to pricing</span>
                 </div>
               </div>
 
-              {/* Floating perks */}
-              <div className="absolute -left-4 top-1/2 -translate-y-1/2 bg-[#1D9E75] text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2">
-                <Zap className="w-4 h-4" />
-                First access
+              {/* Decorative floating element */}
+              <div className="absolute -bottom-6 -right-6 bg-[#FFCCE5] text-[#29285D] text-sm font-bold px-4 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2">
+                <Star className="w-4 h-4" />
+                Limited spots
               </div>
             </div>
           </FadeInSection>
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
