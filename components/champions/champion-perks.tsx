@@ -82,7 +82,7 @@ export function ChampionPerks() {
                         <Check className="w-5 h-5 text-[#29285D]" />
                       </div>
                       <p className="text-white font-medium leading-relaxed text-lg">
-                        Plus 12 months completely free to start
+                        Plus 6 months completely free to start
                       </p>
                     </div>
                     <p className="text-white/60 text-sm pl-14">
