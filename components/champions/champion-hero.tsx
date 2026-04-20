@@ -132,7 +132,7 @@ export function ChampionHero() {
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
-                    <p className="text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">12</p>
+                    <p className="text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">6</p>
                     <p className="text-sm text-white/60 mt-1">months free</p>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">

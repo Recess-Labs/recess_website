@@ -55,7 +55,7 @@ export function ChampionsBanner() {
                   </h3>
                   
                   <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
-                    12 months free, founding member pricing locked forever, and a direct voice in what we build.
+                    6 months free, founding member pricing locked forever, and a direct voice in what we build.
                   </p>
 
                   {/* Quick stats */}
