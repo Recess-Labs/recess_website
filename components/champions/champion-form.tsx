@@ -128,16 +128,16 @@ export function ChampionForm() {
                         className="w-full px-4 py-4 rounded-xl border-2 border-[#E8E0EC] bg-[#F5F5FF] text-[#29285D] placeholder:text-[#777698]/50 focus:outline-none focus:border-[#8D7AA0] focus:bg-white transition-all"
                       />
                       <p className="text-sm text-[#777698] mt-1">
-                        Don&apos;t have a Recess account yet? You&apos;ll need one to join as a Champion.{" "}
+                        New to Recess? No problem.{" "}
                         <a 
-                          href="https://app.withrecess.com/signup" 
+                          href="https://app.withrecess.com" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-[#8D7AA0] font-semibold hover:underline"
                         >
-                          Create your free account here first
+                          Get started
                         </a>
-                        , then come back to apply.
+                        {" "}and create your free account first, then come back to apply to join.
                       </p>
                     </div>
 
