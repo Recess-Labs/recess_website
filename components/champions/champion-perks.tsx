@@ -1,5 +1,7 @@
+"use client"
+
 import { FadeInSection } from "@/components/fade-in-section"
-import { Sparkles, Mic, Award, Gift, ArrowRight } from "lucide-react"
+import { Sparkles, Mic, Award, Gift, ArrowRight, Check } from "lucide-react"
 
 const perks = [
   {
@@ -26,44 +28,58 @@ const perks = [
 
 export function ChampionPerks() {
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: "#F5F5FF" }}>
-      {/* Decorative circles */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border border-accent/10" />
-      <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border border-accent/10" />
+    <section className="relative py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: "#FAFAF8" }}>
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#1D9E75]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-6xl px-6">
         <FadeInSection>
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <p className="text-accent font-serif font-semibold text-sm uppercase tracking-widest mb-3">
-              What You Get
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
-              Everything early. Everything discounted.
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 bg-[#1D9E75]/10 border border-[#1D9E75]/20 rounded-full px-4 py-1.5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]" />
+              <span className="text-xs font-sans font-semibold text-[#04342C] tracking-widest uppercase">
+                What You Get
+              </span>
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+              Everything early.
+              <br />
+              <span className="text-[#1D9E75]">Everything discounted.</span>
             </h2>
           </div>
         </FadeInSection>
 
-        {/* Pricing banner */}
+        {/* Pricing banner - highlight card */}
         <FadeInSection delay={100}>
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="relative bg-background rounded-3xl border border-border/30 shadow-lg overflow-hidden">
-              <div className="h-1.5 bg-gradient-to-r from-[#D4CCE0] via-accent to-[#D4CCE0]" />
-              <div className="p-8 md:p-10">
-                <div className="flex flex-wrap items-center justify-between gap-6">
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="relative overflow-hidden rounded-3xl" style={{ backgroundColor: "#04342C" }}>
+              {/* Animated gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1D9E75]/0 via-[#1D9E75]/20 to-[#1D9E75]/0 animate-pulse" />
+              
+              <div className="relative p-8 md:p-12">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                   <div>
-                    <span className="inline-block text-xs font-serif font-bold text-accent uppercase tracking-widest bg-[#F5F5FF] rounded-full px-3 py-1 mb-4">
+                    <div className="inline-block bg-[#5DCAA5] text-[#04342C] text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
                       Champion Pricing
-                    </span>
-                    <div className="flex items-baseline gap-3 flex-wrap">
-                      <span className="text-3xl text-muted-foreground/50 line-through font-serif">$249</span>
-                      <ArrowRight className="w-5 h-5 text-accent" />
-                      <span className="text-5xl font-serif font-bold text-foreground">$99</span>
-                      <span className="text-muted-foreground">/ year, locked forever</span>
+                    </div>
+                    <div className="flex items-baseline gap-4 flex-wrap">
+                      <span className="text-4xl font-serif text-[#9FE1CB]/60 line-through">$249</span>
+                      <ArrowRight className="w-6 h-6 text-[#5DCAA5]" />
+                      <span className="text-6xl md:text-7xl font-serif font-bold text-white">$99</span>
+                      <span className="text-xl text-[#9FE1CB]">/ year, locked forever</span>
                     </div>
                   </div>
-                  <div className="bg-[#F5F5FF] rounded-xl p-5 border border-border/20 max-w-xs">
-                    <p className="text-foreground font-medium leading-relaxed">
-                      Plus 12 months completely free to start. Your rate never changes — no matter what.
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-sm border border-white/10">
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-full bg-[#5DCAA5] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-4 h-4 text-[#04342C]" />
+                      </div>
+                      <p className="text-white font-medium leading-relaxed">
+                        Plus 12 months completely free to start
+                      </p>
+                    </div>
+                    <p className="text-[#9FE1CB] text-sm pl-11">
+                      Your rate never changes — no matter what.
                     </p>
                   </div>
                 </div>
@@ -72,25 +88,25 @@ export function ChampionPerks() {
           </div>
         </FadeInSection>
 
-        {/* Perks list */}
+        {/* Perks grid */}
         <FadeInSection delay={200}>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-background rounded-2xl border border-border/30 shadow-md overflow-hidden divide-y divide-border/30">
-              {perks.map((perk, i) => (
-                <div 
-                  key={i} 
-                  className="flex items-start gap-5 p-6 hover:bg-[#F5F5FF]/50 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                    <perk.icon className="w-5 h-5 text-accent" />
+          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            {perks.map((perk, i) => (
+              <div 
+                key={i} 
+                className="group relative bg-white rounded-2xl p-6 border border-[#04342C]/10 shadow-sm hover:shadow-xl hover:border-[#1D9E75]/30 transition-all hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1D9E75] to-[#04342C] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                    <perk.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg font-semibold text-foreground mb-1">{perk.title}</h3>
+                    <h3 className="font-serif text-lg font-bold text-foreground mb-2">{perk.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{perk.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </FadeInSection>
       </div>
