@@ -118,7 +118,7 @@ export function ChampionForm() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-semibold text-[#29285D]">Email address</label>
+                      <label className="text-sm font-semibold text-[#29285D]">Email address <span className="font-normal text-[#777698]">(the one tied to your Recess account)</span></label>
                       <input
                         type="email"
                         required
