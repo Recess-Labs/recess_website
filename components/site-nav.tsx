@@ -26,6 +26,8 @@ const resources = [
   { label: "Flow With Recess Podcast", href: "/podcast" },
   { label: "Blog", href: "/blog" },
   { label: "White Papers", href: "/white-papers" },
+  { label: "divider", href: "" },
+  { label: "Become a Recess Champion", href: "/champions" },
 ]
 
 export function SiteNav() {

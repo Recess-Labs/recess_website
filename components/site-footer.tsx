@@ -43,6 +43,7 @@ export function SiteFooter() {
               <li><Link href="/science" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Our Science</Link></li>
               <li><Link href="/about" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">About</Link></li>
               <li><a href="https://pulse.withrecess.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Frontline Emotional Risk Index</a></li>
+              <li><Link href="/champions" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Become a Recess Champion</Link></li>
             </ul>
           </div>
         </div>
