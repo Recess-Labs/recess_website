@@ -152,7 +152,7 @@ export function ChampionForm() {
       const idToken = await user.getIdToken()
 
       const res = await fetch("/api/champions", {
-        method: "PUT",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${idToken}`,
