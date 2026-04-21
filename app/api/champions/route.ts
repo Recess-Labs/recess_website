@@ -30,7 +30,7 @@ function getLocalDatetime(): string {
   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${sign}${offsetHours}:${offsetMinutes}`
 }
 
-export async function PUT(request: Request) {
+export async function POST(request: Request) {
   const apiUrl = process.env.RECESS_API_URL
   if (!apiUrl) {
     return NextResponse.json({ error: "RECESS_API_URL not configured" }, { status: 500 })
@@ -54,8 +54,8 @@ export async function PUT(request: Request) {
   const body = await request.json()
 
   // Forward the request to the Recess API
-  const res = await fetch(`${apiUrl}/api/v1/users`, {
-    method: "PUT",
+  const res = await fetch(`${apiUrl}/users`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,
