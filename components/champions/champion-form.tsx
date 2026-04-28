@@ -338,7 +338,7 @@ export function ChampionForm() {
                     </button>
 
                     <p className="text-center text-sm text-[#777698]">
-                      We&apos;ll review your application and follow up within 48 hours.
+                      No credit card required. We&apos;ll review your application and follow up within 48 hours.
                     </p>
                   </form>
 

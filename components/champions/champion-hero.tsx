@@ -120,6 +120,7 @@ export function ChampionHero() {
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center border border-white/10">
                     <p className="text-3xl sm:text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">6</p>
                     <p className="text-xs sm:text-sm text-white/60 mt-1">months free</p>
+                    <p className="text-[10px] sm:text-xs text-white/50 mt-0.5">No credit card needed</p>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center border border-white/10">
                     <p className="text-2xl sm:text-4xl font-serif font-bold text-white">Forever</p>

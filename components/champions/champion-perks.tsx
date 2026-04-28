@@ -82,7 +82,7 @@ export function ChampionPerks() {
                         <Check className="w-5 h-5 text-[#29285D]" />
                       </div>
                       <p className="text-white font-medium leading-relaxed text-lg">
-                        Your first 6 months are completely free — no card required.
+                        Your first 6 months are completely free. No credit card required to get started.
                       </p>
                     </div>
                     <p className="text-white/60 text-sm pl-14">
