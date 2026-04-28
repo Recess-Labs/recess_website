@@ -55,7 +55,7 @@ export async function PUT(request: Request) {
 
   // Forward the request to the Recess API
   const res = await fetch(`${apiUrl}/users`, {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,
