@@ -341,6 +341,22 @@ export function ChampionForm() {
                       We&apos;ll review your application and follow up within 48 hours.
                     </p>
                   </form>
+
+                  {/* Account creation note */}
+                  <div className="mt-8 pt-6 border-t border-[#E8E0EC]">
+                    <p className="text-center text-sm text-[#777698]">
+                      Don&apos;t have a Recess account yet? You&apos;ll need one to join as a Champion.{" "}
+                      <a
+                        href="https://app.withrecess.com/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-[#8D7AA0] hover:underline"
+                      >
+                        Create your free account here first
+                      </a>
+                      , then come back to apply.
+                    </p>
+                  </div>
                 </>
 
               ) : (
