@@ -30,7 +30,7 @@ function getLocalDatetime(): string {
   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${sign}${offsetHours}:${offsetMinutes}`
 }
 
-export async function POST(request: Request) {
+export async function PUT(request: Request) {
   const apiUrl = process.env.RECESS_API_URL
   if (!apiUrl) {
     return NextResponse.json({ error: "RECESS_API_URL not configured" }, { status: 500 })

@@ -152,7 +152,7 @@ export function ChampionForm() {
       const idToken = await user.getIdToken()
 
       const res = await fetch("/api/champions", {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${idToken}`,
@@ -162,6 +162,7 @@ export function ChampionForm() {
             first_name: formData.firstName,
             last_name: formData.lastName,
             phone: formData.phone || undefined,
+            champion_enrollment: true,
           },
         }),
       })
@@ -217,9 +218,9 @@ export function ChampionForm() {
                       <Check className="w-10 h-10 text-[#8D7AA0]" />
                     </div>
                   </div>
-                  <h2 className="font-serif text-3xl font-bold text-[#29285D] mb-4">You&apos;re In!</h2>
+                  <h2 className="font-serif text-3xl font-bold text-[#29285D] mb-4">Thank you for applying!</h2>
                   <p className="text-lg text-[#777698] leading-relaxed max-w-sm mx-auto">
-                    We&apos;ll review your application and reach out within 48 hours. Welcome to the founding team.
+                    We&apos;ll review your application and reach out within 48 hours.
                   </p>
                 </div>
 
@@ -322,7 +323,7 @@ export function ChampionForm() {
                     <button
                       type="submit"
                       disabled={isSigningIn}
-                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#8D7AA0] to-[#A08DB3] text-white hover:from-[#9D8AB0] hover:to-[#B09DC3] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
                       {isSigningIn ? (
                         <>
@@ -338,9 +339,25 @@ export function ChampionForm() {
                     </button>
 
                     <p className="text-center text-sm text-[#777698]">
-                      We&apos;ll review your application and follow up within 48 hours.
+                      No credit card required. We&apos;ll review your application and follow up within 48 hours.
                     </p>
                   </form>
+
+                  {/* Account creation note */}
+                  <div className="mt-8 pt-6 border-t border-[#E8E0EC]">
+                    <p className="text-center text-sm text-[#777698]">
+                      Don&apos;t have a Recess account yet? You&apos;ll need one to join as a Champion.{" "}
+                      <a
+                        href="https://app.withrecess.com/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-[#8D7AA0] hover:underline"
+                      >
+                        Create your free account here first
+                      </a>
+                      , then come back to apply.
+                    </p>
+                  </div>
                 </>
 
               ) : (
@@ -428,7 +445,7 @@ export function ChampionForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#8D7AA0] to-[#A08DB3] text-white hover:from-[#9D8AB0] hover:to-[#B09DC3] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
                       {isSubmitting ? (
                         <>

@@ -76,17 +76,17 @@ export function ChampionPerks() {
                       <span className="text-xl text-white/60">/ year, locked forever</span>
                     </div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-sm border border-white/20">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md border border-white/20">
                     <div className="flex items-start gap-4 mb-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#AAF5D4] to-[#FFEDAC] flex items-center justify-center flex-shrink-0">
                         <Check className="w-5 h-5 text-[#29285D]" />
                       </div>
                       <p className="text-white font-medium leading-relaxed text-lg">
-                        Plus 6 months completely free to start
+                        Your first 6 months are completely free. No credit card required to get started.
                       </p>
                     </div>
                     <p className="text-white/60 text-sm pl-14">
-                      Your rate never changes — no matter what.
+                      After that, you pay $99/year and that rate is yours permanently. Standard pricing is $249/year and will keep going up. Yours won&apos;t.
                     </p>
                   </div>
                 </div>

@@ -37,24 +37,24 @@ export function ChampionHero() {
       {/* Subtle dot pattern */}
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" }} />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Left column - content */}
           <div>
             <FadeInSection>
               {/* Eyebrow with glow */}
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-8 shadow-lg shadow-[#8D7AA0]/20">
-                <span className="relative flex h-3 w-3">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 mb-6 sm:mb-8 shadow-lg shadow-[#8D7AA0]/20">
+                <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#AAF5D4] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#AAF5D4]" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-[#AAF5D4]" />
                 </span>
-                <span className="text-sm font-sans font-semibold text-white tracking-wide">
+                <span className="text-xs sm:text-sm font-sans font-semibold text-white tracking-wide">
                   Exclusive Founding Group
                 </span>
               </div>
 
               {/* Main headline - bigger and bolder */}
-              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.95]">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight leading-[0.95]">
                 Become a
                 <br />
                 <span className="relative">
@@ -65,91 +65,78 @@ export function ChampionHero() {
                 </span>
               </h1>
 
-              <p className="mt-8 text-xl md:text-2xl text-white/70 leading-relaxed max-w-lg">
+              <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed max-w-lg">
                 Early access. Locked pricing. A direct voice in what we build — for frontline professionals who want in from the start.
               </p>
 
               {/* CTA with hover effects */}
-              <div className="mt-10 flex flex-col sm:flex-row items-start gap-5">
+              <div className="mt-8 sm:mt-10">
                 <button
                   onClick={scrollToForm}
-                  className="group relative inline-flex items-center gap-3 rounded-2xl px-10 py-5 font-serif font-bold text-xl bg-gradient-to-r from-[#8D7AA0] to-[#A08DB3] text-white hover:from-[#9D8AB0] hover:to-[#B09DC3] transition-all shadow-2xl shadow-[#8D7AA0]/40 hover:shadow-[#8D7AA0]/60 hover:-translate-y-1 hover:scale-[1.02]"
+                  className="group relative inline-flex items-center gap-3 rounded-2xl px-8 sm:px-10 py-4 sm:py-5 font-serif font-bold text-lg sm:text-xl bg-gradient-to-r from-[#8D7AA0] to-[#A08DB3] text-white hover:from-[#9D8AB0] hover:to-[#B09DC3] transition-all shadow-2xl shadow-[#8D7AA0]/40 hover:shadow-[#8D7AA0]/60 hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <Sparkles className="w-5 h-5" />
                   Apply to Join
                   <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 </button>
-                <div className="flex items-center gap-3 text-white/60">
-                  <div className="flex -space-x-3">
-                    {["#FFCCE5", "#AAF5D4", "#FFEDAC", "#D4EDF9"].map((color, i) => (
-                      <div 
-                        key={i} 
-                        className="w-10 h-10 rounded-full border-2 border-[#29285D] flex items-center justify-center text-sm font-bold text-[#29285D] shadow-lg"
-                        style={{ backgroundColor: color }}
-                      >
-                        {["S", "M", "J", "K"][i]}
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium">47 founding members joined</span>
-                </div>
               </div>
             </FadeInSection>
           </div>
 
           {/* Right column - premium pricing card */}
           <FadeInSection delay={200}>
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               {/* Floating badges */}
-              <div className="absolute -top-4 -left-4 bg-[#AAF5D4] text-[#29285D] text-sm font-bold px-4 py-2 rounded-xl shadow-xl z-10 flex items-center gap-2">
-                <Zap className="w-4 h-4" />
+              <div className="absolute -top-4 left-4 sm:-left-4 bg-[#AAF5D4] text-[#29285D] text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl shadow-xl z-10 flex items-center gap-2">
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
                 First access
               </div>
               
               {/* Main pricing card with glass effect */}
-              <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-10 shadow-2xl">
+              <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl">
                 <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
                 
-                <div className="absolute top-6 right-6 bg-gradient-to-r from-[#FFCCE5] to-[#FFEDAC] text-[#29285D] text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                <div className="absolute top-4 sm:top-6 right-4 sm:right-6 bg-gradient-to-r from-[#FFCCE5] to-[#FFEDAC] text-[#29285D] text-[10px] sm:text-xs font-bold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg">
                   FOUNDING RATE
                 </div>
                 
-                <div className="flex items-center gap-5 mb-8 pt-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8D7AA0] to-[#29285D] flex items-center justify-center shadow-xl">
-                    <Star className="w-8 h-8 text-white" />
+                <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8 pt-6 sm:pt-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#8D7AA0] to-[#29285D] flex items-center justify-center shadow-xl flex-shrink-0">
+                    <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <div>
-                    <p className="text-sm text-white/60 mb-1">Champion Pricing</p>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-3xl text-white/40 line-through font-serif">$249</span>
-                      <span className="text-6xl font-serif font-bold text-white">$99</span>
-                      <span className="text-white/60">/year</span>
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm text-white/60 mb-1">Champion Pricing</p>
+                    <div className="flex items-baseline gap-2 sm:gap-3 flex-wrap">
+                      <span className="text-xl sm:text-2xl md:text-3xl text-white/40 line-through font-serif">$249</span>
+                      <span className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white">$99</span>
+                      <span className="text-white/60 text-sm sm:text-base">/year</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-8" />
+                <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-6 sm:my-8" />
 
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
-                    <p className="text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">6</p>
-                    <p className="text-sm text-white/60 mt-1">months free</p>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center border border-white/10">
+                    <p className="text-3xl sm:text-4xl font-serif font-bold bg-gradient-to-r from-[#AAF5D4] to-[#FFEDAC] bg-clip-text text-transparent">6</p>
+                    <p className="text-xs sm:text-sm text-white/60 mt-1">months free</p>
+                    <p className="text-[10px] sm:text-xs text-white/50 mt-0.5">No credit card needed</p>
                   </div>
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10">
-                    <p className="text-4xl font-serif font-bold text-white">Forever</p>
-                    <p className="text-sm text-white/60 mt-1">rate locked</p>
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center border border-white/10">
+                    <p className="text-2xl sm:text-4xl font-serif font-bold text-white">Forever</p>
+                    <p className="text-xs sm:text-sm text-white/60 mt-1">rate locked</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-white/70 text-sm bg-[#AAF5D4]/10 rounded-xl p-4 border border-[#AAF5D4]/20">
-                  <Shield className="w-5 h-5 text-[#AAF5D4] flex-shrink-0" />
-                  <span>Your rate never changes — no matter what happens to pricing</span>
+                <div className="flex items-start gap-3 text-white/70 text-sm bg-[#AAF5D4]/10 rounded-xl p-4 border border-[#AAF5D4]/20">
+                  <Shield className="w-5 h-5 text-[#AAF5D4] flex-shrink-0 mt-0.5" />
+                  <span>Start with 6 months completely free. After that, you&apos;re locked in at $99/year — forever. No price increases, ever.</span>
                 </div>
               </div>
 
               {/* Decorative floating element */}
-              <div className="absolute -bottom-6 -right-6 bg-[#FFCCE5] text-[#29285D] text-sm font-bold px-4 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2">
-                <Star className="w-4 h-4" />
+              <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-[#FFCCE5] text-[#29285D] text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl shadow-xl hidden sm:flex items-center gap-2">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4" />
                 Limited spots
               </div>
             </div>

@@ -89,7 +89,7 @@ export function ChampionWhy() {
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#29285D] mb-3">Locked Pricing</h3>
                 <p className="text-[#777698] leading-relaxed">
-                  Founding member rates that never change. Your loyalty today means lifetime savings.
+                  6 months free, then $99/year — locked in permanently. The standard rate is already $249 and rising. Champions never see that number.
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-[#8D7AA0] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   <span>Lock your rate</span>
