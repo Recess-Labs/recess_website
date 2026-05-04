@@ -53,14 +53,14 @@ export function SiteFooter() {
           <div className="flex items-center gap-6">
             <a
               href="https://www.iubenda.com/privacy-policy/50662983"
-              className="iubenda-white no-brand iubenda-noiframe iubenda-embed iub-body-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
+              className="iubenda-white no-brand iubenda-noiframe iubenda-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
               title="Privacy Policy"
             >
               Privacy Policy
             </a>
             <a
               href="https://www.iubenda.com/terms-and-conditions/50662983"
-              className="iubenda-white iubenda-noiframe iubenda-embed iub-body-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
+              className="iubenda-white iubenda-noiframe iubenda-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
               title="Terms and Conditions"
             >
               Terms and Conditions
