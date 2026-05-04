@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   },
   description:
     "Recess helps healthcare, education, and public safety organizations detect trauma exposure early and stabilize teams before it leads to turnover, extended leave, or operational disruption.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 }
 
 export const viewport: Viewport = {

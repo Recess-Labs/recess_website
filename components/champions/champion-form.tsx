@@ -161,7 +161,7 @@ export function ChampionForm() {
           user: {
             first_name: formData.firstName,
             last_name: formData.lastName,
-            phone: formData.phone || undefined,
+            phone_number: formData.phone || undefined,
             champion_enrollment: true,
           },
         }),
