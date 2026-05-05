@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 
 export function SiteFooter() {
   return (
@@ -51,39 +50,20 @@ export function SiteFooter() {
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/40">&copy; {new Date().getFullYear()} Recess. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a
-              href="https://www.iubenda.com/privacy-policy/50662983"
-              className="iubenda-white no-brand iubenda-noiframe iubenda-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
-              title="Privacy Policy"
+            <Link
+              href="/privacy"
+              className="text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="https://www.iubenda.com/terms-and-conditions/50662983"
-              className="iubenda-white iubenda-noiframe iubenda-embed text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
-              title="Terms and Conditions"
+            </Link>
+            <Link
+              href="/terms"
+              className="text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"
             >
               Terms and Conditions
-            </a>
+            </Link>
           </div>
         </div>
-        <Script id="iubenda-loader" strategy="afterInteractive">{`
-          (function (w, d) {
-            var loader = function () {
-              var s = d.createElement("script"),
-                tag = d.getElementsByTagName("script")[0];
-              s.src = "https://cdn.iubenda.com/iubenda.js";
-              tag.parentNode.insertBefore(s, tag);
-            };
-            if (w.addEventListener) {
-              w.addEventListener("load", loader, false);
-            } else if (w.attachEvent) {
-              w.attachEvent("onload", loader);
-            } else {
-              w.onload = loader;
-            }
-          })(window, document);
-        `}</Script>
       </div>
     </footer>
   )
