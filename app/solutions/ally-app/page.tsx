@@ -3,8 +3,15 @@ import { SolutionDetail } from "@/components/solution-detail"
 import { Smartphone } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Recess Frontline Ally\u2122 | Real-Time Trauma Stabilization",
-  description: "Repair overload in minutes with neuroscience-based stabilization protocols.",
+  title: "Frontline Ally | Real-Time Vicarious Trauma & Compassion Fatigue Relief | Recess",
+  description:
+    "Repair emotional overload in minutes with neuroscience-based stabilization protocols. Built specifically for secondary trauma, vicarious trauma, and compassion fatigue in frontline workers.",
+  openGraph: {
+    title: "Frontline Ally | Real-Time Vicarious Trauma & Compassion Fatigue Relief | Recess",
+    description:
+      "Repair emotional overload in minutes with neuroscience-based stabilization protocols for frontline workers.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 export default function AllyAppPage() {

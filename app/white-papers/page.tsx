@@ -6,9 +6,15 @@ import { SharedCTA } from "@/components/shared-cta"
 import { WhitePaperModal } from "@/components/white-paper-modal"
 
 export const metadata: Metadata = {
-  title: "White Papers | Recess Research & Evidence Base",
+  title: "White Papers | Vicarious Trauma & Compassion Fatigue Research | Recess",
   description:
-    "Download Recess white papers on workforce stability, trauma exposure science, and brain-based solutions for high-impact professions.",
+    "Download research white papers on vicarious trauma, secondary trauma, compassion fatigue, and neuroscience-backed solutions for healthcare, education, and public safety workforces.",
+  openGraph: {
+    title: "White Papers | Vicarious Trauma & Compassion Fatigue Research | Recess",
+    description:
+      "Download research white papers on vicarious trauma, secondary trauma, and compassion fatigue solutions.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 const whitePapers = [

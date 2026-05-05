@@ -275,7 +275,7 @@ export function ChampionForm() {
                     type="button"
                     onClick={handleGoogleSignIn}
                     disabled={isSigningIn}
-                    className="w-full flex items-center justify-center gap-3 rounded-xl px-6 py-4 font-semibold text-[#29285D] bg-white border-2 border-[#E8E0EC] hover:border-[#8D7AA0] hover:bg-[#F5F5FF] transition-all disabled:opacity-60 disabled:cursor-not-allowed mb-5"
+                    className="w-full flex items-center justify-center gap-3 rounded-xl px-6 py-4 font-semibold text-[#29285D] bg-white border-2 border-[#E8E0EC] hover:border-[#8D7AA0] hover:bg-[#F5F5FF] transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mb-5"
                   >
                     <GoogleIcon />
                     Continue with Google
@@ -323,7 +323,7 @@ export function ChampionForm() {
                     <button
                       type="submit"
                       disabled={isSigningIn}
-                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
                       {isSigningIn ? (
                         <>
@@ -338,8 +338,8 @@ export function ChampionForm() {
                       )}
                     </button>
 
-                    <p className="text-center text-sm text-[#777698]">
-                      No credit card required. We&apos;ll review your application and follow up within 48 hours.
+                    <p className="text-center text-xs text-[#777698]/70">
+                      We&apos;ll review your application and follow up within 48 hours.
                     </p>
                   </form>
 
@@ -445,7 +445,7 @@ export function ChampionForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      className="w-full flex items-center justify-center gap-3 rounded-xl px-8 py-5 font-serif font-bold text-lg bg-gradient-to-r from-[#4B3860] to-[#654870] text-white hover:from-[#5B4870] hover:to-[#755880] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
                       {isSubmitting ? (
                         <>
@@ -461,7 +461,7 @@ export function ChampionForm() {
                       )}
                     </button>
 
-                    <p className="text-center text-sm text-[#777698]">
+                    <p className="text-center text-xs text-[#777698]/70">
                       We&apos;ll review your application and follow up within 48 hours.
                     </p>
                   </form>

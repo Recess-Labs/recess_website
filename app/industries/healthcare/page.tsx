@@ -3,8 +3,15 @@ import { IndustryDetail } from "@/components/industry-detail"
 import { HealthcareIcon } from "@/components/illustrations"
 
 export const metadata: Metadata = {
-  title: "Healthcare & Behavioral Health",
-  description: "Stabilize trauma-exposed care workforces before instability impacts care delivery.",
+  title: "Healthcare Compassion Fatigue & Vicarious Trauma Solutions | Recess",
+  description:
+    "Combat compassion fatigue, secondary trauma, and burnout in healthcare & behavioral health teams. Trauma-informed training and real-time stabilization for nurses, clinicians, and care professionals.",
+  openGraph: {
+    title: "Healthcare Compassion Fatigue & Vicarious Trauma Solutions | Recess",
+    description:
+      "Combat compassion fatigue, secondary trauma, and burnout in healthcare teams with trauma-informed training.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 export default function HealthcarePage() {

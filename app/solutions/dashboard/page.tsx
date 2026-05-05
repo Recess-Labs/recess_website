@@ -3,8 +3,15 @@ import { SolutionDetail } from "@/components/solution-detail"
 import { BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Recess Signal\u2122 | AI-Powered Workforce Intelligence",
-  description: "Predict and prevent workforce instability with early visibility into trauma load trends.",
+  title: "Recess Signal | AI-Powered Trauma Load & Burnout Prevention Analytics | Recess",
+  description:
+    "Predict and prevent workforce instability with AI-powered analytics. Detect vicarious trauma, compassion fatigue, and burnout risk before it leads to turnover.",
+  openGraph: {
+    title: "Recess Signal | AI-Powered Trauma Load & Burnout Prevention Analytics | Recess",
+    description:
+      "Predict and prevent workforce instability with AI-powered analytics for trauma load and burnout risk.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 export default function DashboardPage() {

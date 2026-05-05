@@ -3,8 +3,15 @@ import { SolutionDetail } from "@/components/solution-detail"
 import { Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Recess Foundation\u2122 | Trauma-Informed Workforce Standards",
-  description: "Build the foundation for stability with consistent trauma response protocols.",
+  title: "Recess Foundation | Trauma-Informed Training & Workforce Standards | Recess",
+  description:
+    "Build trauma-informed workforce standards with leadership training on vicarious trauma, secondary trauma, and compassion fatigue. Consistent protocols for high-exposure environments.",
+  openGraph: {
+    title: "Recess Foundation | Trauma-Informed Training & Workforce Standards | Recess",
+    description:
+      "Build trauma-informed workforce standards with leadership training on vicarious trauma and compassion fatigue.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 export default function WorkforceSystemPage() {

@@ -8,8 +8,15 @@ import { Shield, Smartphone, BarChart3, ArrowRight, CheckCircle2 } from "lucide-
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Solutions | Recess",
-  description: "Explore the Recess System: workforce standards, frontline stabilization, and leadership intelligence.",
+  title: "Trauma-Informed Training & Workforce Stabilization Solutions | Recess",
+  description:
+    "Explore the Recess System: trauma-informed training, frontline stabilization for vicarious trauma and compassion fatigue, and AI-powered workforce intelligence for healthcare, education, and public safety.",
+  openGraph: {
+    title: "Trauma-Informed Training & Workforce Stabilization Solutions | Recess",
+    description:
+      "Explore the Recess System: trauma-informed training, frontline stabilization, and AI-powered workforce intelligence.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 const phases = [

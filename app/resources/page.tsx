@@ -6,8 +6,15 @@ import { SharedCTA } from "@/components/shared-cta"
 import { ArrowRight, BookOpen, Radio, BarChart3, HelpCircle, PenLine } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Resources",
-  description: "Help center, articles, podcast, assessments, and founder insights from Recess.",
+  title: "Resources | Vicarious Trauma & Compassion Fatigue Tools & Assessments | Recess",
+  description:
+    "Free resources for vicarious trauma, secondary trauma, and compassion fatigue. Assessments, articles, podcasts, and trauma-informed training materials for frontline professionals.",
+  openGraph: {
+    title: "Resources | Vicarious Trauma & Compassion Fatigue Tools & Assessments | Recess",
+    description:
+      "Free resources for vicarious trauma and compassion fatigue. Assessments, articles, and training materials.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
+  },
 }
 
 const resources = [
