@@ -5,15 +5,9 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { SharedCTA } from "@/components/shared-cta"
 
 export const metadata: Metadata = {
-  title: "Flow With Recess Podcast | Trauma-Informed Leadership for Frontline Teams",
+  title: "Flow With Recess Podcast | Leading When Crisis Is Part of the Job",
   description:
-    "A leadership podcast on building stable teams in high-stress environments. Explore vicarious trauma, compassion fatigue, and trauma-informed strategies with healthcare, education, and public safety leaders.",
-  openGraph: {
-    title: "Flow With Recess Podcast | Trauma-Informed Leadership for Frontline Teams",
-    description:
-      "A leadership podcast on building stable teams in high-stress environments. Explore vicarious trauma and compassion fatigue.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+    "A leadership podcast exploring what it takes to build stable teams in environments where crisis is part of the job.",
 }
 
 const SPOTIFY_SHOW_ID = "2JDOlLsdj2PBoUjACmO7Wc"

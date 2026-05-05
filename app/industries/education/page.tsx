@@ -3,15 +3,8 @@ import { IndustryDetail } from "@/components/industry-detail"
 import { EducationIcon } from "@/components/illustrations"
 
 export const metadata: Metadata = {
-  title: "Teacher Burnout & Secondary Trauma Solutions for Schools | Recess",
-  description:
-    "Address teacher burnout, secondary trauma, and compassion fatigue in schools. Trauma-informed training and stabilization tools for educators, counselors, and school staff.",
-  openGraph: {
-    title: "Teacher Burnout & Secondary Trauma Solutions for Schools | Recess",
-    description:
-      "Address teacher burnout, secondary trauma, and compassion fatigue with trauma-informed training for educators.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+  title: "Education",
+  description: "The stability of a school depends on the stability of the adults inside it.",
 }
 
 export default function EducationPage() {

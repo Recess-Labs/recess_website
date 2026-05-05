@@ -6,15 +6,8 @@ import { WhitePaperModal } from "@/components/white-paper-modal"
 import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "The Science Behind Recess | Vicarious Trauma & Compassion Fatigue Research",
-  description:
-    "Discover the neuroscience behind Recess: AIP theory, polyvagal research, and HRV science. Built specifically for secondary trauma, vicarious trauma, and compassion fatigue in frontline workers.",
-  openGraph: {
-    title: "The Science Behind Recess | Vicarious Trauma & Compassion Fatigue Research",
-    description:
-      "Discover the neuroscience behind Recess: AIP theory, polyvagal research, and HRV science for trauma-exposed professionals.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+  title: "Our Science",
+  description: "The neuroscience and trauma-processing research behind Recess, built specifically for secondary trauma and repeated exposure.",
 }
 
 export default function SciencePage() {

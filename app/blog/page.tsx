@@ -5,15 +5,9 @@ import { SharedCTA } from "@/components/shared-cta"
 import { BlogGrid } from "@/components/blog/blog-grid"
 
 export const metadata: Metadata = {
-  title: "Blog | Vicarious Trauma, Compassion Fatigue & Workforce Stability Insights | Recess",
+  title: "The Recess Blog | Science, Strategy & Workforce Stability",
   description:
-    "Expert insights on vicarious trauma, secondary trauma, compassion fatigue, and workforce stability. Science-backed strategies for trauma-exposed professionals.",
-  openGraph: {
-    title: "Blog | Vicarious Trauma, Compassion Fatigue & Workforce Stability Insights | Recess",
-    description:
-      "Expert insights on vicarious trauma, secondary trauma, compassion fatigue, and workforce stability.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+    "Science, strategy, and workforce stability in high-exposure environments. Insights from the Recess team.",
 }
 
 export default function BlogPage() {

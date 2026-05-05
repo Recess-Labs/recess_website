@@ -4,15 +4,8 @@ import { PublicSafetyIcon } from "@/components/illustrations"
 import { FadeInSection } from "@/components/fade-in-section"
 
 export const metadata: Metadata = {
-  title: "First Responder Trauma & PTSD Prevention | Police, Fire, EMS | Recess",
-  description:
-    "Prevent PTSD, vicarious trauma, and burnout in first responders. Trauma-informed training and stabilization for police, fire, EMS, corrections, and public safety professionals.",
-  openGraph: {
-    title: "First Responder Trauma & PTSD Prevention | Police, Fire, EMS | Recess",
-    description:
-      "Prevent PTSD, vicarious trauma, and burnout in first responders with trauma-informed training and stabilization.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+  title: "Public Safety",
+  description: "Stabilize police, fire, EMS, corrections, and VA-adjacent workforces before trauma overload creates incident risk.",
 }
 
 function CorrectionsNote() {

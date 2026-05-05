@@ -6,15 +6,8 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Get Started with Trauma-Informed Training | Free Strategy Call | Recess",
-  description:
-    "Schedule a free 30-minute strategy call to see how Recess addresses vicarious trauma, secondary trauma, and compassion fatigue in your workforce with trauma-informed training.",
-  openGraph: {
-    title: "Get Started with Trauma-Informed Training | Free Strategy Call | Recess",
-    description:
-      "Schedule a free strategy call to see how Recess addresses vicarious trauma and compassion fatigue in your workforce.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+  title: "Get Started",
+  description: "Schedule a free 30-minute strategy call and see how Recess stabilizes trauma-exposed teams.",
 }
 
 const benefits = [

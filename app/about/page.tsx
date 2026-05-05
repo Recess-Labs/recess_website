@@ -6,15 +6,8 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { AlertTriangle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Recess | Trauma-Informed Workforce Solutions",
-  description:
-    "Learn about Recess - the neuroscience-informed company building emotional infrastructure for trauma-exposed workforces. Addressing vicarious trauma, secondary trauma, and compassion fatigue at scale.",
-  openGraph: {
-    title: "About Recess | Trauma-Informed Workforce Solutions",
-    description:
-      "Learn about Recess - the neuroscience-informed company building emotional infrastructure for trauma-exposed workforces.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Recess - Reset Your Emotional Patterns" }],
-  },
+  title: "About Recess",
+  description: "Our vision, manifesto, and the team building emotional infrastructure for trauma-exposed workforces.",
 }
 
 const advisors = [
