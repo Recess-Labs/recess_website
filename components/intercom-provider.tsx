@@ -6,15 +6,13 @@ export function IntercomProvider() {
   useEffect(() => {
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID
 
-    // Skip Intercom initialization entirely if no app ID is configured
     if (!appId) {
+      console.warn('[v0] Intercom App ID not configured')
       return
     }
 
-    let scriptLoaded = false
-
     // Initialize Intercom function
-    const initIntercom = () => {
+    ;(function () {
       const w = window as any
       const ic = w.Intercom
       if (typeof ic === 'function') {
@@ -35,19 +33,6 @@ export function IntercomProvider() {
           s.type = 'text/javascript'
           s.async = true
           s.src = `https://widget.intercom.io/widget/${appId}`
-          s.onload = () => {
-            scriptLoaded = true
-            // Boot Intercom after script loads
-            if (w.Intercom) {
-              w.Intercom('boot', {
-                app_id: appId,
-              })
-            }
-          }
-          s.onerror = () => {
-            // Silently handle script load errors
-            scriptLoaded = false
-          }
           const x = d.getElementsByTagName('script')[0]
           x.parentNode?.insertBefore(s, x)
         }
@@ -59,12 +44,17 @@ export function IntercomProvider() {
           w.addEventListener('load', l, false)
         }
       }
+    })()
+
+    // Boot Intercom
+    if (window.Intercom) {
+      window.Intercom('boot', {
+        app_id: appId,
+      })
     }
 
-    initIntercom()
-
     return () => {
-      if (scriptLoaded && window.Intercom) {
+      if (window.Intercom) {
         window.Intercom('shutdown')
       }
     }
