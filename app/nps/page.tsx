@@ -1,32 +1,115 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { AnalyticsBrowser } from "@customerio/cdp-analytics-browser"
 import Link from "next/link"
+import { useRouter, useSearchParams } from "next/navigation"
 import { PageWrapper } from "@/components/page-wrapper"
 import { FadeInSection } from "@/components/fade-in-section"
 import { ArrowRight, CheckCircle, Sparkles, Star } from "lucide-react"
 
+const customerIoWriteKey = process.env.NEXT_PUBLIC_CUSTOMER_IO_WRITE_KEY
+const customerIoAnalytics = customerIoWriteKey
+  ? AnalyticsBrowser.load({ writeKey: customerIoWriteKey })
+  : null
+
 export default function NPSPage() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     reason: "",
     improvement: "",
     hoping: "",
   })
 
+  const customerId = useMemo(() => {
+    const user = searchParams.get("user")
+    if (!user) return null
+    const trimmed = user.trim()
+    return trimmed.length > 0 ? trimmed : null
+  }, [searchParams])
+
+  const score = useMemo(() => {
+    const rawScore = searchParams.get("score")
+    if (!rawScore) return null
+
+    const parsedScore = Number(rawScore)
+    if (!Number.isInteger(parsedScore) || parsedScore < 0 || parsedScore > 10) {
+      return null
+    }
+
+    return parsedScore
+  }, [searchParams])
+
+  const hasValidNpsParams = customerId !== null && score !== null
+
+  useEffect(() => {
+    if (!submitted && !hasValidNpsParams) {
+      router.replace("/")
+    }
+  }, [hasValidNpsParams, submitted, router])
+
+  useEffect(() => {
+    if (!customerId || score === null || !customerIoAnalytics) {
+      return
+    }
+
+    const sessionKey = `nps-score-sent:${customerId}:${score}`
+    if (window.sessionStorage.getItem(sessionKey) === "1") {
+      return
+    }
+
+    const sendScoreEvent = async () => {
+      try {
+        await customerIoAnalytics.identify(customerId)
+        await customerIoAnalytics.track("nps_score_received", { score })
+        window.sessionStorage.setItem(sessionKey, "1")
+      } catch {
+      }
+    }
+
+    sendScoreEvent()
+  }, [customerId, score])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSubmitError(null)
+
+    if (!customerId) {
+      setSubmitError("We could not identify your session. Please use the feedback link you received.")
+      return
+    }
+
+    if (!customerIoAnalytics) {
+      setSubmitError("Customer.io is not configured. Please try again later.")
+      return
+    }
+
     setIsSubmitting(true)
-    
-    // Simulate submission delay
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setSubmitted(true)
-    setIsSubmitting(false)
+
+    try {
+      await customerIoAnalytics.identify(customerId)
+      await customerIoAnalytics.track("nps_feedback_received", {
+        reason: formData.reason,
+        improvement: formData.improvement,
+        hoping: formData.hoping,
+        ...(score !== null ? { score } : {}),
+      })
+
+      setSubmitted(true)
+      router.replace("/nps")
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Unable to submit feedback right now")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
+    !submitted && !hasValidNpsParams ? null : (
     <PageWrapper>
       <section className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6">
@@ -89,14 +172,20 @@ export default function NPSPage() {
                   </div>
 
                   <div className="text-center pt-4">
+                    {submitError && <p className="mb-4 text-sm text-red-600">{submitError}</p>}
                     <button
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !customerId || !customerIoAnalytics}
                       className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-serif font-bold text-lg bg-foreground text-primary-foreground hover:bg-foreground/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? "Submitting..." : "Submit feedback"}
                       {!isSubmitting && <ArrowRight className="w-5 h-5" />}
                     </button>
+                    {!customerId && (
+                      <p className="mt-4 text-sm text-muted-foreground">
+                        Missing user information in the link. Please open this page from your original feedback URL.
+                      </p>
+                    )}
                   </div>
                 </form>
               </div>
@@ -178,5 +267,6 @@ export default function NPSPage() {
         </div>
       </section>
     </PageWrapper>
+    )
   )
 }
