@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { Suspense, useEffect, useMemo, useState } from "react"
 import { AnalyticsBrowser } from "@customerio/cdp-analytics-browser"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
@@ -9,11 +9,22 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { ArrowRight, CheckCircle, Sparkles, Star } from "lucide-react"
 
 const customerIoWriteKey = process.env.NEXT_PUBLIC_CUSTOMER_IO_WRITE_KEY
-const customerIoAnalytics = customerIoWriteKey
-  ? AnalyticsBrowser.load({ writeKey: customerIoWriteKey })
-  : null
+const hasCustomerIoWriteKey = Boolean(customerIoWriteKey)
+let customerIoAnalyticsInstance: ReturnType<typeof AnalyticsBrowser.load> | null = null
 
-export default function NPSPage() {
+function getCustomerIoAnalytics() {
+  if (typeof window === "undefined" || !customerIoWriteKey) {
+    return null
+  }
+
+  if (!customerIoAnalyticsInstance) {
+    customerIoAnalyticsInstance = AnalyticsBrowser.load({ writeKey: customerIoWriteKey })
+  }
+
+  return customerIoAnalyticsInstance
+}
+
+function NPSPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
@@ -53,6 +64,7 @@ export default function NPSPage() {
   }, [hasValidNpsParams, submitted, router])
 
   useEffect(() => {
+    const customerIoAnalytics = getCustomerIoAnalytics()
     if (!customerId || score === null || !customerIoAnalytics) {
       return
     }
@@ -83,6 +95,7 @@ export default function NPSPage() {
       return
     }
 
+    const customerIoAnalytics = getCustomerIoAnalytics()
     if (!customerIoAnalytics) {
       setSubmitError("Customer.io is not configured. Please try again later.")
       return
@@ -175,7 +188,7 @@ export default function NPSPage() {
                     {submitError && <p className="mb-4 text-sm text-red-600">{submitError}</p>}
                     <button
                       type="submit"
-                      disabled={isSubmitting || !customerId || !customerIoAnalytics}
+                      disabled={isSubmitting || !customerId || !hasCustomerIoWriteKey}
                       className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-serif font-bold text-lg bg-foreground text-primary-foreground hover:bg-foreground/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? "Submitting..." : "Submit feedback"}
@@ -268,5 +281,13 @@ export default function NPSPage() {
       </section>
     </PageWrapper>
     )
+  )
+}
+
+export default function NPSPage() {
+  return (
+    <Suspense fallback={null}>
+      <NPSPageContent />
+    </Suspense>
   )
 }
