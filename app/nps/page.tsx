@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { Suspense, useEffect, useMemo, useState } from "react"
 import { AnalyticsBrowser } from "@customerio/cdp-analytics-browser"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
@@ -24,7 +24,7 @@ function getCustomerIoAnalytics() {
   return customerIoAnalyticsInstance
 }
 
-export default function NPSPage() {
+function NPSPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
@@ -281,5 +281,13 @@ export default function NPSPage() {
       </section>
     </PageWrapper>
     )
+  )
+}
+
+export default function NPSPage() {
+  return (
+    <Suspense fallback={null}>
+      <NPSPageContent />
+    </Suspense>
   )
 }
