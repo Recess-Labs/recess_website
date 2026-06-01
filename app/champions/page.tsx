@@ -6,6 +6,7 @@ import { ChampionWhy } from "@/components/champions/champion-why"
 import { ChampionPerks } from "@/components/champions/champion-perks"
 import { ChampionCommitment } from "@/components/champions/champion-commitment"
 import { ChampionForm } from "@/components/champions/champion-form"
+import { ChampionAppliedBanner } from "@/components/champions/champion-applied-banner"
 
 export const metadata: Metadata = {
   title: "Become a Recess Champion",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function ChampionsPage() {
   return (
     <PageWrapper>
+      <ChampionAppliedBanner />
       <ChampionHero />
       <ChampionWhy />
       <ChampionPerks />
