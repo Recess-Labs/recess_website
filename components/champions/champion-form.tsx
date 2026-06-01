@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { AnalyticsBrowser } from "@customerio/cdp-analytics-browser"
+import { useRouter, useSearchParams } from "next/navigation"
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -12,6 +14,21 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { ArrowRight, Loader2, Check, Star, Sparkles, AlertCircle } from "lucide-react"
 
 type Step = "auth" | "apply"
+
+const customerIoWriteKey = process.env.NEXT_PUBLIC_CUSTOMER_IO_WRITE_KEY
+let customerIoAnalyticsInstance: ReturnType<typeof AnalyticsBrowser.load> | null = null
+
+function getCustomerIoAnalytics() {
+  if (typeof window === "undefined" || !customerIoWriteKey) {
+    return null
+  }
+
+  if (!customerIoAnalyticsInstance) {
+    customerIoAnalyticsInstance = AnalyticsBrowser.load({ writeKey: customerIoWriteKey })
+  }
+
+  return customerIoAnalyticsInstance
+}
 
 // Google "G" icon as an inline SVG to avoid emoji/icon library constraints
 function GoogleIcon() {
@@ -38,6 +55,8 @@ function GoogleIcon() {
 }
 
 export function ChampionForm() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
   const [step, setStep] = useState<Step>("auth")
 
   // Auth step state
@@ -57,6 +76,38 @@ export function ChampionForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+
+  const userFromQuery = useMemo(() => {
+    const rawUser = searchParams.get("user")
+    if (!rawUser) return null
+    const trimmed = rawUser.trim()
+    return trimmed.length > 0 ? trimmed : null
+  }, [searchParams])
+
+  useEffect(() => {
+    if (!userFromQuery) return
+
+    const redirectToApplied = () => {
+      router.replace("/champions?applied=1")
+    }
+
+    const sendChampionAttribute = async () => {
+      const customerIoAnalytics = getCustomerIoAnalytics()
+      if (!customerIoAnalytics) {
+        redirectToApplied()
+        return
+      }
+
+      try {
+        await customerIoAnalytics.identify(userFromQuery, { champion: true })
+      } catch {
+      } finally {
+        redirectToApplied()
+      }
+    }
+
+    sendChampionAttribute()
+  }, [router, userFromQuery])
 
   // ── Auth helpers ──────────────────────────────────────────────────────────
 
