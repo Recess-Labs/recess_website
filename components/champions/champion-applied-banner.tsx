@@ -1,13 +1,11 @@
-"use client"
-
-import { useSearchParams } from "next/navigation"
 import { Check } from "lucide-react"
 
-export function ChampionAppliedBanner() {
-  const searchParams = useSearchParams()
-  const showBanner = searchParams.get("applied") === "1"
+type ChampionAppliedBannerProps = {
+  show: boolean
+}
 
-  if (!showBanner) return null
+export function ChampionAppliedBanner({ show }: ChampionAppliedBannerProps) {
+  if (!show) return null
 
   return (
     <section className="bg-green-50/70 py-4">
