@@ -40,7 +40,7 @@ export function LoadPattern({ pattern }: { pattern: HomeContent["pattern"] }) {
   const paths = useMemo(() => ({ without: buildPath(false), with: buildPath(true) }), [])
 
   return (
-    <section className="bg-blush pb-20 lg:pb-28" aria-labelledby="pattern-title">
+    <section className="bg-blush py-16 lg:py-28" aria-labelledby="pattern-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <div className="overflow-hidden rounded-[2rem] border border-border/40 bg-background shadow-xl">

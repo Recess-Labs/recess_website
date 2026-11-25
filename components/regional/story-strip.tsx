@@ -11,13 +11,13 @@ const frames = [
 
 export function StoryStrip({ story, note }: { story: HomeContent["story"]; note: string }) {
   return (
-    <section className="bg-foreground py-20 text-primary-foreground lg:py-28" aria-labelledby="still-wired">
+    <section className="bg-foreground py-16 text-primary-foreground lg:py-28" aria-labelledby="still-wired">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-serif text-sm font-bold uppercase tracking-widest text-mint">Still wired</p>
-              <h2 id="still-wired" className="mt-3 max-w-2xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-balance md:text-5xl">
+              <h2 id="still-wired" className="mt-3 max-w-2xl font-serif text-[2rem] font-bold leading-[1.1] text-balance md:text-5xl">
                 The shift ends. The load doesn&apos;t.
               </h2>
             </div>
