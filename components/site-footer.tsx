@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { RegionSelector } from "@/components/regional/region-selector"
 
 export function SiteFooter() {
   return (
@@ -50,6 +51,7 @@ export function SiteFooter() {
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/40">&copy; {new Date().getFullYear()} Recess. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <RegionSelector variant="footer" />
             <Link
               href="/privacy"
               className="text-xs text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors"

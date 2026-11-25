@@ -6,6 +6,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
+import { RegionSelector } from "@/components/regional/region-selector"
 
 const solutions = [
   { label: "Recess Foundation\u2122", href: "/solutions/workforce-system" },
@@ -59,16 +60,20 @@ export function SiteNav() {
         </div>
 
         {/* CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-2">
+          <RegionSelector />
           <Button asChild size="sm" className="rounded-full font-serif font-semibold px-5 bg-foreground text-background hover:bg-foreground/90">
             <Link href="/get-started">Schedule Free Strategy Call</Link>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+        <div className="flex items-center gap-1 lg:hidden">
+        <RegionSelector />
+        <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
           {mobileOpen ? <X className="w-5 h-5 text-foreground" /> : <Menu className="w-5 h-5 text-foreground" />}
         </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}

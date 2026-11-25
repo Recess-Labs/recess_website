@@ -8,6 +8,7 @@ const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.withrecess.com"),
   title: {
     default: "Recess | Emotional Infrastructure for Trauma-Exposed Workforces",
     template: "%s | Recess",
@@ -31,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${rubik.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${rubik.variable} ${dmSans.variable} bg-background`}>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <IntercomProvider />
         {children}
