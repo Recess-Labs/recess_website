@@ -111,8 +111,12 @@ export function LoadPattern({ pattern }: { pattern: HomeContent["pattern"] }) {
                 {EVENTS.map((e, i) => (
                   <g key={e.t}>
                     <line x1={x(e.t)} x2={x(e.t)} y1={PAD.top - 6} y2={H - PAD.bottom} stroke="var(--foreground)" opacity="0.12" />
-                    <text x={x(e.t)} y={PAD.top - 14} textAnchor="middle" className="fill-foreground font-sans text-[12px] font-semibold">
+                    <text x={x(e.t)} y={PAD.top - 14} textAnchor="middle" className="hidden fill-foreground font-sans text-[12px] font-semibold md:inline">
                       {pattern.events[i]}
+                    </text>
+                    <circle cx={x(e.t)} cy={PAD.top - 18} r="11" fill="var(--foreground)" className="md:hidden" />
+                    <text x={x(e.t)} y={PAD.top - 13} textAnchor="middle" className="fill-primary-foreground font-sans text-[14px] font-bold md:hidden">
+                      {i + 1}
                     </text>
                     {withRecess && (
                       <g>
@@ -127,6 +131,16 @@ export function LoadPattern({ pattern }: { pattern: HomeContent["pattern"] }) {
                 <text x={PAD.left} y={H - 8} className="fill-muted-foreground font-sans text-[12px]">Monday</text>
                 <text x={W - PAD.right} y={H - 8} textAnchor="end" className="fill-muted-foreground font-sans text-[12px]">Friday</text>
               </svg>
+              <ol className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 md:hidden" aria-label="Events on the chart">
+                {pattern.events.map((ev, i) => (
+                  <li key={ev} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                    <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground text-xs font-bold text-primary-foreground" aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    {ev}
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div className="grid gap-px border-t border-border/40 bg-border/40 md:grid-cols-[1fr_auto_1fr_auto_1fr]">

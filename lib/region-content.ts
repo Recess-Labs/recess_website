@@ -14,6 +14,7 @@ export type HomeContent = {
   metaTitle: string
   metaDescription: string
   hero: {
+    eyebrow: string
     headline: string
     highlight: string
     body: string
@@ -145,11 +146,12 @@ const content: Record<RegionId, HomeContent> = {
     metaDescription:
       "Frontline staff absorb other people's worst days, and it builds up until they quit. Recess gives them a ten-minute way to put it down during the shift, and gives leaders early warning before turnover.",
     hero: {
+      eyebrow: "For behavioral health, hospitals, schools and first responders",
       headline: "Your people absorb everyone else's crisis.",
       highlight: "Then they quit.",
-      body: "Recess is emotional infrastructure for trauma-exposed workforces. Staff get a ten-minute way to come down during the shift. Leaders get early warning before it turns into turnover, extended leave or an incident.",
+      body: "A patient death. An assault. A lockdown. Your staff go straight back to work carrying it. Recess gives them ten minutes to come down during the shift, and shows you which units are close to the edge before the call-outs and resignations start.",
       secondary: { label: "Check your team's exposure", href: LOW_COMMIT_URL, external: true },
-      microcopy: "30 minutes with a founder. You'll leave knowing where strain is building in your team.",
+      microcopy: "You'll leave knowing where strain is building in your team, whether or not you work with us.",
       sectors: ["Behavioral health & residential treatment", "Hospitals", "K-12", "Police, fire & EMS", "Corrections"],
     },
     story: [
@@ -276,11 +278,12 @@ const content: Record<RegionId, HomeContent> = {
     metaDescription:
       "Your staff carry everyone else's worst days. Then they leave. Recess gives care, NHS, school and blue light staff a ten-minute way to put the load down during the shift, and early warning before sickness absence.",
     hero: {
+      eyebrow: "For care homes, the NHS and blue light services",
       headline: "Your staff carry everyone else's worst days.",
       highlight: "Then they leave.",
-      body: "Recess is emotional infrastructure for care homes, children's homes, the NHS and emergency services. Staff get a ten-minute way to put the load down during the shift. You get early warning before it turns into sickness absence, agency cover or a resignation.",
+      body: "A death. An assault. A safeguarding call. Your staff go straight back on shift carrying it. Recess gives them ten minutes to put it down, and shows you which teams are close to the edge before the sick notes and resignations arrive.",
       secondary: { label: "Check your team's exposure", href: LOW_COMMIT_URL, external: true },
-      microcopy: "30 minutes with a founder. You'll leave knowing where strain is building in your team.",
+      microcopy: "You'll leave knowing where strain is building in your team, whether or not you work with us.",
       sectors: ["Residential & care homes", "Children's homes", "NHS & mental health", "Schools", "Blue light services"],
     },
     story: [
@@ -421,9 +424,10 @@ const content: Record<RegionId, HomeContent> = {
     metaDescription:
       "Your staff carry everyone else's worst days. Recess gives care, health, education and emergency-service staff a ten-minute way to come down, and gives leaders anonymised team trends to act on psychosocial risk early.",
     hero: {
+      eyebrow: "For care, health, education and emergency services",
       headline: "Your staff carry everyone else's worst days.",
       highlight: "Give them somewhere to put it down.",
-      body: "Recess gives care, health, education and emergency-service staff a ten-minute way to come down after the hardest moments, and gives leaders anonymised team trends so they can act on psychosocial risk early.",
+      body: "After the hardest moments, your staff go straight back on shift. Recess gives them ten minutes to come down, and gives you anonymised team trends so you can act on psychosocial risk before it becomes absence.",
       secondary: { label: "See how we handle data", href: "/privacy", external: false },
       microcopy: "30 minutes with a founder. You'll leave with a clear first step on psychosocial risk.",
       sectors: ["Residential & elder care", "Health", "Education", "Emergency services"],
@@ -521,11 +525,12 @@ const content: Record<RegionId, HomeContent> = {
     metaDescription:
       "Your people carry everyone else's worst days. Then they leave. Recess gives frontline staff in care, health, education, emergency services and field teams a ten-minute way to put the load down during the shift.",
     hero: {
+      eyebrow: "For frontline care, health, emergency and field teams",
       headline: "Your people carry everyone else's worst days.",
       highlight: "Then they leave.",
-      body: "Recess gives frontline staff in care, health, education, emergency services and field teams a ten-minute way to put the load down during the shift, and gives leaders early warning before it becomes absence, burnout or a resignation.",
+      body: "A death. An assault. A crisis in the field. Your staff go straight back to work carrying it. Recess gives them ten minutes to put it down, and shows you which teams are close to the edge before absence and resignations follow.",
       secondary: { label: "Check your team's exposure", href: LOW_COMMIT_URL, external: true },
-      microcopy: "30 minutes with a founder. You'll leave knowing where strain is building in your team.",
+      microcopy: "You'll leave knowing where strain is building in your team, whether or not you work with us.",
       sectors: ["Residential care", "Health systems", "Education", "Emergency services", "Humanitarian & NGO field teams"],
     },
     story: [

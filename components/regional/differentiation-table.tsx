@@ -21,7 +21,39 @@ export function DifferentiationTable({ diff }: { diff: HomeContent["differentiat
           </h2>
         </FadeInSection>
 
-        <FadeInSection delay={150} className="mt-12">
+        <FadeInSection delay={150} className="mt-10 md:hidden">
+          <div className="flex flex-col gap-3">
+            <div className="rounded-3xl bg-foreground p-5 text-primary-foreground shadow-xl">
+              <p className="font-serif text-lg font-bold">Recess</p>
+              <dl className="mt-4 flex flex-col gap-4">
+                {rows.map((r) => (
+                  <div key={r.label} className="flex flex-col gap-1">
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-mint">{r.label}</dt>
+                    <dd className="flex items-start gap-2 text-sm font-medium leading-relaxed">
+                      <Check className="mt-0.5 size-4 shrink-0 text-mint" aria-hidden="true" />
+                      {r.cells[3]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            {cols.slice(0, 3).map((c, ci) => (
+              <div key={c} className="rounded-3xl border border-border/60 bg-secondary/50 p-5">
+                <p className="font-serif text-base font-bold text-foreground">{c}</p>
+                <dl className="mt-3 grid grid-cols-3 gap-3">
+                  {rows.map((r) => (
+                    <div key={r.label} className="flex flex-col gap-1">
+                      <dt className="text-xs font-medium text-muted-foreground">{r.label}</dt>
+                      <dd className="text-sm leading-snug text-foreground/80">{r.cells[ci]}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </FadeInSection>
+
+        <FadeInSection delay={150} className="mt-12 hidden md:block">
           <div className="overflow-x-auto rounded-3xl border border-border/50">
             <table className="w-full min-w-[720px] border-collapse text-left">
               <caption className="sr-only">How Recess compares with an assistance line, training and a wellbeing app</caption>

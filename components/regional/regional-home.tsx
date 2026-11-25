@@ -30,7 +30,7 @@ export function RegionalHome({ region }: { region: RegionId }) {
   return (
     <PageWrapper>
       <div lang={REGIONS[region].locale}>
-        <RegionalHero hero={c.hero} />
+        <RegionalHero hero={c.hero} stat={c.recognition.stats[0]} />
         <LoadPattern pattern={c.pattern} />
         <StoryStrip story={c.story} note={c.storyNote} />
         <RecognitionSection recognition={c.recognition} />

@@ -25,11 +25,11 @@ export function StoryStrip({ story, note }: { story: HomeContent["story"]; note:
           </div>
         </FadeInSection>
 
-        <ol className="mt-12 grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
+        <ol className="-mx-5 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 md:mt-12 md:gap-4 lg:grid-cols-4">
           {story.map((s, i) => {
             const last = i === story.length - 1
             return (
-              <li key={s.caption}>
+              <li key={s.caption} className="w-[78%] shrink-0 snap-start sm:w-auto">
                <FadeInSection delay={i * 150} className={`group relative aspect-[4/5] overflow-hidden rounded-2xl ${last ? "ring-2 ring-mint" : ""}`}>
                   <Image
                     src={frames[i].src}
@@ -39,9 +39,11 @@ export function StoryStrip({ story, note }: { story: HomeContent["story"]; note:
                     className={`object-cover transition-transform duration-700 group-hover:scale-105 ${last ? "" : "grayscale-[35%]"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/30 to-transparent" aria-hidden="true" />
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 p-4 md:p-5">
-                    <span className={`text-xs font-medium ${last ? "text-mint" : "text-primary-foreground/50"}`}>{s.voice}</span>
-                    <p className="font-serif text-base font-semibold leading-snug text-primary-foreground text-pretty md:text-lg">{s.caption}</p>
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-5">
+                    <span className={`w-fit rounded-full px-2.5 py-1 text-xs font-semibold ${last ? "bg-mint text-foreground" : "bg-primary-foreground/15 text-primary-foreground backdrop-blur"}`}>
+                      {s.voice}
+                    </span>
+                    <p className="font-serif text-lg font-semibold leading-snug text-primary-foreground text-pretty">{s.caption}</p>
                   </div>
                </FadeInSection>
               </li>
