@@ -8,12 +8,12 @@ export function RecognitionSection({ recognition }: { recognition: HomeContent["
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:gap-20">
         <FadeInSection>
           <p className="font-serif text-sm font-bold uppercase tracking-widest text-accent">{recognition.eyebrow}</p>
-          <h2 id="recognition-title" className="mt-3 font-serif text-3xl font-bold leading-tight text-foreground text-balance md:text-5xl">
+          <h2 id="recognition-title" className="mt-3 font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-foreground text-balance md:text-5xl">
             {recognition.title}
           </h2>
           <ul className="mt-8 flex flex-col">
             {recognition.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-4 border-b border-border/60 py-4 text-lg leading-relaxed text-foreground">
+              <li key={b} className="flex items-start gap-4 border-b border-border/60 py-4 text-base leading-relaxed sm:text-lg text-foreground">
                 <span className="mt-2.5 size-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                 {b}
               </li>
@@ -28,9 +28,9 @@ export function RecognitionSection({ recognition }: { recognition: HomeContent["
           <div className="flex flex-col gap-4">
             {recognition.stats.map((s, i) => (
               <FadeInSection key={s.value} delay={i * 120}>
-                <figure className={`rounded-3xl p-7 md:p-8 ${i === 0 ? "bg-foreground text-primary-foreground" : "bg-secondary text-foreground"}`}>
+                <figure className={`rounded-3xl p-5 sm:p-7 md:p-8 ${i === 0 ? "bg-foreground text-primary-foreground" : "bg-secondary text-foreground"}`}>
                   <p className="font-serif text-5xl font-bold tracking-tight md:text-6xl">{s.value}</p>
-                  <p className={`mt-2 text-lg leading-relaxed ${i === 0 ? "text-primary-foreground/80" : "text-foreground"}`}>{s.label}</p>
+                  <p className={`mt-2 text-base leading-relaxed sm:text-lg ${i === 0 ? "text-primary-foreground/80" : "text-foreground"}`}>{s.label}</p>
                   <figcaption className={`mt-3 text-xs ${i === 0 ? "text-primary-foreground/50" : "text-muted-foreground"}`}>{`Source: ${s.source}`}</figcaption>
                 </figure>
               </FadeInSection>

@@ -19,7 +19,7 @@ export function RegionPicker() {
               href={r.path}
               hrefLang={r.locale}
               onClick={() => saveRegionPref(id)}
-              className={`group flex h-full flex-col gap-4 rounded-3xl border p-7 transition-all hover:-translate-y-1 hover:shadow-xl ${
+              className={`group flex h-full flex-col gap-4 rounded-3xl border p-5 sm:p-7 transition-all hover:-translate-y-1 hover:shadow-xl ${
                 active ? "border-foreground bg-foreground text-primary-foreground" : "border-border/50 bg-background text-foreground"
               }`}
             >

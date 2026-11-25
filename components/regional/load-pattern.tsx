@@ -41,13 +41,13 @@ export function LoadPattern({ pattern }: { pattern: HomeContent["pattern"] }) {
 
   return (
     <section className="bg-blush pb-20 lg:pb-28" aria-labelledby="pattern-title">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <div className="overflow-hidden rounded-[2rem] border border-border/40 bg-background shadow-xl">
             <div className="flex flex-col gap-6 border-b border-border/40 p-6 md:flex-row md:items-end md:justify-between md:p-10">
               <div>
                 <p className="font-serif text-sm font-bold uppercase tracking-widest text-accent">The pattern we address</p>
-                <h2 id="pattern-title" className="mt-3 max-w-xl font-serif text-3xl font-bold leading-tight text-foreground text-balance md:text-4xl">
+                <h2 id="pattern-title" className="mt-3 max-w-xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-foreground text-balance md:text-4xl">
                   Hard moments don&apos;t reset at the end of a shift. They stack.
                 </h2>
               </div>

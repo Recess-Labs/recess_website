@@ -12,12 +12,12 @@ const frames = [
 export function StoryStrip({ story, note }: { story: HomeContent["story"]; note: string }) {
   return (
     <section className="bg-foreground py-20 text-primary-foreground lg:py-28" aria-labelledby="still-wired">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-serif text-sm font-bold uppercase tracking-widest text-mint">Still wired</p>
-              <h2 id="still-wired" className="mt-3 max-w-2xl font-serif text-3xl font-bold leading-tight text-balance md:text-5xl">
+              <h2 id="still-wired" className="mt-3 max-w-2xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-balance md:text-5xl">
                 The shift ends. The load doesn&apos;t.
               </h2>
             </div>
@@ -25,7 +25,7 @@ export function StoryStrip({ story, note }: { story: HomeContent["story"]; note:
           </div>
         </FadeInSection>
 
-        <ol className="-mx-5 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 md:mt-12 md:gap-4 lg:grid-cols-4">
+        <ol className="-mx-4 mt-10 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 md:mt-12 md:gap-4 lg:grid-cols-4">
           {story.map((s, i) => {
             const last = i === story.length - 1
             return (

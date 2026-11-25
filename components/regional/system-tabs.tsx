@@ -14,13 +14,13 @@ export function SystemTabs({ system }: { system: HomeContent["system"] }) {
 
   return (
     <section className="bg-background py-20 lg:py-28" aria-labelledby="system-title">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <p className="font-serif text-sm font-bold uppercase tracking-widest text-accent">The Recess system</p>
-          <h2 id="system-title" className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-tight text-foreground text-balance md:text-5xl">
+          <h2 id="system-title" className="mt-3 max-w-3xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-foreground text-balance md:text-5xl">
             Three layers. One operating system for the emotional load.
           </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">{system.intro}</p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg text-muted-foreground">{system.intro}</p>
         </FadeInSection>
 
         <FadeInSection delay={150} className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,22rem)_1fr]">
@@ -47,9 +47,9 @@ export function SystemTabs({ system }: { system: HomeContent["system"] }) {
             ))}
           </div>
 
-          <div id="layer-panel" role="tabpanel" aria-labelledby={`layer-tab-${active}`} className={`flex flex-col gap-6 rounded-3xl p-8 md:p-10 ${tones[active]}`}>
+          <div id="layer-panel" role="tabpanel" aria-labelledby={`layer-tab-${active}`} className={`flex flex-col gap-6 rounded-3xl p-5 sm:p-8 md:p-10 ${tones[active]}`}>
             <h3 className="font-serif text-2xl font-bold text-foreground md:text-3xl">{layer.title}</h3>
-            <p className="max-w-2xl text-lg leading-relaxed text-foreground">{layer.desc}</p>
+            <p className="max-w-2xl text-base leading-relaxed sm:text-lg text-foreground">{layer.desc}</p>
             <ul className="grid gap-3 sm:grid-cols-2">
               {layer.checks.map((c) => (
                 <li key={c} className="flex items-start gap-3 rounded-xl bg-background/70 p-4 text-sm font-medium leading-relaxed text-foreground">

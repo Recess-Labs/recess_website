@@ -7,12 +7,12 @@ export function BookCta({ tone = "dark", size = "lg", className = "" }: { tone?:
     tone === "dark"
       ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
       : "bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
-  const sizing = size === "lg" ? "h-14 px-8 text-base" : "h-11 px-6 text-sm"
+  const sizing = size === "lg" ? "h-14 px-5 text-[0.9375rem] sm:px-8 sm:text-base" : "h-11 px-5 text-sm sm:px-6"
   return (
     <span className={`relative inline-flex ${className}`}>
       <Link
         href={BOOK_HREF}
-        className={`group relative z-10 inline-flex items-center justify-center gap-2 rounded-full font-serif font-semibold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl ${palette} ${sizing}`}
+        className={`group relative z-10 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full font-serif font-semibold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl ${palette} ${sizing}`}
       >
         {BOOK_LABEL}
         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />

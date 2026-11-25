@@ -13,10 +13,10 @@ export function DifferentiationTable({ diff }: { diff: HomeContent["differentiat
 
   return (
     <section className="bg-background py-20 lg:py-28" aria-labelledby="diff-title">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <p className="font-serif text-sm font-bold uppercase tracking-widest text-accent">Why what you have isn&apos;t enough</p>
-          <h2 id="diff-title" className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-tight text-foreground text-balance md:text-5xl">
+          <h2 id="diff-title" className="mt-3 max-w-3xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-foreground text-balance md:text-5xl">
             Most support arrives after the damage is done
           </h2>
         </FadeInSection>

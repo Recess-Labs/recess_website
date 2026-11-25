@@ -7,10 +7,10 @@ const stepTones = ["bg-sky", "bg-butter", "bg-mint"]
 export function StepsResult({ stepsTitle, steps, result }: { stepsTitle: string; steps: HomeContent["steps"]; result: HomeContent["result"] }) {
   return (
     <section className="bg-peach py-20 lg:py-28" aria-labelledby="steps-title">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <FadeInSection>
           <p className="font-serif text-sm font-bold uppercase tracking-widest text-accent">How it works</p>
-          <h2 id="steps-title" className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-tight text-foreground text-balance md:text-5xl">
+          <h2 id="steps-title" className="mt-3 max-w-3xl font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-foreground text-balance md:text-5xl">
             {stepsTitle}
           </h2>
         </FadeInSection>
@@ -18,7 +18,7 @@ export function StepsResult({ stepsTitle, steps, result }: { stepsTitle: string;
         <ol className="relative mt-12 grid gap-4 md:grid-cols-3">
           {steps.map((s, i) => (
             <li key={s.title}>
-              <FadeInSection delay={i * 120} className="flex h-full flex-col gap-4 rounded-3xl bg-background p-7 shadow-sm">
+              <FadeInSection delay={i * 120} className="flex h-full flex-col gap-4 rounded-3xl bg-background p-5 sm:p-7 shadow-sm">
                 <span className={`flex size-12 items-center justify-center rounded-2xl font-serif text-lg font-bold text-foreground ${stepTones[i % 3]}`}>{i + 1}</span>
                 <div>
                   <h3 className="font-serif text-2xl font-bold text-foreground">{s.title}</h3>
@@ -32,11 +32,11 @@ export function StepsResult({ stepsTitle, steps, result }: { stepsTitle: string;
 
         <FadeInSection delay={200} className="mt-16">
           <div className="overflow-hidden rounded-[2rem] bg-foreground text-primary-foreground shadow-2xl">
-            <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+            <div className="grid gap-10 p-5 sm:p-8 md:p-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
               <div>
                 <p className="font-serif text-sm font-bold uppercase tracking-widest text-mint">The result</p>
-                <h3 className="mt-3 font-serif text-3xl font-bold leading-tight text-balance md:text-4xl">{result.headline}</h3>
-                <p className="mt-5 text-lg leading-relaxed text-primary-foreground/75">{result.track}</p>
+                <h3 className="mt-3 font-serif text-[1.75rem] font-bold leading-tight sm:text-3xl text-balance md:text-4xl">{result.headline}</h3>
+                <p className="mt-5 text-base leading-relaxed sm:text-lg text-primary-foreground/75">{result.track}</p>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="rounded-2xl bg-primary-foreground/10 p-6">
